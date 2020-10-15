@@ -6,6 +6,6 @@
     <title>Ecom Store</title>
 </head>
 <body>
-    
+    <p>welcome to Ecom Store 2020 </p>
 </body>
 </html>
