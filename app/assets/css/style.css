@@ -1,0 +1,139 @@
+/*
+
+  Theme Name:EliteShop
+  
+  FirstColor: #08526d
+  SecondColor: #ec1c23
+
+*/
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300&family=Cairo&display=swap');
+*
+{
+  box-sizing: border-box;
+}
+body{
+  direction: rtl;
+}
+
+
+/* Login Page*/
+:root {
+  --input-padding-x: 1.5rem;
+  --input-padding-y: .75rem;
+}
+
+.signin {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.signin .signin-title {
+  margin-bottom: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
+  font-weight: bold;
+
+}
+
+.signin .signin-body {
+  padding: 2rem;
+}
+
+.form-signin {
+  width: 100%;
+}
+
+.form-signin .btn {
+  font-family: 'Almarai', sans-serif;
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-family: 'Cairo', sans-serif;
+  padding: 1rem;
+  transition: all 0.2s;
+  border: #F58C20;
+  background-color: #F58C20;
+}
+
+.form-signin .btn:hover {
+color:#f79635 ;
+opacity: 0.8;
+margin-left: 5px;
+font-family: 'Almarai', sans-serif;
+
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-label-group input {
+  height: auto;
+  direction: rtl;
+  border-radius: 2rem;
+}
+.form-label-group input:focus{
+  border-color: #f79635;
+  box-shadow: 0 0 3px #f79635;
+}
+span.psw a{
+  float: left;
+  margin-top:5px;
+}
+
+.form-label-group>input,
+.form-label-group>label {
+  padding: var(--input-padding-y) var(--input-padding-x);
+}
+
+.form-label-group>label {
+  position: absolute;
+  float:right;
+  text-align: right;
+
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  /* Override default `<label>` margin */
+  line-height: 1.5;
+  color: #495057;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .1s ease-in-out;
+}
+
+span{
+ 
+  position: absolute;
+  margin-bottom: 1rem;
+  top: 369px;
+  left: 218px;
+  width: 40px;
+  height:40px;
+  background: #efefef;
+  border-radius: 50%;
+  line-height: 40px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.btn-google {
+  color: white;
+  background-color: #ea4335 !important;
+  font-family: 'Almarai', sans-serif;
+}
+
+.btn-facebook {
+  color: white;
+  background-color: #3b5998 !important;
+  font-family: 'Almarai', sans-serif;
+}
+
+
+
+/* End Login Page*/
