@@ -1,12 +1,12 @@
-/**This is the main page of the project that will be building using MVC */
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecom Store</title>
-</head>
-<body>
-    
-</body>
-</html>
+<?php
+use coreAppNS\Route;
+use coreAppNS\Controller;
+use coreAppNS\View;
+use coreAppNS\model;
+include("core/route.php");
+include("core/controllers.php");
+include("core/view.php");
+include("core/model.php");
+$url=isset($_GET['url'])?$_GET['url']:"home";
+new Route ($url);
+?>
