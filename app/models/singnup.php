@@ -5,42 +5,27 @@ require("database.php");
 require("core/db.php");
 
 class singnup{
-
-
    public  $db;
-
     function __construct(){
-        $this->db=new DB();
+     $this->db=new DB();
     }
 
-
-    function  getData(){
-        $cols=array("cat_id","cat_name");
-        $tbls=array("categories");
-        return  $this->db
-        ->select($cols)
-        ->from($tbls)
-        ->where("is_active","=","1")
-        ->where('parent','=','0')
-        ->build()
-        ->exeucte();
-    }
     function addData($data){          
                 print_r($data);
-                $userName = $_POST['userName'];
+                $userName = $_POST['user_name'];
                 $email = $_POST['email'];
-                $cols=array("userName","email");
+                $cols=array("user_name","email");
                 $tbls=array("users");
                 $select_result =  $this->db
                 ->select($cols)
                 ->from($tbls)
-                ->where("userName","=",$userName)
+                ->where("user_name","=",$userName)
                 ->orWhere("email","=",$email)
                 ->build()
                 ->exeucte();
                 $count = count($select_result);
                 if ( $count > 0) {
-                if (!empty($select_result[0]->userName) && $select_result[0]->userName == $userName)
+                if (!empty($select_result[0]->user_name) && $select_result[0]->user_name == $userName)
                 {
                         header("Location: ../views/signup/index?error=The username is taken try another");
                         exit();
