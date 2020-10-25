@@ -20,8 +20,7 @@ class loginController extends Controller{
         $this->controller->view_object->create_view('login');
     }
        function add(){
-          echo "<br>".$this->link."<br>";
-          print_r($_POST);
+         
           $this->singn_model->check($_POST);
           $this->controller->view_object->create_view('feedback');
        }
