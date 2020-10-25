@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../app/assets/css/style.css" />
     <link rel="stylesheet" href="../app/assets/css/font-awesome.min.css" />
   </head>
-  <body>    
+  <body>  
         <div class="container">
           <div class="row">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
@@ -26,11 +26,11 @@
                     <?php } ?>
                   <form class="form-signin" action="singnup/add" method="post" >
                     <div class="form-label-group">
-                        <input type="text" id="inputName" class="form-control"placeholder="الإسم " name="name" required autofocus>
+                        <input type="text" id="inputName" class="form-control"placeholder="الإسم " name="full_name" required autofocus>
                         <label for="inputName" ></label>
                       </div>
                       <div class="form-label-group">
-                        <input type="text" id="inputName" class="form-control"placeholder="اسم المستخدم " name="userName" required autofocus>
+                        <input type="text" id="inputName" class="form-control"placeholder="اسم المستخدم " name="user_name" required autofocus>
                         <label for="inputName" ></label>
                       </div>
                     <div class="form-label-group">
@@ -38,8 +38,18 @@
                       <label for="inputEmail" ></label>
                     </div>
                     <div class="form-label-group">
+                        <input type="text" id="inputName" class="form-control"placeholder="العنوان" name="address" required autofocus>
+                        <label for="inputName" ></label>
+                      </div>
+                      <div class="form-label-group">
+                        <input type="text" id="inputName" class="form-control"placeholder="رقم الهاتف  " name="phone" required autofocus>
+                        <label for="inputName" ></label>
+                      </div>	
+                    <div class="form-label-group">
                         <input type="password" id="inputPassword" class="form-control" placeholder=" كلمة المرور" name="password" required>
-                        <label for="inputPassword"> </label>
+                        <label for="inputPassword"> </label>	
+                        <?PHP $creation_date=date("Y-m-d H:i:s"); ?>
+                        <input type="hidden" checked="" class="custom-control-input" name='creation_date' value= <?PHP echo $creation_date; ?>>
                       </div>
                     <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">تسجيل </button>
                   </form>
