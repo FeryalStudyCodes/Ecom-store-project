@@ -13,7 +13,7 @@ require('app/views/admin/header.php');
                  </div>
                  <!-- /. ROW  -->
                  <hr />
-                 <a  href="admin/admin_brand/index"> Brand </a>
+                 
             </div>  
                                   
         </div>

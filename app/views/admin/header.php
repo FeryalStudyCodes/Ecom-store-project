@@ -32,7 +32,7 @@
                 <ul class="nav" id="main-menu">
 				
                     <li>
-                        <a  href="admin/admin_brand/index"> Brand </a>
+                        <a  href="http://localhost/Ecom/admin/admin_brand/index"> Brand </a>
                     </li>
                       <li>
                         <a  href="admin/admin_cat/show"> categories</a>

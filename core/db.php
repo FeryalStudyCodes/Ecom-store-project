@@ -55,8 +55,6 @@ class DB{
         $stmt=$this->connection->prepare($this->final_query);
         $stmt->execute();
        $result= $stmt->fetchAll(PDO::FETCH_OBJ);
-       $row=$stmt->rowCount();
-      
        return $result;
     }
     function insert($tbl,$items){
