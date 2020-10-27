@@ -8,12 +8,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.../../app/assets/js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/../../app/assets/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../../app/assets/css/bootstrap.css" />
-       <link rel="stylesheet" href="../../app/assets/css/font-awesome.css">
-    <link rel="stylesheet" href="../../app/assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../app/assets/css/smoothproducts.css">
-    <link rel="stylesheet" type="text/css" href="../../app/assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="../../app/assets/css/style.css" />
+    <link rel="stylesheet" href="app/assets/css/bootstrap.css" />
+       <link rel="stylesheet" href="app/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="app/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="app/assets/css/smoothproducts.css">
+    <link rel="stylesheet" type="text/css" href="app/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="app/assets/css/style.css" />
 
 
   </head>
@@ -34,8 +34,8 @@
               <i class="fa fa-language"></i> اللغة
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="#"><img src="../../app/assets/img/ar.png"> العربية</a>
-                <a class="dropdown-item" href="#"><img src="../../app/assets/img/en.png">  الإنجليزية</a>
+                <a class="dropdown-item" href="#"><img src="app/assets/images/ar.png"> العربية</a>
+                <a class="dropdown-item" href="#"><img src="app/assets/images/en.png">  الإنجليزية</a>
               </div>
             
           
@@ -50,7 +50,7 @@
    <nav class="navbar navbar-expand-lg navbar-light ">
      <div class="container">
      <a class="navbar-brand" href="#">
-       <img src="../../app/assets/img/login_store_logos-1 (1).png" style="width:20%;height:20%;">
+       <img src="app/assets/images/login_store_logos-1 (1).png" style="width:20%;height:20%;">
      
      </a>
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -185,7 +185,7 @@
         <div class="product-store">
           <div class="product-img">
               <a href="#">
-                  <img class="pic" src="../../app/assets/img/dell-10-300x211.jpg">
+                  <img class="pic" src="app/assets/images/dell-10-300x211.jpg">
               </a>
               <ul class="social">
                   <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -209,7 +209,7 @@
         <div class="product-store">
           <div class="product-img">
               <a href="#">
-                  <img class="pic" src="../../app/assets/img/dell-10-300x211.jpg">
+                  <img class="pic" src="app/assets/images/dell-10-300x211.jpg">
               </a>
               <ul class="social">
                   <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -233,7 +233,7 @@
         <div class="product-store">
           <div class="product-img">
               <a href="#">
-                  <img class="pic" src="../../app/assets/img/dell-10-300x211.jpg">
+                  <img class="pic" src="app/assets/images/dell-10-300x211.jpg">
               </a>
               <ul class="social">
                   <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -257,7 +257,7 @@
         <div class="product-store">
           <div class="product-img">
               <a href="#">
-                  <img class="pic" src="../../app/assets/img/dell-10-300x211.jpg">
+                  <img class="pic" src="app/assets/images/dell-10-300x211.jpg">
               </a>
               <ul class="social">
                   <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -283,7 +283,7 @@
         <div class="product-store">
           <div class="product-img">
               <a href="#">
-                  <img class="pic" src="../../app/assets/img/dell-10-300x211.jpg">
+                  <img class="pic" src="app/assets/images/dell-10-300x211.jpg">
               </a>
               <ul class="social">
                   <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -307,7 +307,7 @@
         <div class="product-store">
           <div class="product-img">
               <a href="#">
-                  <img class="pic" src="../../app/assets/img/dell-10-300x211.jpg">
+                  <img class="pic" src="app/assets/images/dell-10-300x211.jpg">
               </a>
               <ul class="social">
                   <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -331,7 +331,7 @@
         <div class="product-store">
           <div class="product-img">
               <a href="#">
-                  <img class="pic" src="../../app/assets/img/dell-10-300x211.jpg">
+                  <img class="pic" src="app/assets/images/dell-10-300x211.jpg">
               </a>
               <ul class="social">
                   <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -355,7 +355,7 @@
         <div class="product-store">
           <div class="product-img">
               <a href="#">
-                  <img class="pic" src="../../app/assets/img/dell-10-300x211.jpg">
+                  <img class="pic" src="app/assets/images/dell-10-300x211.jpg">
               </a>
               <ul class="social">
                   <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -381,7 +381,7 @@
         <div class="product-store">
           <div class="product-img">
               <a href="#">
-                  <img class="pic" src="../../app/assets/img/dell-10-300x211.jpg">
+                  <img class="pic" src="app/assets/images/dell-10-300x211.jpg">
               </a>
               <ul class="social">
                   <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -405,7 +405,7 @@
 <div class="product-store">
               <div class="product-img">
                   <a href="#">
-                      <img class="pic" src="../../app/assets/img/dell-10-300x211.jpg">
+                      <img class="pic" src="app/assets/images/dell-10-300x211.jpg">
                   </a>
                   <ul class="social">
                       <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -428,7 +428,7 @@
         <div class="product-store">
           <div class="product-img">
               <a href="#">
-                  <img class="pic" src="../../app/assets/img/dell-10-300x211.jpg">
+                  <img class="pic" src="app/assets/images/dell-10-300x211.jpg">
               </a>
               <ul class="social">
                   <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -452,7 +452,7 @@
           <div class="product-store">
               <div class="product-img">
                   <a href="#">
-                      <img class="pic" src="../../app/assets/img/dell-10-300x211.jpg">
+                      <img class="pic" src="app/assets/images/dell-10-300x211.jpg">
                   </a>
                   <ul class="social">
                       <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -511,7 +511,7 @@
           <div class="product-store">
               <div class="product-img">
                   <a href="#">
-                      <img class="pic" src="../../app/assets/img/dell-10-300x211.jpg">
+                      <img class="pic" src="app/assets/images/dell-10-300x211.jpg">
                   </a>
                   <ul class="social">
                       <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -534,7 +534,7 @@
         <div class="product-store">
             <div class="product-img">
                 <a href="#">
-                    <img class="pic" src="../../app/assets/img/lenovo1.png">
+                    <img class="pic" src="app/assets/images/lenovo1.png">
                 </a>
                 <ul class="social">
                     <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -557,7 +557,7 @@
       <div class="product-store">
           <div class="product-img">
               <a href="#">
-                  <img class="pic" src="../../app/assets/img/dell-1-20-300x203.jpg">
+                  <img class="pic" src="app/assets/images/dell-1-20-300x203.jpg">
               </a>
               <ul class="social">
                   <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -580,7 +580,7 @@
     <div class="product-store">
         <div class="product-img">
             <a href="#">
-                <img class="pic" src="../../app/assets/img/Dell-Inspiron-11-3162-300x184.jpg">
+                <img class="pic" src="app/assets/images/Dell-Inspiron-11-3162-300x184.jpg">
             </a>
             <ul class="social">
                 <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -616,7 +616,7 @@
           <div class="product-offers">
               <div class="product-image">
                   <a href="#">
-                      <img class="pic-1" src="../../app/assets/img/Dell-Inspiron-11-3162-300x184.jpg">
+                      <img class="pic-1" src="app/assets/images/Dell-Inspiron-11-3162-300x184.jpg">
                   </a>
                   <ul class="social">
                       <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -639,7 +639,7 @@
         <div class="product-offers">
             <div class="product-image">
                 <a href="#">
-                    <img class="pic-1" src="../../app/assets/img/ASUS-Chromebook-C423-1-300x202.jpg">
+                    <img class="pic-1" src="app/assets/images/ASUS-Chromebook-C423-1-300x202.jpg">
                 </a>
                 <ul class="social">
                     <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -662,7 +662,7 @@
       <div class="product-offers">
           <div class="product-image">
               <a href="#">
-                  <img class="pic-1" src="../../app/assets/img/lenovo3.png">
+                  <img class="pic-1" src="app/assets/images/lenovo3.png">
               </a>
               <ul class="social">
                   <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -688,7 +688,7 @@
         <div class="product-offers">
             <div class="product-image">
                 <a href="#">
-                    <img class="pic-1" src="../../app/assets/img/acer3.jpg">
+                    <img class="pic-1" src="app/assets/images/acer3.jpg">
                 </a>
                 <ul class="social">
                     <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -717,13 +717,13 @@
 <div class="container">
     <div class="row">
       <div class="offer-card">
-        <img src="../../app/assets/img/add.jpg">
+        <img src="app/assets/images/add.jpg">
       </div>
       <div class="offer-card">
-        <img src="../../app/assets/img/add2.jpg">
+        <img src="app/assets/images/add2.jpg">
       </div>
       <div class="offer-card">
-        <img src="../../app/assets/img/add2.jpg">
+        <img src="app/assets/images/add2.jpg">
       </div>
     </div>
   </div>
@@ -738,7 +738,7 @@
           <div class="product-store">
               <div class="product-img">
                   <a href="#">
-                      <img class="pic" src="../../app/assets/img/samsung.jpg">
+                      <img class="pic" src="app/assets/images/samsung.jpg">
                   </a>
                   <ul class="social">
                       <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -761,7 +761,7 @@
         <div class="product-store">
             <div class="product-img">
                 <a href="#">
-                    <img class="pic" src="../../app/assets/img/hawa.jpg">
+                    <img class="pic" src="app/assets/images/hawa.jpg">
                 </a>
                 <ul class="social">
                     <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -784,7 +784,7 @@
       <div class="product-store">
           <div class="product-img">
               <a href="#">
-                  <img class="pic" src="../../app/assets/img/opop.jpg">
+                  <img class="pic" src="app/assets/images/opop.jpg">
               </a>
               <ul class="social">
                   <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -807,7 +807,7 @@
     <div class="product-store">
         <div class="product-img">
             <a href="#">
-                <img class="pic" src="../../app/assets/img/honor.jpg">
+                <img class="pic" src="app/assets/images/honor.jpg">
             </a>
             <ul class="social">
                 <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -843,7 +843,7 @@
           <div class="product-offers">
               <div class="product-image">
                   <a href="#">
-                      <img class="pic-1" src="../../app/assets/img/iphone.jpg">
+                      <img class="pic-1" src="app/assets/images/iphone.jpg">
                   </a>
                   <ul class="social">
                       <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -866,7 +866,7 @@
         <div class="product-offers">
             <div class="product-image">
                 <a href="#">
-                    <img class="pic-1" src="../../app/assets/img/5VQ9ZQoC1590590122.jpg">
+                    <img class="pic-1" src="app/assets/images/5VQ9ZQoC1590590122.jpg">
                 </a>
                 <ul class="social">
                     <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -889,7 +889,7 @@
       <div class="product-offers">
           <div class="product-image">
               <a href="#">
-                  <img class="pic-1" src="../../app/assets/img/telephone.jpg">
+                  <img class="pic-1" src="app/assets/images/telephone.jpg">
               </a>
               <ul class="social">
                   <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -916,7 +916,7 @@
         <div class="product-offers">
             <div class="product-image">
                 <a href="#">
-                    <img class="pic-1" src="../../app/assets/img/ph-1-color-black-moon-essential.jpg">
+                    <img class="pic-1" src="app/assets/images/ph-1-color-black-moon-essential.jpg">
                 </a>
                 <ul class="social">
                     <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -949,13 +949,13 @@
       <div class="row-fluid">
         <div class="span8 hidden-phone ">
           <div class="ty-banner__image-wrapper">
-            <a href="#"><img src="../../app/assets/img/add (2).jpg"></a>
+            <a href="#"><img src="app/assets/images/add (2).jpg"></a>
             
           </div>
       </div>
       <div class="span8 hidden-phone ">
         <div class="ty-banner__image-wrapper">
-          <a href="#"><img src="../../app/assets/img/add (1).jpg"></a>
+          <a href="#"><img src="app/assets/images/add (1).jpg"></a>
           
         </div>
     </div>
@@ -979,7 +979,7 @@
                  <div class="col-lg-3 col-md-6 col-sm-6 ">
                      <div class="web-info">
                       <div class="footer-about-logo">
-                        <a href="#"><img src="../../app/assets/img/login_store_logos-1 (1).png" style="width: 30%;height: 30%;" alt=""></a>
+                        <a href="#"><img src="app/assets/images/login_store_logos-1 (1).png" style="width: 30%;height: 30%;" alt=""></a>
                     </div>
                     <ul >
                       
@@ -1054,7 +1054,7 @@
                   All Rights Reserved | Design by &copy;LoginStore 2020
                  </div>
                  <div class="col-lg-6 text-center text-md-left ">
-                  <div class="footer__copyright__payment"><img src="../../app/assets/img/payment-item.png" alt=""></div>
+                  <div class="footer__copyright__payment"><img src="app/assets/img/payment-item.png" alt=""></div>
 
                  </div>
           </div>
@@ -1062,12 +1062,12 @@
 
     </div>
     <!-- end copyRight  -->
-    <script type="text/javascript" src="../../app/assets/js/jquery-3.5.1.min.js"></script>
-    <script type="text/javascript" src="../../app/assets/js/popper.min.js"></script>
-    <script type="text/javascript" src="../../app/assets/js/all.js"></script>
-    <script type="text/javascript" src="../../app/assets/js/bootstrap.js"></script>
-    <script type="text/javascript" src="../../app/assets/js/main.js"></script>
-    <script type="text/javascript" src="../../app/assets/js/smoothproducts.min.js"></script>
+    <script type="text/javascript" src="app/assets/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="app/assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="app/assets/js/all.js"></script>
+    <script type="text/javascript" src="app/assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="app/assets/js/main.js"></script>
+    <script type="text/javascript" src="app/assets/js/smoothproducts.min.js"></script>
     <script type="text/javascript">
       /* wait for images to load */
       $(window).load( function() {

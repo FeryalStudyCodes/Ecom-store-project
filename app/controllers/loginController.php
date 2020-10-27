@@ -13,8 +13,6 @@ class loginController extends Controller{
         $this->$function();
        
     }
-
-
     function index()
     {   
         $this->controller->view_object->create_view('login');

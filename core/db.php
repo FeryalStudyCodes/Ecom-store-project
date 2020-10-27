@@ -36,7 +36,7 @@ class DB{
         if(empty($this->cond))
         $this->cond="where ".$cond." ".$oprator." '".$value."' ";
         else
-        $this->cond.=" and ".$cond." ".$oprator." ".$value." ";
+        $this->cond.=" and ".$cond." ".$oprator." '".$value."' ";
         return $this;
    }
     function orWhere($cond,$oprator,$value){
@@ -46,12 +46,17 @@ class DB{
         $this->cond.=" or ".$cond." ".$oprator." '".$value."' ";
         return $this;
     }
+    function whereselect($cond,$oprator,$value){
+        $this->cond="where ".$cond." ".$oprator." '".$value."' ";
+        return $this;
+   }
     function build(){ 
         $this->final_query=$this->columns.$this->tables.$this->cond;
         return $this;
     }
 
     function exeucte(){
+        echo "<br>".$this->final_query."<br>";
         $stmt=$this->connection->prepare($this->final_query);
         $stmt->execute();
        $result= $stmt->fetchAll(PDO::FETCH_OBJ);
@@ -93,6 +98,24 @@ class DB{
       }
        return $this;
    }
+   function updateproduct($tbls,$items,$value){
+    $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $values=array();
+    foreach(array_values($items)as $item){
+        $values[]="'".$item."'";
+    }
+   try{
+    $this->final_query="UPDATE ".$tbls." SET product_name"." = '".$items['product_name']."', product_details"." = '".$items['product_details']."', category_id "." = '".$items['category_id']."', brand_id "." = '".$items['brand_id']."', product_quantity "." = '".$items['product_quantity']."', product_main_image "." = '".$items['product_main_image']."', product_images "." = '".$items['product_images']."', color_id "." = '".$items['color_id']."', product_short_desc "." = '".$items['product_short_desc']."', product_long_desc "." = '".$items['product_long_desc']."', product_price "." = '".$items['product_price']."', is_active "." = '".$items['is_active']."' WHERE product_id = ".$value;
+    $stmt=$this->connection->prepare($this->final_query);
+    $stmt->execute();
+    echo "successfully"."<br>";
+
+   }catch(Exception $ex){
+       
+       echo $ex->getMessage();
+   }
+    return $this;
+}
    function delete_execute(){
     try{
      $stmt=$this->connection->prepare($this->final_query);
