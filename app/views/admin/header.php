@@ -31,17 +31,18 @@
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 				
-                    <li>
+                <li>
                         <a  href="http://localhost/Ecom/admin/admin_brand/index"> Brand </a>
                     </li>
                       <li>
-                        <a  href="admin/admin_cat/show"> categories</a>
+                        <a  href="http://localhost/Ecom/admin/admin_cat/show"> categories</a>
                     </li>
                     <li>
-                        <a  href="admin/admin_product/index">products</a>
+                        <a  href="http://localhost/Ecom/admin/admin_product/index">products</a>
                     </li>
 					<li>
-                        <a  href="admin/admin_offers/index">Offers</a>
+                        <a  href="http://localhost/Ecom/admin/admin_offers/index">Offers</a>
+                    </li>
                     </li>					
                 </ul>
             </div>
