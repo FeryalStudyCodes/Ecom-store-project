@@ -6,8 +6,8 @@
     <title>Login Store</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.../../app/assets/js/1.12.9/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/../../app/assets/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="app/assets/css/bootstrap.css" />
        <link rel="stylesheet" href="app/assets/css/font-awesome.css">
     <link rel="stylesheet" href="app/assets/css/font-awesome.min.css">
@@ -22,9 +22,9 @@
      <div class="upper-bar">
        <div class="container">
          <div class="row">
-          <div class="col-sm info text-center text-sm-right">
-            <i class="fa fa-phone"></i> <span> +967 777 777 777. </span>
-            <i class="fa fa-envelope" aria-hidden="true"></i> <span> login@gmail.com </span>
+         <div class="col-sm info text-center text-sm-right">
+            <i class="fa fa-phone"></i> <span class="fa-sphone"> +967 777 777 777. </span>
+            <i class="fa fa-envelope" ></i> <span class="fa-semail"> login@gmail.com </span>
             </div>
 
           <div class="col-sm info text-center text-sm-left">
@@ -73,29 +73,29 @@
               <div class="col-sm-4">
                 <ul class="multi-column-dropdown">
             <h6>جوالات و أجهزة تابلت</h6>
-                  <li><a href="products.html">جوالات</a></li>
-                  <li><a href="products.html">تابلت</a></li>
-                  <li><a href="products.html">الإكسسوارات</a></li>
+                  <li><a href="main/categories">جوالات</a></li>
+                  <li><a href="main/categories">تابلت</a></li>
+                  <li><a href="main/categories">الإكسسوارات</a></li>
                   
                 </ul>
               </div>
               <div class="col-sm-4">
                 <ul class="multi-column-dropdown">
             <h6>أجهزة لابتوب و كمبيوتر</h6>
-                  <li><a href="products.html">أجهزة لابتوب</a></li>
-                  <li><a href="products.html">أجهزة كمبيوتر</a></li>
-                  <li><a href="products.html">اكسسوارات الكمبيوتر</a></li>
-                  <li><a href="products.html">ماسحات ضوئية</a></li>
+                  <li><a href="main/categories">أجهزة لابتوب</a></li>
+                  <li><a href="main/categories">أجهزة كمبيوتر</a></li>
+                  <li><a href="main/categories">اكسسوارات الكمبيوتر</a></li>
+                  <li><a href="main/categories">ماسحات ضوئية</a></li>
                   
                 </ul>
               </div>
               <div class="col-sm-4">
                 <ul class="multi-column-dropdown">
             <h6>كاميرات</h6>
-                  <li><a href="products.html">ذواكر كاميرا</a></li>
-                  <li><a href="products.html">كاميرات درونز</a></li>
-                  <li><a href="products.html">كاميرات أكشن</a></li>
-                  <li><a href="products.html">كاميرات مدمجة</a></li>
+                  <li><a href="main/categories">ذواكر كاميرا</a></li>
+                  <li><a href="main/categories">كاميرات درونز</a></li>
+                  <li><a href="main/categories">كاميرات أكشن</a></li>
+                  <li><a href="main/categories">كاميرات مدمجة</a></li>
                 </ul>
               </div>
             
@@ -159,11 +159,11 @@
 <!--div class="slider">
   <div class="container">
     <div class="owl-carousel">
-      <div class="item"><img src="../../app/assets/img/Acer.jpg"></div>
-      <div class="item"><img src="../../app/assets/img/lenovo4.png"></div>
-      <div class="item"><img src="../../app/assets/img/Acer_Chromebook_315_01_32ff69f880-300x274.jpg"></div>
-      <div class="item"><img src="../../app/assets/img/ASUS-Chromebook-C423-1-300x202 (1).jpg"></div>
-      <div class="item"><img src="../../app/assets/img/htc-desire-12_990b.jpg"></div>
+      <div class="item"><img src="app/assets/images/Acer.jpg"></div>
+      <div class="item"><img src="app/assets/images/lenovo4.png"></div>
+      <div class="item"><img src="app/assets/images/Acer_Chromebook_315_01_32ff69f880-300x274.jpg"></div>
+      <div class="item"><img src="app/assets/images/ASUS-Chromebook-C423-1-300x202 (1).jpg"></div>
+      <div class="item"><img src="app/assets/images/htc-desire-12_990b.jpg"></div>
     </div>
      
   </div>
@@ -188,8 +188,8 @@
                   <img class="pic" src="app/assets/images/dell-10-300x211.jpg">
               </a>
               <ul class="social">
-                  <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                  <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                  <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                  <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
                   <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
               </ul>
              
@@ -212,8 +212,8 @@
                   <img class="pic" src="app/assets/images/dell-10-300x211.jpg">
               </a>
               <ul class="social">
-                  <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                  <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                  <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                  <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
                   <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
               </ul>
              
@@ -236,8 +236,8 @@
                   <img class="pic" src="app/assets/images/dell-10-300x211.jpg">
               </a>
               <ul class="social">
-                  <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                  <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                  <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                  <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
                   <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
               </ul>
              
@@ -260,8 +260,8 @@
                   <img class="pic" src="app/assets/images/dell-10-300x211.jpg">
               </a>
               <ul class="social">
-                  <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                  <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                  <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                  <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
                   <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
               </ul>
              
@@ -286,8 +286,8 @@
                   <img class="pic" src="app/assets/images/dell-10-300x211.jpg">
               </a>
               <ul class="social">
-                  <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                  <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                  <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                  <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
                   <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
               </ul>
              
@@ -310,8 +310,8 @@
                   <img class="pic" src="app/assets/images/dell-10-300x211.jpg">
               </a>
               <ul class="social">
-                  <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                  <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                  <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                  <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
                   <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
               </ul>
              
@@ -334,8 +334,8 @@
                   <img class="pic" src="app/assets/images/dell-10-300x211.jpg">
               </a>
               <ul class="social">
-                  <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                  <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                  <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                  <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
                   <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
               </ul>
              
@@ -358,8 +358,8 @@
                   <img class="pic" src="app/assets/images/dell-10-300x211.jpg">
               </a>
               <ul class="social">
-                  <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                  <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                  <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                  <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
                   <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
               </ul>
              
@@ -384,8 +384,8 @@
                   <img class="pic" src="app/assets/images/dell-10-300x211.jpg">
               </a>
               <ul class="social">
-                  <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                  <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                  <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                  <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
                   <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
               </ul>
              
@@ -408,8 +408,8 @@
                       <img class="pic" src="app/assets/images/dell-10-300x211.jpg">
                   </a>
                   <ul class="social">
-                      <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                      <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                      <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                      <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
                       <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
                   </ul>
                  
@@ -431,8 +431,8 @@
                   <img class="pic" src="app/assets/images/dell-10-300x211.jpg">
               </a>
               <ul class="social">
-                  <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                  <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                  <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                  <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
                   <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
               </ul>
              
@@ -455,8 +455,8 @@
                       <img class="pic" src="app/assets/images/dell-10-300x211.jpg">
                   </a>
                   <ul class="social">
-                      <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                      <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                      <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                      <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
                       <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
                   </ul>
                  
@@ -493,7 +493,7 @@
   <div class="container">
     <div class="row">
       <div class="banner">
-        <img src="../../app/assets/img/banner.jpg" alt="Banner">
+        <img src="app/assets/images/banner.jpg" alt="Banner">
 
     </div>
     
@@ -514,8 +514,8 @@
                       <img class="pic" src="app/assets/images/dell-10-300x211.jpg">
                   </a>
                   <ul class="social">
-                      <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                      <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                      <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                      <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
                       <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
                   </ul>
                  
@@ -537,8 +537,8 @@
                     <img class="pic" src="app/assets/images/lenovo1.png">
                 </a>
                 <ul class="social">
-                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                    <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                    <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                    <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
                     <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
                 </ul>
                
@@ -560,8 +560,8 @@
                   <img class="pic" src="app/assets/images/dell-1-20-300x203.jpg">
               </a>
               <ul class="social">
-                  <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                  <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                  <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                  <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
                   <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
               </ul>
              
@@ -583,8 +583,8 @@
                 <img class="pic" src="app/assets/images/Dell-Inspiron-11-3162-300x184.jpg">
             </a>
             <ul class="social">
-                <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
                 <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
             </ul>
            
@@ -619,8 +619,8 @@
                       <img class="pic-1" src="app/assets/images/Dell-Inspiron-11-3162-300x184.jpg">
                   </a>
                   <ul class="social">
-                      <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                      <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                      <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                      <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
                       <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
                   </ul>
                   <span class="product-discount-label">خصم %25</span>
@@ -629,7 +629,7 @@
                   <h3 class="title"><a href="#">ديل كمبيوتر محمول E7440 معالج كورi5   </a></h3>
                   <div class="price">
                       $14.40
-                      <span>$16.00</span>
+                      <span class="old-price">$16.00</span>
                   </div>
                   <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
                 </div>
@@ -642,8 +642,8 @@
                     <img class="pic-1" src="app/assets/images/ASUS-Chromebook-C423-1-300x202.jpg">
                 </a>
                 <ul class="social">
-                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                    <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                    <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                    <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
                     <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
                 </ul>
                 <span class="product-discount-label">خصم %15</span>
@@ -652,7 +652,7 @@
                 <h3 class="title"><a href="#">فكتوس ثول فكتوس 13 "ماك بوك اير - اسود</a></h3>
                 <div class="price">
                   $66.60
-                    <span>$74.00</span>
+                    <span class="old-price">$74.00</span>
                 </div>
                 <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
               </div>
@@ -665,8 +665,8 @@
                   <img class="pic-1" src="app/assets/images/lenovo3.png">
               </a>
               <ul class="social">
-                  <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                  <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                  <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                  <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
                   <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
               </ul>
               <span class="product-discount-label">%خصم 10</span>
@@ -676,7 +676,7 @@
                 </a></h3>
               <div class="price">
                 $594.00
-                  <span>$669.17</span>
+                  <span class="old-price">$669.17</span>
               </div>
               <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
           </div>
@@ -691,8 +691,8 @@
                     <img class="pic-1" src="app/assets/images/acer3.jpg">
                 </a>
                 <ul class="social">
-                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                    <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                    <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                    <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
                     <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
                 </ul>
                 <span class="product-new-label">New</span>
@@ -702,7 +702,7 @@
                 <h3 class="title"><a href="#">ديل الكمبيوتر المحمول معالج كور i3 طراز E5420 - تم تجديده (أسود)</a></h3>
                 <div class="price">
                      $156.00
-                    <span>$669.17</span>
+                    <span class="old-price">$669.17</span>
                 </div>
                 <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
               </div>
@@ -741,8 +741,8 @@
                       <img class="pic" src="app/assets/images/samsung.jpg">
                   </a>
                   <ul class="social">
-                      <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                      <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                      <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                      <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
                       <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
                   </ul>
                  
@@ -764,8 +764,8 @@
                     <img class="pic" src="app/assets/images/hawa.jpg">
                 </a>
                 <ul class="social">
-                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                    <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                    <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                    <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
                     <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
                 </ul>
                
@@ -787,8 +787,8 @@
                   <img class="pic" src="app/assets/images/opop.jpg">
               </a>
               <ul class="social">
-                  <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                  <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                  <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                  <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
                   <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
               </ul>
              
@@ -810,8 +810,8 @@
                 <img class="pic" src="app/assets/images/honor.jpg">
             </a>
             <ul class="social">
-                <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
                 <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
             </ul>
            
@@ -846,8 +846,8 @@
                       <img class="pic-1" src="app/assets/images/iphone.jpg">
                   </a>
                   <ul class="social">
-                      <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                      <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                      <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                      <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
                       <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
                   </ul>
                   <span class="product-discount-label">خصم %25</span>
@@ -856,7 +856,7 @@
                   <h3 class="title"><a href="#">أيفون 7 مجدد أصلي 32 جيجابايت+ 128 جيجابايت بضمان لمدة سنة   </a></h3>
                   <div class="price">
                        $291.63
-                      <span>$370.49</span>
+                      <span class="old-price">$370.49</span>
                   </div>
                   <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
                 </div>
@@ -869,8 +869,8 @@
                     <img class="pic-1" src="app/assets/images/5VQ9ZQoC1590590122.jpg">
                 </a>
                 <ul class="social">
-                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                    <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                    <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                    <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
                     <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
                 </ul>
                 <span class="product-discount-label">خصم %15</span>
@@ -879,7 +879,7 @@
                 <h3 class="title"><a href="#">فكتوس ثول فكتوس 13 "ماك بوك اير - اسود</a></h3>
                 <div class="price">
                   $360.24
-                    <span>$450.30</span>
+                    <span class="old-price">$450.30</span>
                 </div>
                 <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
               </div>
@@ -892,8 +892,8 @@
                   <img class="pic-1" src="app/assets/images/telephone.jpg">
               </a>
               <ul class="social">
-                  <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                  <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                  <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                  <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
                   <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
               </ul>
               <span class="product-discount-label">%خصم 10</span>
@@ -904,7 +904,7 @@
                 </a></h3>
               <div class="price">
                 $17.51
-                  <span>$22.76</span>
+                  <span class="old-price">$22.76</span>
               </div>
               <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
           </div>
@@ -919,8 +919,8 @@
                     <img class="pic-1" src="app/assets/images/ph-1-color-black-moon-essential.jpg">
                 </a>
                 <ul class="social">
-                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                    <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                    <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                    <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
                     <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
                 </ul>
                 <span class="product-new-label">New</span>
@@ -930,7 +930,7 @@
                 <h3 class="title"><a href="#">سامسونج هاتف جالاكسي S20 الترا ثنائي الشريحة ذاكرة رام 12 جيجابايت وذاكرة داخلية 128 ...</a></h3>
                 <div class="price">
                      $156.00
-                    <span>$669.17</span>
+                    <span class="old-price">$669.17</span>
                 </div>
                 <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
               </div>
@@ -1030,12 +1030,12 @@
                       <input class="form-control mr-sm-2" type="email" placeholder=" أدخل إيميلك" aria-label=" Email" width="50%">
                       <button class="btn  my-2 my-lg-0" type="submit">الأشتراك</button>
                     </form>
-                    <div class="socials">
+                    <!-- <div class="socials">
                       <a href="#"><i class="fa  fa-facebook"></i></a> 
                       <a href="#"><i class="fa fa-instagram"></i></a>
                       <a href="#"><i class="fa fa-twitter"></i></a>
                       <a href="#"><i class="fa fa-youtube"></i></a>
-                  </div>
+                  </div> -->
                 </div>
             </div>
               </div>
@@ -1054,7 +1054,7 @@
                   All Rights Reserved | Design by &copy;LoginStore 2020
                  </div>
                  <div class="col-lg-6 text-center text-md-left ">
-                  <div class="footer__copyright__payment"><img src="app/assets/img/payment-item.png" alt=""></div>
+                  <div class="footer__copyright__payment"><img src="app/assets/images/payment-item.png" alt=""></div>
 
                  </div>
           </div>
@@ -1067,35 +1067,6 @@
     <script type="text/javascript" src="app/assets/js/all.js"></script>
     <script type="text/javascript" src="app/assets/js/bootstrap.js"></script>
     <script type="text/javascript" src="app/assets/js/main.js"></script>
-    <script type="text/javascript" src="app/assets/js/smoothproducts.min.js"></script>
-    <script type="text/javascript">
-      /* wait for images to load */
-      $(window).load( function() {
-          $('.sp-wrap').smoothproducts();
-      });
-    </script>
- 
-    <script>
-      $(document).ready(function() {
-		  var owl = $("#owl-demo");
-		  owl.owlCarousel({
-		  autoPlay: 1500,
-		  items : 4, //10 items above 1000px browser width
-		  itemsDesktop : [1000,4], //5 items between 1000px and 901px
-		  itemsDesktopSmall : [900,3], // 3 items betweem 900px and 601px
-		  itemsTablet: [600,2], //2 items between 600 and 0;
-		  itemsMobile : false, // itemsMobile disabled - inherit from itemsTablet option
-		  pagination:false
-      });
-      $(".next").click(function(){
-          owl.trigger('owl.next');
-      })
-      $(".prev").click(function(){
-          owl.trigger('owl.prev');
-      })
-    });
-    
-     
-    </script>
+   
   </body>
 </html>
