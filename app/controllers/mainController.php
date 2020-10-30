@@ -11,6 +11,14 @@ class mainController extends Controller{
        function main(){   
         $this->controller->view_object->create_view('main');
        }
+
+       function login(){   
+        $this->controller->view_object->create_view('login');
+       }
+
+       function singnup(){   
+        $this->controller->view_object->create_view('singnup');
+       }
  
        function categories(){   
         $this->controller->view_object->create_view('categories');

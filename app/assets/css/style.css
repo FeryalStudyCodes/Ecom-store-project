@@ -51,6 +51,7 @@ a:focus {
   margin-left: 15px;
 
 }
+
 .upper-bar .get-quote
 {
   display: inline-block;
@@ -984,11 +985,13 @@ margin-bottom: 24px;
   padding: 1rem;
   transition: all 0.2s;
   border: #F58C20;
+  color: white;
   background-color: #F58C20;
 }
 
 .form-signin .btn:hover {
 color:#f79635 ;
+background-color: #eee;
 opacity: 0.8;
 margin-left: 5px;
 font-family: 'Almarai', sans-serif;
