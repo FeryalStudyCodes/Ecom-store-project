@@ -33,7 +33,7 @@
       }
     </style>
     <!-- Custom styles for this template -->
-    <link href="http://localhost/Ecom/app/assets/css/admin/dashboard.css" rel="stylesheet">
+    <link href="http://localhost/Ecom-store-project/app/assets/css/admin/dashboard.css" rel="stylesheet">
   </head>
  <body>
  <!-- end Top -->
@@ -43,7 +43,6 @@
   <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
-    
       
     </li>
   </ul>
@@ -52,6 +51,7 @@
 <!-- sidebar -->
 <div class="container-fluid">
   <div class="row">
+    <?php //include "../dashboard_contant/sidebar.php"; ?>
     <nav class="col-md-2 d-none d-md-block bg-light sidebar">
       <div class="sidebar-sticky">
         <ul class="nav flex-column">
@@ -64,7 +64,7 @@
           ?>
 
           <li class="nav-item">
-           
+            
           </li>
           <li class="nav-item">
             <a class="nav-link <?php echo ($page == '') ? 'active' : ''; ?>" href="http://localhost/Ecom-store-project/admin/admin_product/index">
@@ -116,20 +116,19 @@
       </div>
       <div class="modal-body">
       <?php 
-        $i=0;
-        $rows=$data['categories'];
-        foreach($rows as $row)
-         {
+    $i=0;
+    $rows=$data['brand'];
+    foreach($rows as $row)
+     {
     ?>
-        <form method='post' action='admin_cat/update'>
+        <form method='post' action='admin_brand/update'>
           <div class="row">
             <div class="col-12">
               <div class="form-group">
-                <input type='hidden' name='category_id' value='<?PHP echo $rows[$i]->category_id?>' >
-                <label> Category Name : 
-                <input type='text' name='category_name' value='<?PHP echo $rows[$i]->category_name?>'>  
-                </label>
-          </div>
+              <input type='hidden' name='brand_id' value=<?PHP echo $row->brand_id?> >
+                <label>Brand Name</label>
+                <input type="text" name="brand_name" class="form-control"  value="<?PHP echo $row->brand_name; ?>">
+              </div>
             </div>
             <div class="col-12">
               <div class="form-group">
@@ -144,29 +143,7 @@
                 <option value=0>No</option>;
 		        		</select>
               </div>
-            </div>       
-            <div class="col-12">
-              <div class="form-group">
-              <label>parent_catergory : <?php if($row->parent_catergory != 0 ) echo "not Mean  "; else echo " Mean catergory  ";   ?></label>
-             </div>
             </div>
-        		<div class="col-12">
-        			<div class="form-group">
-		        		<label>Parent </label>
-		        		<select class="form-control category_list" name="parent_catergory" >
-                <option value='0'>parent</opiton>
-                <?php
-                    $rows=$data['categories'];
-                    foreach($rows as $row)
-                    {
-                      echo "<option value=$row->category_id>$row->category_name</option>";
-                    }
-                ?>
-		        		</select>
-              </div>
-        		</div> 
-            <?PHP $modification_date=date("Y-m-d"); ?>
-            <input type="hidden" checked="" class="custom-control-input" name='modification_date' value= <?PHP echo $modification_date; ?>>    							
             <div class="col-12">
               <button type='submit' class="btn btn-primary edit-brand-btn">Update Brand</button>
             </div>
@@ -183,14 +160,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+	<script 
+  src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
   
  </body>
 </html>
-
-
-
-
-
-
-

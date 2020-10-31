@@ -41,13 +41,16 @@ public $cat_model;
           $this->controller->view_object->create_view('admin/feedback');
        }
        function update(){
-    
          $this->cat_model->update($_POST);
-         $this->controller->view_object->create_view('admin/feedback');
+         $items=array(
+            'categories'=>$this->cat_model->getData(),
+        );
+          $this->controller->view_object->create_view('admin/categories/show_categories',$items);
+        
       }
       function delete(){
          $this->cat_model->delete($_POST);
-         $this->controller->view_object->create_view('admin/feedback');
+         
       }
 }
 

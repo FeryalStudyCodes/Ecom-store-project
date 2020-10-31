@@ -94,7 +94,14 @@ public $cat_model;
          );
 
          $this->cat_model->addData($data);
-          $this->controller->view_object->create_view('admin/feedback');
+         $items=array(
+            'products'=>$this->cat_model->getproducts(),
+            'color'=>$this->cat_model->getColor(),
+            'brand'=>$this->cat_model->getBrand(),
+            'categories'=>$this->cat_model->getCategory(),
+            );
+    $this->controller->view_object->create_view('admin/products/show_products',$items);
+    
        }
        function edite_cat(){ 
         $items=array(
