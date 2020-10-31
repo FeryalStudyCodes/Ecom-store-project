@@ -1,22 +1,20 @@
 
-<?PHP 
-require('app/views/admin/header.php');
+<?php
+include "dashboard_contant/top.php"; 
+
 ?>
-        <!-- /. NAV SIDE  -->
-        <div id="page-wrapper" >
-            <div id="page-inner">
-                <div class="row">
-                    <div class="col-md-12">
-                     <h2> Dashboared </h2>   
-                    </div>
-                   
-                 </div>
-                 <!-- /. ROW  -->
-                 <hr />
-                 
-            </div>  
-                                  
-        </div>
-<?PHP 
-require('app/views/admin/footer.php');
-?>
+ 
+<?php include "dashboard_contant/navbar.php"; ?>
+
+<div class="container-fluid">
+  <div class="row">
+    
+    <?php include "dashboard_contant/sidebar.php"; ?>
+
+      <h2>Dashboard</h2>
+     
+
+<?php include "dashboard_contant/footer.php"; ?>
+
+<script type="text/javascript" src="./js/admin.js"></script>
+

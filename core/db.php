@@ -12,8 +12,8 @@ class DB{
         $conn = dbconnect::$server.":host=".dbconnect::$host.";dbname=".dbconnect::$dbname;
         $options = [ PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,];
       $this->connection = new PDO($conn,dbconnect::$username, dbconnect::$password, $options);
-      //print_r($conn);
-      echo "Connected successfully<br>";
+     
+     // echo "Connected successfully";
     } catch(PDOException $e) {
         echo "Connection failed: " . $e->getMessage();
       }
@@ -56,7 +56,7 @@ class DB{
     }
 
     function exeucte(){
-        echo "<br>".$this->final_query."<br>";
+       // echo "<br>".$this->final_query."<br>";
         $stmt=$this->connection->prepare($this->final_query);
         $stmt->execute();
        $result= $stmt->fetchAll(PDO::FETCH_OBJ);
@@ -72,7 +72,7 @@ class DB{
         $this->final_query="insert into ".$tbl."(".implode(",",array_keys($items)).") values (".implode(",",$values).")";
         $stmt=$this->connection->prepare($this->final_query);
         $stmt->execute();
-        echo "<br>".$this->final_query."<br>"."successfully"."<br>";
+        echo " add successfully";
 
        }catch(Exception $ex){
            
@@ -87,8 +87,8 @@ class DB{
            $values[]="'".$item."'";
        }
       try{
-       $this->final_query="UPDATE ".$tbls." SET category_name"." = '".$items['category_name']."', is_active"." = '".$items['is_active']."', modification_date"." = '".$items['modification_date']."' WHERE category_id = ".$value;
-       $stmt=$this->connection->prepare($this->final_query);
+        $this->final_query="UPDATE ".$tbls." SET category_name"." = '".$items['category_name']."', is_active"." = '".$items['is_active']."', parent_catergory"." = '".$items['parent_catergory']."', modification_date"." = '".$items['modification_date']."' WHERE category_id = ".$value;
+        $stmt=$this->connection->prepare($this->final_query);
        $stmt->execute();
        echo "<br>"."successfully"."<br>";
 
@@ -116,14 +116,34 @@ class DB{
    }
     return $this;
 }
+function updateBrand($tbls,$items,$value){
+    $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $values=array();
+    foreach(array_values($items)as $item){
+        $values[]="'".$item."'";
+    }
+   try{
+    $this->final_query="UPDATE ".$tbls." SET brand_name"." = '".$items['brand_name']."', is_active"." = '".$items['is_active']."' WHERE brand_id  = ".$value;
+    $stmt=$this->connection->prepare($this->final_query);
+    $stmt->execute();
+    echo " update successfully";
+   }catch(Exception $ex){
+       
+       echo $ex->getMessage();
+   }
+    return $this; 
+}
    function delete_execute(){
     try{
      $stmt=$this->connection->prepare($this->final_query);
      $stmt->execute();
+     $result = 1;
+     echo $result;
     }catch(Exception $ex){ 
-        echo $ex->getMessage();
+        $result = 0;
+       echo $result;
     }
-     return $this;
+     
  }
 
 

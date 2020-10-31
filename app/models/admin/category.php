@@ -47,7 +47,7 @@ class category{
      
     }
     function delete($data){
-        $value= $_GET['category_id'];
+        $value= $_POST['category_id'];
         $tbls=array("category");
         return  $this->db
         ->delete()

@@ -24,7 +24,23 @@ public $cat_model;
       }
        function insert(){
          $this->cat_model->addData($_POST);
-          $this->controller->view_object->create_view('admin/feedback');
+         $this->controller->view_object->create_view('admin/feedback');
+       }
+       function delet(){
+         $this->cat_model->delet($_POST);  
+       }
+       function edite_brand(){
+        $items=array(
+          'brand'=>$this->cat_model->updateBrand(),
+      );  
+      $this->controller->view_object->create_view('admin/brand/edit_brand',$items);
+       }
+       function update(){
+        $this->cat_model->update($_POST);
+        $items=array(
+          'brand'=>$this->cat_model->getData(),
+      );
+        $this->controller->view_object->create_view('admin/brand/show_brand',$items);
        }
 }
 
