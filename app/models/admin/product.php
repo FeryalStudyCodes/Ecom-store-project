@@ -63,7 +63,10 @@ class product{
         $value= $_POST['product_id'];
         $this->db->updateproduct("product",$data,$value);
     }
-   
+    function updatewithoutimage($data){
+        $value= $_POST['product_id'];
+        $this->db->updateproductwithoutimage("product",$data,$value);   
+    }
     function delete(){
         $value= $_POST['product_id'];
         $tbls=array("product");

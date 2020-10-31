@@ -68,25 +68,25 @@
           ?>
 
           <li class="nav-item">
-            <a class="nav-link <?php echo ($page == '' || $page == 'index.php') ? 'active' : ''; ?>" href="index.php">
+            <a >
               <span data-feather="home"></span>
               Dashboard <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php echo ($page == '') ? 'active' : ''; ?>" href="http://localhost/Ecom/admin/admin_product/index">
+            <a class="nav-link <?php echo ($page == '') ? 'active' : ''; ?>" href="http://localhost/Ecom-store-project/admin/admin_product/index">
               <span data-feather="shopping-cart"></span>
               Products
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php echo ($page == 'brands.php') ? 'active' : ''; ?>" href="http://localhost/Ecom/admin/admin_brand/index">
+            <a class="nav-link <?php echo ($page == 'brands.php') ? 'active' : ''; ?>" href="http://localhost/Ecom-store-project/admin/admin_brand/index">
               <span data-feather="shopping-cart"></span>
               Brands
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php echo ($page == 'categories.php') ? 'active' : ''; ?>" href="http://localhost/Ecom/admin/admin_cat/show">
+            <a class="nav-link <?php echo ($page == 'categories.php') ? 'active' : ''; ?>" href="http://localhost/Ecom-store-project/admin/admin_cat/show">
               <span data-feather="shopping-cart"></span>
               Categories
             </a>
@@ -161,7 +161,7 @@
                         $clean_url=explode(',',$clean_url);
                         foreach($clean_url as $part){
                         $product_images='http://localhost/Ecom-store-project/app/assets/images/'.$part;
-                        echo "<img  width='60' height='60' src=' $product_images'>";}?> 
+                        echo "<img width='60' height='60' src=' $product_images'>";}?> 
                 </td>
                 <td> <?php  echo $row->product_short_desc ?> </td>
                 <td> <?php  echo $row->product_long_desc ?> </td>
@@ -169,7 +169,7 @@
                 <td> <?php if($row->is_active == 1) echo " active "; else echo " not active ";?> </td>
                 <td> <?php  echo $row->creation_date ?> </td>
                 <td><button type="button" id="<?php echo $row->product_name ?>" class='delete_product btn-sm btn btn-danger' data-id='<?= $id; ?>'><i class="fas fa-trash-alt"></i></button>
-                <a href="admin/admin_cat/edite_cat?action=edite_cat&category_id=<?PHP echo $id?>"  class="btn btn-sm btn-info edit_product"  data-id='<?= $id; ?>' style="color:#fff;" ><i class="fas fa-pencil-alt"></i></a>
+                <a href="admin/admin_product/edite_product?action=edite_product&product_id=<?PHP echo $id?>"  class="btn btn-sm btn-info edit_product"  data-id='<?= $id; ?>' style="color:#fff;" ><i class="fas fa-pencil-alt"></i></a>
                 </td> </tr> 
           <?php $i++; } ?> 
           </tbody>
@@ -195,15 +195,15 @@
                   <form method='post' action='admin_product/add' enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="cat_name" class="col-form-label">product Name : </label>
-                            <input id="cat_name" type="text" class="form-control" name='product_name'>
+                            <input  type="text" id="product_name" class="form-control" name='product_name'>
                         </div>
                         <div class="form-group">
                             <label for="cat_name" class="col-form-label">product details  : </label>
-                            <input id="cat_name" type="text" class="form-control" name='product_details'>
+                            <input type="text" id="product_details" class="form-control" name='product_details'>
                         </div>
                         <div class="form-group">
                                     <label for="input-select">Category</label>
-                                    <select class="form-control" id="input-select" name='category_id'>
+                                    <select class="form-control" id="category_id" name='category_id'>
                                     <?php
                                     $rows=$data['categories'];
                                     foreach($rows as $row)
@@ -212,11 +212,11 @@
                                     <option value=$row->category_id>$row->category_name</option>";
                                      }
                                     ?>
-                            </select>
+                                    </select>
                         </div>
                         <div class="form-group">
                                     <label for="input-select">Brand</label>
-                                    <select class="form-control" id="input-select" name='brand_id'>
+                                    <select class="form-control" id="brand_id" name='brand_id'>
                                     <?php
                                     $rows=$data['brand'];
                                     foreach($rows as $row)
@@ -228,20 +228,20 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="cat_name" class="col-form-label">product_quantity : </label>
-                            <input id="cat_name" type="text" class="form-control" name='product_quantity'>
+                            <label for="" class="col-form-label">product_quantity : </label>
+                            <input  type="text" id="product_quantity" class="form-control" name='product_quantity'>
                         <div>
                         <div class="form-group">
                             <label for="exampleFormControlFile1">main image</label>
-                            <input type="file" accept="image/*" class="form-control-file" name='product_main_image'> 
+                            <input type="file" id="product_main_image" accept="image/*" class="form-control-file" name='product_main_image'> 
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlFile1">images</label>
-                            <input type="file" accept="image/*" multiple class="form-control-file" name='product_images[]'>
+                            <input type="file" id="product_images" accept="image/*" multiple class="form-control-file" name='product_images[]'>
                         </div>
                         <div class="form-group">
                                     <label for="input-select">color</label>
-                                    <select class="form-control" id="input-select" name='color_id'>
+                                    <select class="form-control" id="color_id" name='color_id'>
                                     <?php
                                     $rows=$data['color'];
                                     foreach($rows as $row)
@@ -254,23 +254,23 @@
                         </div>
                         <div class="form-group">
                             <label for="cat_name" class="col-form-label">product_short_desc : </label>
-                            <input id="cat_name" type="text" class="form-control" name='product_short_desc'>
+                            <input id="product_short_desc" type="text" class="form-control" name='product_short_desc'>
                         <div>
                         <div class="form-group">
                             <label for="cat_name" class="col-form-label">product_long_desc : </label>
-                            <input id="cat_name" type="text" class="form-control" name='product_long_desc'>
+                            <input id="product_long_desc" type="text" class="form-control" name='product_long_desc'>
                         <div>
                         <div class="form-group">
                             <label for="cat_name" class="col-form-label">product_price : </label>
-                            <input id="cat_name" type="text" class="form-control" name='product_price'>
+                            <input id="product_price" type="text" class="form-control" name='product_price'>
                         <div>
                         <label class="custom-control custom-checkbox">
-                        <input type="checkbox" checked="" class="custom-control-input" name='is_active' value=1>
+                        <input type="checkbox" id="is_active" class="custom-control-input" name='is_active' value=1>
                         <span class="custom-control-label">is Active</span>
                         </label>                     
                         <?PHP $creation_date=date("Y-m-d"); ?>
-                        <input type="hidden" checked="" class="custom-control-input" name='creation_date' value= <?PHP echo $creation_date; ?>>    							
-                        <input type='submit' value='add product' class='btn btn-primary'>
+                        <input type="hidden" id="creation_date" class="custom-control-input" name='creation_date' value= <?PHP echo $creation_date; ?>>    							
+                        <input type='submit' type='submit' value='add product' class='btn btn-primary add_product'>
                   </form>
       </div>
       </div>
@@ -304,14 +304,15 @@
             type: 'POST',
             data: { product_id :deleteid },
             success: function(data){
-              if(data == 1){
+              if(data = 1){
                 alert("deleted successfuly");
                 $(el).closest('tr').fadeOut(800,function(){
               $(this).remove();
                     });
               }
               else{
-                alert("sorry you can deleted");
+                alert("sorry you can deleted "+data);
+               
               }
             }
           });
@@ -326,17 +327,15 @@
                 var brand_id = $('#brand_id').val();
                 var product_quantity = $('#product_quantity').val();
                 var product_main_image = $('#product_main_image').val();
-                var product_images = $('#product_images').val();
+                var product_images = $('#product_images[]').val();
                 var color_id = $('#color_id').val();
                 var product_short_desc = $('#product_short_desc').val();
                 var product_long_desc = $('#product_long_desc').val();
                 var product_price = $('#product_price').val();
                 var is_active = $('#is_active').val();
                 var creation_date = $('#creation_date').val();
-               
-               
-                
-                    $.ajax({
+                alert(product_images);
+                   /* $.ajax({
                       url : 'admin/admin_product/add',
                       method : 'POST',
                       data : {
@@ -359,7 +358,7 @@
                         setInterval('refreshPage()', 900);
                         
                         } 
-                    });
+                    });*/
                 
         }); //end add category*/
 

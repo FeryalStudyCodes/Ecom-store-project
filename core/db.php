@@ -116,6 +116,24 @@ class DB{
    }
     return $this;
 }
+function updateproductwithoutimage($tbls,$items,$value){
+    $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $values=array();
+    foreach(array_values($items)as $item){
+        $values[]="'".$item."'";
+    }
+   try{
+    $this->final_query="UPDATE ".$tbls." SET product_name"." = '".$items['product_name']."', product_details"." = '".$items['product_details']."', category_id "." = '".$items['category_id']."', brand_id "." = '".$items['brand_id']."', product_quantity "." = '".$items['product_quantity']."', color_id "." = '".$items['color_id']."', product_short_desc "." = '".$items['product_short_desc']."', product_long_desc "." = '".$items['product_long_desc']."', product_price "." = '".$items['product_price']."', is_active "." = '".$items['is_active']."' WHERE product_id = ".$value;
+    $stmt=$this->connection->prepare($this->final_query);
+    $stmt->execute();
+    echo "successfully"."<br>";
+
+   }catch(Exception $ex){
+       
+       echo $ex->getMessage();
+   }
+    return $this;
+}
 function updateBrand($tbls,$items,$value){
     $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $values=array();
@@ -139,9 +157,11 @@ function updateBrand($tbls,$items,$value){
      $stmt->execute();
      $result = 1;
      echo $result;
+     exit;
     }catch(Exception $ex){ 
         $result = 0;
        echo $result;
+       exit;
     }
      
  }
