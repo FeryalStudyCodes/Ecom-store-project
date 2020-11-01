@@ -14,10 +14,7 @@ public $cat_model;
        }
        function index(){  
             $items=array(
-                'products'=>$this->cat_model->getproducts(),
-                'color'=>$this->cat_model->getColor(),
-                'brand'=>$this->cat_model->getBrand(),
-                'categories'=>$this->cat_model->getCategory(),
+                'products'=>$this->cat_model->innerJoine(),
                 );
         $this->controller->view_object->create_view('admin/products/show_products',$items);
        }
@@ -146,7 +143,7 @@ public $cat_model;
      $img = img($_FILES['product_images']);
      $main_image = main_image($_FILES['product_main_image']); 
      // print_r($_POST); 'product_id' => $_POST['product_id'], 
-     if(empty($img) || empty($img) ){
+     if($_FILES['product_images']['size'] = 0 || $_FILES['product_main_image']['size'] = 0){
         $data = array( 
             'product_name' => $_POST['product_name'], 
             'product_details' => $_POST['product_details'], 
@@ -164,6 +161,7 @@ public $cat_model;
      }
      else
      {
+      
       $data = array( 
          'product_name' => $_POST['product_name'], 
          'product_details' => $_POST['product_details'], 

@@ -141,6 +141,7 @@
           <?php 
             $i=0;
             $rows=$data['products'];
+           // print_r($rows);
             foreach($rows as $row)
             {   
               $id = $row->product_id;
@@ -151,8 +152,8 @@
                 <td></td>
                 <td> <?php  echo $row->product_name ?> </td>
                 <td> <?php  echo $row->product_details ?> </td>
-                <td> tel </td>
-                <td> sam </td>
+                <td> <?php  echo $row->category_id ?> </td>
+                <td> <?php  echo $row->brand_id ?> </td>
                 <td> <?php  echo $row->product_quantity ?> </td>
                 <td> <img  width="60" height="60"  src='<?php  echo $imageURl; ?>'> </td>
                 <td><?php
