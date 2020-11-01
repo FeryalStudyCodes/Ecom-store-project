@@ -2,6 +2,7 @@
 use coreAppNS\Controller;
 class mainController extends Controller{
     public $controller;
+    public $login_model;
 
 
     function __construct($function="index"){
@@ -15,7 +16,7 @@ class mainController extends Controller{
        function login(){   
         $this->controller->view_object->create_view('login');
        }
-
+     
        function singnup(){   
         $this->controller->view_object->create_view('singnup');
        }
