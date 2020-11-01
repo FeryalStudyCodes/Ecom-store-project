@@ -1,6 +1,7 @@
 <?php
 use coreAppNS\Controller;
-class loginController extends Controller{
+
+class admin_loginController extends Controller{
     public $controller;
     public $login_model;
     public $link;
@@ -13,14 +14,13 @@ class loginController extends Controller{
         $this->$function();
        
     }
-    function index()
-    {   
-        $this->controller->view_object->create_view('login');
-    }
-       function add(){
-         
-          $this->login_model->check($_POST);
-          $this->controller->view_object->create_view('feedback');
+       function index(){
+        $this->controller->view_object->create_view('admin/login');
+       }
+       function chec(){
+          print_r($_POST);
+          $this->login_model->checkl();
+          $this->controller->view_object->create_view('admin/admin_home');
        }
 }
 ?>

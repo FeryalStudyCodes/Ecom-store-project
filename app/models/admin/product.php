@@ -44,7 +44,10 @@ class product{
         ->build()
         ->exeucte();
     }
-    
+    function innerJoine(){
+        return $this->db->innerJoine();
+        
+    }
     function addData($data){
         $this->db->insert("product",$data);
     }
