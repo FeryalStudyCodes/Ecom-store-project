@@ -141,6 +141,14 @@
               <div class="signin my-5">
                 <div class="signin-body" style="direction: rtl;">
                   <h5 class="signin-title text-center">الدخول</h5>
+                  <div class="error" id="div_erroe"></div>
+                  <div class="success"></div>
+                    <?php if (isset($_GET['error'])) { ?>
+                    <p class="error"><?php echo $_GET['error']; ?></p>
+                    <?php } ?>
+                    <?php if (isset($_GET['success'])) { ?>
+                        <p class="success"><?php echo $_GET['success']; ?></p>
+                    <?php } ?>
                   <form class="form-signin" action="main/checklogin" method="post">
                     <div class="form-label-group">
                       <input type="email" id="inputEmail" class="form-control"placeholder="الإيميل" name="email" required autofocus >

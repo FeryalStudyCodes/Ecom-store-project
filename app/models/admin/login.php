@@ -11,9 +11,8 @@ class login{
         $this->db=new DB();
     }
 
-    function checkl($data)
+    function check($data)
     {
-
                 $cols=array("email","password");
                 $tbls=array("users");
                 $select_result =  $this->db
@@ -26,12 +25,14 @@ class login{
                 $count = count($select_result);
                 if ( $count > 0) 
                 {
-                 echo "login sucssfuly";
-                }
-                else 
-                {
-                    echo "sorry check your email or password";
-                }
+                        header("Location: ../views/admin/admin_home");
+                        exit();
+                    }
+                    else 
+                    { 
+                        header("Location: ../views/admin/index?message=sorry check your email or password");
+                        exit();
+                    }
     }
             
         

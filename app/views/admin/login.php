@@ -11,7 +11,10 @@ include "dashboard_contant/top.php";
 		<div class="col-md-4">
 			<h4>Admin Login</h4>
 			<p class="message"></p>
-			<form action="admin_login/chec" method="post" >
+			        <?php if (isset($_GET['message'])) { ?>
+                    <p class="message"><?php echo $_GET['message']; ?></p>
+                    <?php } ?>
+			<form action="admin_login/checklogin" method="post" >
 			  <div class="form-group">
 			    <label for="email">Email address</label>
 			    <input type="email" class="form-control" name="email" id="email"  placeholder="Enter email">

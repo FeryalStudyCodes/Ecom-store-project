@@ -70,7 +70,7 @@ class DB{
     }
 
     function exeucte(){
-        echo "<br>".$this->final_query."<br>";
+       
         $stmt=$this->connection->prepare($this->final_query);
         $stmt->execute();
        $result= $stmt->fetchAll(PDO::FETCH_OBJ);
