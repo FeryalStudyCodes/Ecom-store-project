@@ -24,7 +24,7 @@ public $cat_model;
       }
        function insert(){
          $this->cat_model->addData($_POST);
-         $this->controller->view_object->create_view('admin/feedback');
+       //  $this->controller->view_object->create_view('admin/feedback');
        }
        function delet(){
          $this->cat_model->delet($_POST);  

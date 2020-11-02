@@ -141,7 +141,7 @@
               <div class="signin my-5">
                 <div class="signin-body" style="direction: rtl;">
                   <h5 class="signin-title text-center">الدخول</h5>
-                  <form class="form-signin" action="login/add" method="post">
+                  <form class="form-signin" action="main/checklogin" method="post">
                     <div class="form-label-group">
                       <input type="email" id="inputEmail" class="form-control"placeholder="الإيميل" name="email" required autofocus >
                       <label for="inputEmail" ></label>
@@ -174,7 +174,7 @@
         <div class="container">
           <div class="row">
           <div class="col-md-12 text-center">
-          <span> ليس لديك حساب؟ </span><a style="color:#f79635;font-weight: 600;" class="register"  href="main/singnup">انشاء حساب</a>
+          <span> ليس لديك حساب؟ </span><a style="color:#f79635;font-weight: 600;" class="register"  href="singnup/index">انشاء حساب</a>
           </div>
           </div>
          </div>
