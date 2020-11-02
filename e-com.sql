@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 31, 2020 at 01:31 AM
+-- Generation Time: Nov 02, 2020 at 08:13 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -38,8 +38,10 @@ CREATE TABLE `brand` (
 --
 
 INSERT INTO `brand` (`brand_id`, `brand_name`, `is_active`) VALUES
-(5, 'samsung s10+', 1),
-(88, 'Lg jk ll;;;', 1);
+(5, 'samsung ', 1),
+(88, 'LG', 1),
+(89, 'hc', 1),
+(90, 'apple', 1);
 
 -- --------------------------------------------------------
 
@@ -61,9 +63,14 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`category_id`, `category_name`, `is_active`, `creation_date`, `parent_catergory`, `modification_date`) VALUES
-(2, 'جوالات هواووي', 1, '2020-10-25 00:00:00.000000', 0, '2020-10-30 00:00:00.000000'),
-(16, 'جوالات هواووي', 1, '2020-10-30 00:00:00.000000', 0, '2020-10-30 00:00:00.000000'),
-(17, 'تابليت', 0, '2020-10-30 00:00:00.000000', 0, '0000-00-00 00:00:00.000000');
+(2, 'جوالات و أجهزة تابلت', 1, '2020-10-25 00:00:00.000000', 0, '2020-11-01 00:00:00.000000'),
+(16, 'كمبوتر', 1, '2020-10-30 00:00:00.000000', 0, '2020-11-01 00:00:00.000000'),
+(17, 'تابليت', 1, '2020-10-30 00:00:00.000000', 0, '2020-10-31 00:00:00.000000'),
+(18, 'ايبادات', 1, '2020-10-31 00:00:00.000000', 0, '2020-11-01 00:00:00.000000'),
+(19, 'جوالات ', 1, '2020-10-31 00:00:00.000000', 0, '2020-10-31 00:00:00.000000'),
+(20, 'كمبوتر', 1, '2020-10-31 00:00:00.000000', 0, '2020-11-01 00:00:00.000000'),
+(21, 'جوالات هواووي', 1, '2020-11-01 00:00:00.000000', 0, '0000-00-00 00:00:00.000000'),
+(23, 'جوالات و أجهزة تابلت', 1, '2020-11-01 00:00:00.000000', 0, '0000-00-00 00:00:00.000000');
 
 -- --------------------------------------------------------
 
@@ -206,7 +213,7 @@ CREATE TABLE `payment` (
 CREATE TABLE `product` (
   `product_id` int(60) NOT NULL,
   `product_name` varchar(255) NOT NULL,
-  `product_details` int(60) NOT NULL,
+  `product_details` varchar(60) NOT NULL,
   `category_id` int(60) NOT NULL,
   `brand_id` int(60) NOT NULL,
   `product_quantity` varchar(255) NOT NULL,
@@ -225,8 +232,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `product_name`, `product_details`, `category_id`, `brand_id`, `product_quantity`, `product_main_image`, `product_images`, `color_id`, `product_short_desc`, `product_long_desc`, `product_price`, `is_active`, `creation_date`) VALUES
-(38, 'galaxy', 0, 2, 5, '50', '5 benefits of single page apps.png', '5 benefits of single page apps.png,80-percent-01.png,', 2, 'ram4t', 'dfghjk', 55.00, 1, '2020-10-31 00:00:00.000000'),
-(39, 'galaxy', 0, 2, 5, '50', '5 benefits of single page apps.png', '5 benefits of single page apps.png,80-percent-01.png,', 2, 'ram4t', 'dfghjk', 55.00, 1, '2020-10-31 00:00:00.000000');
+(78, 'iphone pro', 'good', 2, 5, '', '5qF9TmS51568312922.jpg', ',', 1, 'ديل كمبيوتر محمول E7440 معالج كورi5', 'dfghjk', 2000.00, 1, '2020-10-31 00:00:00.000000'),
+(79, 'ibad', '0', 2, 5, '29', '5qF9TmS51568312922.jpg', ',', 1, 'fhgjhljlknk', 'dfghjkl', 30.00, 1, '2020-11-01 00:00:00.000000');
 
 -- --------------------------------------------------------
 
@@ -251,6 +258,7 @@ CREATE TABLE `users` (
   `user_id` int(60) NOT NULL,
   `full_name` varchar(255) NOT NULL,
   `user_name` varchar(255) NOT NULL,
+  `id_group` int(2) NOT NULL,
   `email` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `phone` varchar(255) NOT NULL,
@@ -263,9 +271,9 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `full_name`, `user_name`, `email`, `address`, `phone`, `password`, `creation_date`, `modification_date`) VALUES
-(4, 'hamas', 'hamas', 'hamas1464@gmail.com', 'ghgjlg', '789765567890', '123', '2020-10-25 00:00:00.000000', '0000-00-00 00:00:00.000000'),
-(5, 'plkkln', 'hgjjjjjjjj', 'ggg@gg.hhh', 'v nvm', '4567890', '123asd', '2020-10-26 00:00:00.000000', '0000-00-00 00:00:00.000000');
+INSERT INTO `users` (`user_id`, `full_name`, `user_name`, `id_group`, `email`, `address`, `phone`, `password`, `creation_date`, `modification_date`) VALUES
+(4, 'hamas', 'hamas', 0, 'hamas1464@gmail.com', 'ghgjlg', '789765567890', '123', '2020-10-25 00:00:00.000000', '0000-00-00 00:00:00.000000'),
+(5, 'plkkln', 'hgjjjjjjjj', 0, 'ggg@gg.hhh', 'v nvm', '4567890', '123asd', '2020-10-26 00:00:00.000000', '0000-00-00 00:00:00.000000');
 
 --
 -- Indexes for dumped tables
@@ -377,13 +385,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `brand`
 --
 ALTER TABLE `brand`
-  MODIFY `brand_id` int(60) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
+  MODIFY `brand_id` int(60) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(60) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `category_id` int(60) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `color`
@@ -443,7 +451,7 @@ ALTER TABLE `payment`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(60) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `product_id` int(60) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- AUTO_INCREMENT for table `shoping_cart`
