@@ -506,12 +506,25 @@
 <!--Satrt Featured Product-->
 <div class="container">
   <h3 class="h4 text-sm-right mb-5 text-secondary ">إلكترونيات  </h3>
+  
+          
   <div class="row">
+  <?php 
+            $i=0;
+            $rows=$data['products'];
+           // print_r($rows);
+            foreach($rows as $row)
+            {   
+              $id = $row->product_id;
+              $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+          ?>
+         
       <div class="col-md-3 col-sm-6">
           <div class="product-store">
               <div class="product-img">
                   <a href="#">
-                      <img class="pic" src="app/assets/images/dell-10-300x211.jpg">
+                      
+                      <img  width="60" height="60"  src='<?php  echo $imageURl; ?>'>
                   </a>
                   <ul class="social">
                       <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -521,15 +534,16 @@
                  
               </div>
               <div class="product-content">
-                  <h3 class="title"><a href="#">ديل كمبيوتر محمول E7440 معالج كورi5 </a></h3>
+                  <h3 class="title"><a href="#"> <?php  echo $row->product_short_desc ?></a></h3>
                   <div class="price">
                     $260.00
-                      
+                    <?php  echo $row->product_price ?>
                   </div>
                   <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
                 </div>
           </div>
       </div>
+      <?php $i++; } ?> 
       <div class="col-md-3 col-sm-6">
         <div class="product-store">
             <div class="product-img">

@@ -119,6 +119,7 @@ class DB{
         $values[]="'".$item."'";
     }
    try{
+      // echo $this->final_query;
     $this->final_query="UPDATE ".$tbls." SET product_name"." = '".$items['product_name']."', product_details"." = '".$items['product_details']."', category_id "." = '".$items['category_id']."', brand_id "." = '".$items['brand_id']."', product_quantity "." = '".$items['product_quantity']."', product_main_image "." = '".$items['product_main_image']."', product_images "." = '".$items['product_images']."', color_id "." = '".$items['color_id']."', product_short_desc "." = '".$items['product_short_desc']."', product_long_desc "." = '".$items['product_long_desc']."', product_price "." = '".$items['product_price']."', is_active "." = '".$items['is_active']."' WHERE product_id = ".$value;
     $stmt=$this->connection->prepare($this->final_query);
     $stmt->execute();

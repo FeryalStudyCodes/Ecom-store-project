@@ -38,7 +38,7 @@ public $cat_model;
        }
        function add(){
           $this->cat_model->addData($_POST);
-          $this->controller->view_object->create_view('admin/feedback');
+         // $this->controller->view_object->create_view('admin/feedback');
        }
        function update(){
          $this->cat_model->update($_POST);

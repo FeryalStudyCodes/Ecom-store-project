@@ -18,7 +18,7 @@ class Route{
         }
         include($controller_dirctory.$rquestedController.".php");
         $function_name=$clean_url[sizeof($clean_url)-1];
-        echo $function_name;
+       // echo $function_name;
         new $rquestedController($function_name,$url);
     }
 }

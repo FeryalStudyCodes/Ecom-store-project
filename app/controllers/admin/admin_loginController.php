@@ -18,8 +18,8 @@ class admin_loginController extends Controller{
         $this->controller->view_object->create_view('admin/login');
        }
        function chec(){
-          print_r($_POST);
-          $this->login_model->checkl();
+        //  print_r($_POST);
+         // $this->login_model->checkl();
           $this->controller->view_object->create_view('admin/admin_home');
        }
 }
