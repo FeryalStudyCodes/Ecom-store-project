@@ -37,6 +37,6 @@
       }
     </style>
     <!-- Custom styles for this template -->
-    <link href="../../app/assets/css/admin/dashboard.css" rel="stylesheet">
+    <link href="http://localhost//Ecom-store-project/app/assets/css/admin/dashboard.css" rel="stylesheet">
   </head>
  <body>

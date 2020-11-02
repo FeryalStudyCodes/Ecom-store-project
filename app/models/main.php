@@ -62,15 +62,17 @@ class main{
         $count = count($select_result);
         if ( $count > 0) 
         {
-         echo "login sucssfuly";
+            header("Location: ../views/login?success=login sucssfuly");
+            exit();
         }
         else 
-        {
-            echo "sorry check your email or password";
+        { 
+            header("Location: ../views/login?error=sorry check your email or password");
+            exit();
         }
     }
     function addusers($data){          
-        print_r($data);
+      
         $userName = $_POST['user_name'];
         $email = $_POST['email'];
         $cols=array("user_name","email");

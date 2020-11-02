@@ -18,6 +18,7 @@ class Model{
             }
         }       
         require_once($controller_dirctory.$requestedModel.".php");
+        echo $requestedModel;
         return new $requestedModel();
     }
 }

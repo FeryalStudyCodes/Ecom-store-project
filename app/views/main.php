@@ -23,8 +23,10 @@
        <div class="container">
          <div class="row">
          <div class="col-sm info text-center text-sm-right">
+       
             <i class="fa fa-phone"></i> <span class="fa-sphone"> +967 777 777 777. </span>
             <i class="fa fa-envelope" ></i> <span class="fa-semail"> login@gmail.com </span>
+           
             </div>
 
           <div class="col-sm info text-center text-sm-left">
@@ -33,6 +35,7 @@
               <a class="get-quote dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fa fa-language"></i> اللغة
               </a>
+              <a href="admin/admin_login/index">  Dashboared</a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item" href="#"><img src="app/assets/images/ar.png"> العربية</a>
                 <a class="dropdown-item" href="#"><img src="app/assets/images/en.png">  الإنجليزية</a>
