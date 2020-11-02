@@ -148,7 +148,7 @@
                     <?php if (isset($_GET['success'])) { ?>
                         <p class="success"><?php echo $_GET['success']; ?></p>
                     <?php } ?>
-                  <form class="form-signin" action="singnup/add" method="post" >
+                  <form class="form-signin" action="main/adduser" method="post" >
                     <div class="form-label-group">
                         <input type="text" id="inputName" class="form-control"placeholder="الإسم " name="full_name" required autofocus>
                         <label for="inputName" ></label>
