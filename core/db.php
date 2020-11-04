@@ -28,13 +28,13 @@ class DB{
         return $this;
     }
     function innerJoine(){
-        $stmt=$this->connection->prepare("select product.product_id,product.is_active,product.product_name,product.product_images,product.product_main_image,product.product_price,product.product_details,brand.brand_name,color.color_name ,category.category_name
+
          FROM product INNER JOIN color ON product.color_id = color.color_id
           INNER JOIN category ON product.category_id = category.category_id
            INNER JOIN brand ON product.brand_id = brand.brand_id ");
         $stmt->execute();
         $result= $stmt->fetchAll(PDO::FETCH_OBJ);
-      //  print_r ($result);
+
         return $result;
     }
     function from($tbls){
