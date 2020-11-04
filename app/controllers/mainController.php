@@ -43,8 +43,7 @@ class mainController extends Controller{
     function product_details(){   
         $items=array(
             'products'=>$this->main_model->getproduct_details(),
-         
-            );
+
        $this->controller->view_object->create_view('product',$items);
     }
 
