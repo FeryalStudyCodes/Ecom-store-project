@@ -40,10 +40,19 @@ class mainController extends Controller{
     function product(){   
         $this->controller->view_object->create_view('product');
     }
+    function product_details(){   
+        $items=array(
+            'products'=>$this->main_model->getproduct_details(),
+         
+            );
+       $this->controller->view_object->create_view('product',$items);
+    }
 
     function wishlist(){   
         $this->controller->view_object->create_view('wishlist');
     }
+
+    
 }
 
 ?>

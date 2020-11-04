@@ -135,35 +135,49 @@
 
    <!-- end Navbar -->
  
-  	
-      
+
+
   <!-- Product Detail Page Start -->
 	<div class="product-detail">
 		<div class="container">
+    
+         <?php 
+             $rows=$data['products'];
+
+           if ("product_id"==$_GET['product_id']){
+            $mainimageURl = 'http://localhost:/Ecom-store-project/app/assets/images/'.$rows->product_images;
+
+           }
+          
+          ?>
+          <?php   echo $_GET['product_id']?>
+    
 			<div class="product-detail-left">
 				<div class="sp-loading">
-					<img src="images/sp-loading.gif">
+
+					<img src="/Ecom-store-project/app/assets/images/sp-loading.gif">
 					تحميل الصورة
 				</div>
-				<div class="sp-wrap">
-        <a href="/Ecom-store-project/app/assets/images/pro-detail-1.jpg"><img src="/Ecom-store-project/app/assets/images/pro-detail-1.jpg" alt=""></a>
-					<a href="/Ecom-store-project/app/assets/images/pro-detail-3.jpg"><img src="/Ecom-store-project/app/assets/images/pro-detail-3.jpg" alt=""></a>
-          <a href="/Ecom-store-project/app/assets/images/pro-detail-4.jpg"><img src="/Ecom-store-project/app/assets/images/pro-detail-4.jpg" alt=""></a>
-          <a href="/Ecom-store-project/app/assets/images/pro-detail-5.jpg"><img src="/Ecom-store-project/app/assets/images/pro-detail-5.jpg" alt=""></a>
+			 <div class="sp-wrap">
+        <a href='../../<?php  echo  $rows->product_images ?>'><img src='../../<?php   echo  $rows->product_images ?>' alt=""></a>
+        <a href='<?php  echo  $mainimageURl; ?>'><img src='<?php  echo  $mainimageURl; ?>' alt=""></a>
+        <a href='<?php  echo  $mainimageURl; ?>'><img src='<?php  echo  $mainimageURl; ?>' alt=""></a>
+        <a href='<?php  echo  $mainimageURl; ?>'><img src='<?php  echo  $mainimageURl; ?>' alt=""></a> 
+
 				</div>
 			</div>
 			<div class="product-detail-right">
-			<h3>لينوفو لابتوب 310، بشاشة 14 بوصة ومعالج كور I5/  اسود
-        <br><small>الكود : NOT-L-310-14IKB-80TU</small></h3>
-				<h5><b>السعر : </b> <i class="fas fa-dollar-sign"></i> $598</h5>
-				<h5><b>العلامة التحارية : </b> لينوفو</h5>
-				<h5><b>ضمان : </b>12 شهر</h5>
-				<h5><b>دفع : </b> COD, Visa, Mastercard</h5>
-				<h5><b>متوفر : </b> متوفر بالمخزن</h5>
+      
+			<h3><?php  echo $rows->product_details ?></h3>
+				<h5><b>السعر : </b> <i class="fas fa-dollar-sign"></i>  <?php  echo $rows->product_price ?></h5>
+				<h5><b>العلامة التحارية : </b>  <?php  echo $rows->brand_name ?></h5>
+				<h5><b>اللون : </b><?php  echo $rows->color_name ?></h5>
+				<h5><b>متوفر : </b> <?php  echo $rows->is_active ?></h5></h5>
 				<a href="#" class="addtocart"><i class="fa fa-heart"></i>  المفضلة</a>
 				<a href="#" class="buynow"><i class="fa fa-shopping-cart"></i> أشتري الآن</a>
 			</div>
-			<div class="product-detail-feature">
+      
+			<!-- <div class="product-detail-feature">
 				<h3>الوصف</h3>
 				<p>العلامة التجارية : Apple</p>
 				<p>البلوتوث : نعم</p>
@@ -175,7 +189,8 @@
 				<p>المعالج : Intel Core i7</p>
 				<p>الذاكرة العشوائية : GB8</p>
 				
-			</div>
+			</div> -->
+   
 		</div>
 	</div>
 	<!-- Product Detail Page End -->
