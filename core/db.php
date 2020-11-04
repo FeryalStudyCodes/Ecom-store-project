@@ -27,18 +27,14 @@ class DB{
         $this->columns="select ".implode(",",$cols)." ";
         return $this;
     }
-    function innerJoine($cols,$tbls){
-        $stmt=$this->connection->prepare("select product_name product_details product_quantity product_main_image product_images product_short_desc product_long_desc product_price is_active creation_date
-        brand_name category_name
-        from product 
-        join category 
-        on product.category_id = category.category_id 
-        join brand 
-        on product.brand_id = brand.brand_id 
-        join color 
-        on product.color_id = color.color_id ");
+    function innerJoine(){
+        $stmt=$this->connection->prepare("select product.product_name,product.product_price,product.product_details,brand.brand_name,color.color_name ,category.category_name
+         FROM product INNER JOIN color ON product.color_id = color.color_id
+          INNER JOIN category ON product.category_id = category.category_id
+           INNER JOIN brand ON product.brand_id = brand.brand_id ");
         $stmt->execute();
         $result= $stmt->fetchAll(PDO::FETCH_OBJ);
+       /* print_r ($result);*/
         return $result;
     }
     function from($tbls){
@@ -181,7 +177,25 @@ function updateBrand($tbls,$items,$value){
      
  }
 
+ /*function inner_join(){
+    $name= $_GET['product_name'];
+    $price= $_GET['product_price'];
+    $details= $_GET['product_details'];
+    $brand= $_GET['brand_name'];
+    $color= $_GET['color_name'];
+    $category = $_GET['category_name'];
 
+    $cols=array('*');
+    $tbls=array("product");
+    return  $this->db
+    ->select($cols)
+    ->from($tbls)
+    ->join($color,"product.color_id","=","color.color_id")
+    ->join($category,"product.category_id","=","category.category_id")
+    ->join($brand,"product.brand_id","=","brand.brand_id")
+    ->build()
+    ->exeucte();
+}*/
 
 
 
