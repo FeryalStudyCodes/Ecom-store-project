@@ -532,13 +532,10 @@
                       
                       <img  width="60" height="60"  src='<?php  echo $imageURl; ?>'>
                   </a>
-<<<<<<< HEAD
                   <ul class="social"><?php  echo $row->product_id ?><?PHP echo $id?>
                       <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-=======
                   <ul class="social">
                       <li><a href="main/product_details?action=product_details&product_id=<?PHP echo $id?>" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
->>>>>>> 5c039641cb8a1eea4592d86a517d2e25e0b063c9
                       <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
                       <li><a href="" data-tip="Add to Cart" class="cart"  data-id='<?= $id; ?>' ><i class="fa fa-shopping-cart "></i></a></li>
                      
