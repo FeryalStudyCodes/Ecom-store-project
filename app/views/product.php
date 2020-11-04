@@ -143,12 +143,43 @@
     
          <?php 
              $rows=$data['products'];
+            // echo "<br>". $rows['key']->product_id."<br>";
+            
+           // print_r($rows);
+            foreach($rows as $row)
+            {
+              //echo "<br>". $row->product_id."<br>";
+           if ($row->product_id == $_GET['product_id']){
+            $mainimageURl = 'http://localhost:/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+          ?>
+			<div class="product-detail-left">
+				<div class="sp-loading">
 
+					تحميل الصورة
+				</div>
+			 <div class="sp-wrap">
+        <a href='<?php  echo  $mainimageURl ?>'><img src='<?php echo $mainimageURl ?>' alt=""></a>
+        <?php
+            $imges = $row->product_images;
+            $clean_url=rtrim($imges,',');
+            $clean_url=explode(',',$clean_url);
+            foreach($clean_url as $part){
+            $product_images='http://localhost:/Ecom-store-project/app/assets/images/'.$part;
+            echo "<a href='$product_images'><img src='  $product_images'></a>"
+            ;}?> 
 				</div>
 			</div>
 			<div class="product-detail-right">
       
-
+			<h3><?php  echo $row->product_details ?></h3> 
+				<h5><b>السعر : </b> <i class="fas fa-dollar-sign"></i>  <?php  echo $row->product_price ?></h5>
+				<h5><b>العلامة التحارية : </b>  <?php  echo $row->brand_name ?></h5>
+				<h5><b>اللون : </b><?php  echo $row->color_name ?></h5>
+				<h5><b>متوفر : </b> <?php  echo $row->is_active ?></h5></h5>
+				<a href="#" class="addtocart"><i class="fa fa-heart"></i>  المفضلة</a>
+				<a href="#" class="buynow"><i class="fa fa-shopping-cart"></i> أشتري الآن</a>
+			</div>
+      <?php } }?> 
 			<!-- <div class="product-detail-feature">
 				<h3>الوصف</h3>
 				<p>العلامة التجارية : Apple</p>
