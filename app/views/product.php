@@ -175,7 +175,7 @@
 				<h5><b>السعر : </b> <i class="fas fa-dollar-sign"></i>  <?php  echo $row->product_price ?></h5>
 				<h5><b>العلامة التحارية : </b>  <?php  echo $row->brand_name ?></h5>
 				<h5><b>اللون : </b><?php  echo $row->color_name ?></h5>
-				<h5><b>متوفر : </b> <?php  echo $row->is_active ?></h5></h5>
+				<h5><b>متوفر : </b> <?php if($row->is_active==1)  echo "نعم"; else echo "لا"  ?></h5></h5>
 				<a href="#" class="addtocart"><i class="fa fa-heart"></i>  المفضلة</a>
 				<a href="#" class="buynow"><i class="fa fa-shopping-cart"></i> أشتري الآن</a>
 			</div>
