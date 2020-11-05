@@ -16,7 +16,16 @@
 {
   box-sizing: border-box;
 }
-body{
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
   direction: rtl;
 }
 a:hover,
@@ -70,7 +79,6 @@ a:focus {
 
 }
 
-
 .upper-bar .dropdown-menu.show
 {
   background-color: #5B298D;
@@ -93,10 +101,10 @@ a:focus {
 /* Start NavBar */
 
 .navbar-brand img{
-  padding: 15px 0;
+  padding: 0px;
   float: right;
   margin-right:-32px;
-  margin-top: -18px;
+  margin-top: 0px;
 
 }
 .navbar-brand a{
@@ -108,7 +116,7 @@ a:focus {
   text-transform: uppercase;
   font-size: 15px;
   margin-right: 20px;
-  font-weight:580;
+  font-weight:560;
   color: #0b0c0c;
 }
 .navbar-nav .active > .nav-link
@@ -401,19 +409,20 @@ list-style-type:none;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
+  background-position: center center;
   background-size: cover;
 }
 .slider .carousel-one{
-  background-image: url("../../../app/assets/images/55__2_.jpg");
+  background-image: url("../../../app/assets/images/slider1.jpg");
 }
 .slider .carousel-tow{
-  background-image: url("../../../app/assets/images/57.jpg");
+  background-image: url("../../../app/assets/images/slider1.jpg");
 }
 .slider .carousel-three{
-  background-image: url("../../../app/assets/images/56-1.jpg");
+  background-image: url("../../../app/assets/images/slider1.jpg");
 }
 
- .slider  .carousel-indicators li
+ .slider .carousel-indicators li
 {
   height: 8px !important;
   cursor: pointer;
@@ -1849,10 +1858,158 @@ ul.product-top-list li {
 
 /*-- categories-page-ends-here --*/
 
+/*--------------------------------------------------------------
+	#hero-style
+--------------------------------------------------------------*/
+
+ .slide-title,
+ .slide-text,
+ .slide-btns {
+  max-width: 690px;
+}
+
+.slider-txt{
+  float: right;
+  margin-right: 10%;
+  margin-left: 10%;
+  margin-top: 10em;
+}
+
+.slide-title h2 {
+  font-size: 5rem;
+  font-weight: 600;
+  line-height: 1;
+  color: #4d125fe0;
+  margin: 0 0 50px;
+  text-transform: capitalize;
+  transition: all .4s ease;
+}
+
+@media (max-width: 1199px) {
+ .slide-title h2 {
+    font-size: 75px;
+  }
+}
+
+@media (max-width: 991px) {
+  .slide-title h2 {
+    font-size: 50px;
+    margin: 0 0 35px;
+  }
+}
+
+@media (max-width: 767px) {
+  .slide-title h2 {
+    font-size: 35px;
+    margin: 0 0 30px;
+  }
+}
+
+.slide-text p {
+  opacity: 0.8;
+  font-family: Rajdhani;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #1d1919;
+  margin: 0 0 40px;
+  transition: all .4s ease;
+}
+
+@media (max-width: 767px) {
+  .hero-style .slide-text p {
+    font-size: 16px;
+    font-size: 1rem;
+    font-weight: normal;
+    margin: 0 0 30px;
+  }
+}
+
+.hero-style .slide-btns>a:first-child {
+  margin-right: 10px;
+}
 
 
+/*--------------------------------------------------------------
+	#button-style
+--------------------------------------------------------------*/
+.theme-btn,
+.theme-btn-s2, 
+.theme-btn-s3 {
+  background-color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+  color: #772b95;
+  padding: 9px 32px;
+  border: 0;
+  border-radius: 3px;
+  text-transform: uppercase;
+  display: inline-block;
+  line-height: initial;
+  transition: all .4s ease;
+}
 
+a {
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
 
+.theme-btn-s2 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  background-color: #F58B20;
+  color: #ffffff;
+}
 
+.theme-btn:hover,
+.theme-btn-s2:hover,
+.theme-btn:focus,
+.theme-btn-s2:focus,
+.theme-btn:active,
+.theme-btn-s2:active {
+  background-color: #2b3b95;
+  color: #fff;
+}
+
+.theme-btn-s3 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  background-color: #5B298D;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+i.fa-chevron-circle-right {
+  height: 22px;
+  width: 22px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+@media (max-width: 991px) {
+
+  .theme-btn,
+  .theme-btn-s2,
+  .theme-btn-s3 {
+    font-size: 13px;
+    padding: 15px 25px;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .theme-btn,
+  .theme-btn-s2 {
+    padding: 13px 20px;
+    font-size: 13px;
+  }
+}
 
 
