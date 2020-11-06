@@ -109,7 +109,5 @@ class main{
       
 }
 
-// function innerJoine(){
-//     return  $this->db->innerJoine();
-// }
+
 ?>

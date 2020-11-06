@@ -28,7 +28,7 @@ class DB{
         return $this;
     }
     function innerJoine(){
-        $stmt=$this->connection->prepare("select product.product_id,product.is_active,product.product_name,product.product_images,product.product_main_image,product.product_price,product.product_details,brand.brand_name,color.color_name ,category.category_name
+        $stmt=$this->connection->prepare("select product.product_id,product.is_active,product.product_name,product.product_images,product.product_main_image,product.product_price,product.product_short_desc,brand.brand_name,color.color_name ,category.category_name
          FROM product INNER JOIN color ON product.color_id = color.color_id
           INNER JOIN category ON product.category_id = category.category_id
            INNER JOIN brand ON product.brand_id = brand.brand_id ");
@@ -177,26 +177,7 @@ function updateBrand($tbls,$items,$value){
      
  }
 
- /*function inner_join(){
-    $name= $_GET['product_name'];
-    $price= $_GET['product_price'];
-    $details= $_GET['product_details'];
-    $brand= $_GET['brand_name'];
-    $color= $_GET['color_name'];
-    $category = $_GET['category_name'];
-
-    $cols=array('*');
-    $tbls=array("product");
-    return  $this->db
-    ->select($cols)
-    ->from($tbls)
-    ->join($color,"product.color_id","=","color.color_id")
-    ->join($category,"product.category_id","=","category.category_id")
-    ->join($brand,"product.brand_id","=","brand.brand_id")
-    ->build()
-    ->exeucte();
-}*/
-
+ 
 
 
 

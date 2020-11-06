@@ -70,7 +70,54 @@
               الأقسام<b class="caret"></b>
             </a>
           
-          <ul class="dropdown-menu multi-column columns-3">
+            <ul class="dropdown-menu multi-column columns-3">
+            <div class="row">
+              <div class="col-sm-4">
+                <ul class="multi-column-dropdown">
+                <?PHP
+                        $rows=$data['categories'];
+                        
+                        foreach($rows as $row){
+                          if($row->parent_catergory==0){
+                            echo "<h6> ".$row->category_name."</h6>";
+                          }else{
+                            echo "<li><a href='main/categories'>".$row->category_name."</a></li>";
+                          }
+                            // echo "<li><a href=''>$row->category_name</a></li>";
+                            // " 
+                            // <li><a href="main/categories">جوالات</a></li>
+                            // <li><a href="main/categories">تابلت</a></li>
+                            // <li><a href="main/categories">الإكسسوارات</a></li> "
+                        }
+                        ?>
+           
+                  
+                </ul>
+              </div>
+              <div class="col-sm-4">
+                <ul class="multi-column-dropdown">
+            <!-- <h6>أجهزة لابتوب و كمبيوتر</h6>
+                  <li><a href="main/categories">أجهزة لابتوب</a></li>
+                  <li><a href="main/categories">أجهزة كمبيوتر</a></li>
+                  <li><a href="main/categories">اكسسوارات الكمبيوتر</a></li>
+                  <li><a href="main/categories">ماسحات ضوئية</a></li> -->
+                  
+                </ul>
+              </div>
+              <div class="col-sm-4">
+                <ul class="multi-column-dropdown">
+            <!-- <h6>كاميرات</h6>
+                  <li><a href="main/categories">ذواكر كاميرا</a></li>
+                  <li><a href="main/categories">كاميرات درونز</a></li>
+                  <li><a href="main/categories">كاميرات أكشن</a></li>
+                  <li><a href="main/categories">كاميرات مدمجة</a></li> -->
+                </ul>
+              </div>
+            
+        <div class="clearfix"></div>
+            </div>
+          </ul>
+          <!-- <ul class="dropdown-menu multi-column columns-3">
             <div class="row">
               <div class="col-sm-4">
                 <ul class="multi-column-dropdown">
@@ -103,12 +150,12 @@
             
         <div class="clearfix"></div>
             </div>
-          </ul>
+          </ul> -->
       </li>
     
          </li>
          <li class="nav-item ">
-           <a class="nav-link" href="#">المدونة</a>
+           <a class="nav-link" href="#">العروض</a>
          </li>
          <li class="nav-item">
            <a class="nav-link" href="#">صفحات</a>
@@ -150,11 +197,11 @@
             {
               //echo "<br>". $row->product_id."<br>";
            if ($row->product_id == $_GET['product_id']){
-            $mainimageURl = 'http://localhost:/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+            $mainimageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
           ?>
 			<div class="product-detail-left">
 				<div class="sp-loading">
-
+          <img src="/Ecom-store-project/app/assets/images/sp-loading.gif">
 					تحميل الصورة
 				</div>
 			 <div class="sp-wrap">
@@ -164,16 +211,16 @@
             $clean_url=rtrim($imges,',');
             $clean_url=explode(',',$clean_url);
             foreach($clean_url as $part){
-            $product_images='http://localhost:/Ecom-store-project/app/assets/images/'.$part;
+            $product_images='http://localhost/Ecom-store-project/app/assets/images/'.$part;
             echo "<a href='$product_images'><img src='  $product_images'></a>"
             ;}?> 
 				</div>
 			</div>
 			<div class="product-detail-right">
       
-			<h3><?php  echo $row->product_details ?></h3> 
+			<h3><?php  echo $row->product_short_desc ?></h3> 
 				<h5><b>السعر : </b> <i class="fas fa-dollar-sign"></i>  <?php  echo $row->product_price ?></h5>
-				<h5><b>العلامة التحارية : </b>  <?php  echo $row->brand_name ?></h5>
+				<h5><b>العلامة التجارية : </b>  <?php  echo $row->brand_name ?></h5>
 				<h5><b>اللون : </b><?php  echo $row->color_name ?></h5>
 				<h5><b>متوفر : </b> <?php if($row->is_active==1)  echo "نعم"; else echo "لا"  ?></h5></h5>
 				<a href="#" class="addtocart"><i class="fa fa-heart"></i>  المفضلة</a>

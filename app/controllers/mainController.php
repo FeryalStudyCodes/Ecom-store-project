@@ -35,7 +35,19 @@ class mainController extends Controller{
        }
        function categories(){   
         $this->controller->view_object->create_view('categories');
-    }
+       }
+
+       function getcategories(){
+        $this->cat_model=$this->controller->model_object->create_model('main');
+        $items=array(
+            'categories'=>$cat_model->getCategory(),
+        
+        );
+
+        $this->controller->view_object->create_view('product',$items);
+       }
+
+
 
     function product(){   
         $this->controller->view_object->create_view('product');
@@ -43,6 +55,7 @@ class mainController extends Controller{
     function product_details(){   
         $items=array(
             'products'=>$this->main_model->getproduct_details(),
+            'categories'=>$this->main_model->getCategory(),
             );
           //  print_r($items);
        $this->controller->view_object->create_view('product',$items);
