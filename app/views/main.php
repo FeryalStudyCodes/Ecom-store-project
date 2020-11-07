@@ -1,11 +1,11 @@
-
+ 
  <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Login Store</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -13,13 +13,19 @@
        <link rel="stylesheet" href="/Ecom-store-project/app/assets/css/font-awesome.css">
     <link rel="stylesheet" href="/Ecom-store-project/app/assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="/Ecom-store-project/app/assets/css/smoothproducts.css">
-
+    <link rel="stylesheet" type="text/css" href="/Ecom-store-project/app/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/Ecom-store-project/app/assets/css/style.css" />
+     
+    <script>
+        window.console = window.console || function (t) {};
+      </script>
 
       <script>
         if (document.location.search.match(/type=embed/gi)) {
           window.parent.postMessage("resize", "*&");
         }
       </script>
+
   </head>
    <body>
     <!-- Start Upper Bar -->
@@ -57,7 +63,7 @@
    <nav class="navbar navbar-expand-lg navbar-light ">
      <div class="container">
      <a class="navbar-brand" href="#">
-       <img src="/Ecom-store-project/app/assets/images/login_store_logos-1 (1).png" style="width:16%;height:16%;">
+       <img src="app/assets/images/login_store_logos-1 (1).png" style="width:20%;height:20%;">
      
      </a>
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -115,7 +121,7 @@
            <a class="nav-link" href="#">تواصل معنا</a>
          </li>
          <li class="nav-item">
-          <a class="nav-link" href="main/shopping_cart"><i class="fa fa-shopping-cart"></i><span class="ty-minicart-count">1</span></a>
+          <a class="nav-link" href="#"><i class="fa fa-shopping-cart"></i><span class="ty-minicart-count">1</span></a>
          </li>
          <li class="nav-item">
          <a class="nav-link" href="#"><i class="fa fa-heart"></i><span class="ty-miniwish-count">1</span></a>
@@ -137,7 +143,7 @@
     <div id="mysild" class="carousel slide " data-ride="carousel" >
 
          <div class="carousel-inner">
-
+              <div class="carousel-item  carousel-one active">
                <div class="slider_txt">
             <div class="slide-title">
               <h2>تخفيضــات</h2>
@@ -169,7 +175,6 @@
 
 
  <!-- End  silder -->
-
 
 <!-- Product slider Start -->
 <!--div class="slider">
@@ -208,7 +213,7 @@
               if($row->category_id==25){
                   
               
-              $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+              $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
           ?>
          
       <div class="col-md-3 col-sm-6">
@@ -250,7 +255,7 @@
               if($row->category_id==25){
                   
               
-              $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+              $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
           ?>
          
       <div class="col-md-3 col-sm-6">
@@ -293,7 +298,7 @@
               if($row->category_id==25){
                   
               
-              $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+              $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
           ?>
          
       <div class="col-md-3 col-sm-6">
@@ -367,8 +372,10 @@
             foreach($rows as $row)
             {   
               $id = $row->product_id;
-
-              $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+              if($row->category_id==25){
+                  
+              
+              $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
           ?>
          
       <div class="col-md-3 col-sm-6">
@@ -379,91 +386,24 @@
                       <img  style='width="60"; height="60"'  src='<?php  echo $imageURl; ?>'>
                   </a>
                   <ul class="social">
-
+                      <li><a href="main/product_details?action=product_details&product_id=<?PHP echo $id?>" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                      <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                      <li><a href="" data-tip="Add to Cart" class="cart"  data-id='<?= $id; ?>' ><i class="fa fa-shopping-cart "></i></a></li>
                   </ul>
                  
               </div>
               <div class="product-content">
                   <h3 class="title"><a href="#"> <?php  echo $row->product_short_desc ?></a></h3>
                   <div class="price">
-                    $260.00
+                  
                     <?php  echo $row->product_price ?>
                   </div>
-                  <a class="add-to-cart" href="" data-id='<?=$id;?>'>أضف الى عربة التسوق</a>
+                  <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
                 </div>
           </div>
       </div>
-      <?php $i++; } ?> 
-      <div class="col-md-3 col-sm-6">
-        <div class="product-store">
-            <div class="product-img">
-                <a href="#">
-                    <img class="pic" src="app/assets/images/lenovo1.png">
-                </a>
-                <ul class="social">
-                    <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                    <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                    <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                </ul>
-               
-            </div>
-            <div class="product-content">
-                <h3 class="title"><a href="#">لينوفو لابتوب 310، بشاشة 14 بوصة ومعالج كور i5/ متعدد الوسائط- اسود</a></h3>
-                <div class="price">
-                  $675.74
-                    
-                </div>
-                <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
-              </div>
-        </div>
-    </div>
-    <div class="col-md-3 col-sm-6">
-      <div class="product-store">
-          <div class="product-img">
-              <a href="#">
-                  <img class="pic" src="app/assets/images/dell-1-20-300x203.jpg">
-              </a>
-              <ul class="social">
-                  <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                  <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                  <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-              </ul>
-             
-          </div>
-          <div class="product-content">
-              <h3 class="title"><a href="#">ديل لابتوب لاتيتيود 13 3350 عالج كور i3/ ذاكرة وصول عشوائي سعة 4 جيجابايت</a></h3>
-              <div class="price">
-                $514.74
-                  
-              </div>
-              <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
-          </div>
-      </div>
-  </div>
-  <div class="col-md-3 col-sm-6">
-    <div class="product-store">
-        <div class="product-img">
-            <a href="#">
-                <img class="pic" src="app/assets/images/Dell-Inspiron-11-3162-300x184.jpg">
-            </a>
-            <ul class="social">
-                <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-            </ul>
-           
-        </div>
-        <div class="product-content">
-            <h3 class="title"><a href="#">
-              إتش بي كمبيوتر محمول إليت بوك 8470p بشاشة قياس 14 إنشاً، معالج كورi5 </a></h3>
-            <div class="price">
-              $202.50
-                
-            </div>
-            <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
-          </div>
-    </div>
-</div>
+      <?php $i++; } }?> 
+ 
   </div>
 </div>
 <hr>
@@ -472,110 +412,7 @@
 <!--End Featured Product-->
 
 
-<!--Start offers product-->
-<div class="container">
-  <h3 class="h4 text-sm-right mb-5 text-secondary ">أقوى عروض  </h3>
-  <div class="row">
-      <div class="col-md-3 col-sm-6">
-          <div class="product-offers">
-              <div class="product-image">
-                  <a href="#">
-                      <img class="pic-1" src="app/assets/images/Dell-Inspiron-11-3162-300x184.jpg">
-                  </a>
-                  <ul class="social">
-                      <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                      <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                      <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                  </ul>
-                  <span class="product-discount-label">خصم %25</span>
-              </div>
-              <div class="product-content">
-                  <h3 class="title"><a href="#">ديل كمبيوتر محمول E7440 معالج كورi5   </a></h3>
-                  <div class="price">
-                      $14.40
-                      <span class="old-price">$16.00</span>
-                  </div>
-                  <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
-                </div>
-          </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="product-offers">
-            <div class="product-image">
-                <a href="#">
-                    <img class="pic-1" src="app/assets/images/ASUS-Chromebook-C423-1-300x202.jpg">
-                </a>
-                <ul class="social">
-                    <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                    <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                    <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                </ul>
-                <span class="product-discount-label">خصم %15</span>
-            </div>
-            <div class="product-content">
-                <h3 class="title"><a href="#">فكتوس ثول فكتوس 13 "ماك بوك اير - اسود</a></h3>
-                <div class="price">
-                  $66.60
-                    <span class="old-price">$74.00</span>
-                </div>
-                <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
-              </div>
-        </div>
-      </div>
-    <div class="col-md-3 col-sm-6">
-      <div class="product-offers">
-          <div class="product-image">
-              <a href="#">
-                  <img class="pic-1" src="app/assets/images/lenovo3.png">
-              </a>
-              <ul class="social">
-                  <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                  <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                  <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-              </ul>
-              <span class="product-discount-label">%خصم 10</span>
-          </div>
-          <div class="product-content">
-              <h3 class="title"><a href="#"> اتش بي لابتوب إيليت بوك تم تجديده بشاشة لمس 820G1
-                </a></h3>
-              <div class="price">
-                $594.00
-                  <span class="old-price">$669.17</span>
-              </div>
-              <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
-          </div>
-      </div>
-    </div>
-    
-      
-      <div class="col-md-3 col-sm-6">
-        <div class="product-offers">
-            <div class="product-image">
-                <a href="#">
-                    <img class="pic-1" src="app/assets/images/acer3.jpg">
-                </a>
-                <ul class="social">
-                    <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                    <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                    <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                </ul>
-                <span class="product-new-label">New</span>
-                <span class="product-discount-label">خصم %23</span>
-            </div>
-            <div class="product-content">
-                <h3 class="title"><a href="#">ديل الكمبيوتر المحمول معالج كور i3 طراز E5420 - تم تجديده (أسود)</a></h3>
-                <div class="price">
-                     $156.00
-                    <span class="old-price">$669.17</span>
-                </div>
-                <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
-              </div>
-        </div>
-      </div>
-  </div>
-</div>
-<hr>
-<!--End offers product-->
+
 
 <!--Start add-->
 <div class="container">
@@ -598,12 +435,24 @@
 <div class="container">
   <h3 class="h4 text-sm-right mb-5 text-secondary ">جوالات  </h3>
   <div class="row">
-
+  <?php 
+            $i=0;
+            $rows=$data['products'];
+           // print_r($rows);
+            foreach($rows as $row)
+            {   
+              $id = $row->product_id;
+              if($row->category_id==38){
+                  
+              
+              $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+          ?>
       <div class="col-md-3 col-sm-6">
           <div class="product-store">
               <div class="product-img">
                   <a href="#">
-                      <img class="pic" src="app/assets/images/samsung.jpg">
+                      <img  width="60" height="60"  src='<?php  echo $imageURl; ?>'>
+
                   </a>
                   <ul class="social">
                       <li><a href="main/product_details?action=product_details&product_id=<?PHP echo $id?>" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
@@ -613,86 +462,17 @@
                  
               </div>
               <div class="product-content">
-                  <h3 class="title"><a href="#">سامسونج هاتف جالاكسي S20 بلس ثنائي الشريحة مزود بذاكرة رام سعة 8 جيجابايت وذاكرة داخل... </a></h3>
+                  <h3 class="title"><a href="#"><a href="#"> <?php  echo $row->product_short_desc ?></a></h3>
                   <div class="price">
-                    $823.74
+                  <?php  echo $row->product_price ?>
                       
                   </div>
                   <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
                 </div>
           </div>
       </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="product-store">
-            <div class="product-img">
-                <a href="#">
-                    <img class="pic" src="app/assets/images/hawa.jpg">
-                </a>
-                <ul class="social">
-                    <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                    <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                    <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                </ul>
-               
-            </div>
-            <div class="product-content">
-                <h3 class="title"><a href="#"> جوال هواوي ميت 30 برو بشريحتين وذاكرة داخلية 256 جيجابايت</a></h3>
-                <div class="price">
-                  $962.73
-                    
-                </div>
-                <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
-              </div>
-        </div>
-    </div>
-    <div class="col-md-3 col-sm-6">
-      <div class="product-store">
-          <div class="product-img">
-              <a href="#">
-                  <img class="pic" src="app/assets/images/opop.jpg">
-              </a>
-              <ul class="social">
-                  <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                  <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                  <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-              </ul>
-             
-          </div>
-          <div class="product-content">
-              <h3 class="title"><a href="#"> أوبو هاتف A31‏ يذاكرة داخلية سعة 128 جيجابايت وذاكرة رام 4 جيجابايت- اسود</a></h3>
-              <div class="price">
-                $186.98
-                  
-              </div>
-              <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
-          </div>
-      </div>
-  </div>
-  <div class="col-md-3 col-sm-6">
-    <div class="product-store">
-        <div class="product-img">
-            <a href="#">
-                <img class="pic" src="app/assets/images/honor.jpg">
-            </a>
-            <ul class="social">
-                <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-            </ul>
-           
-        </div>
-        <div class="product-content">
-            <h3 class="title"><a href="#">
-              هاتف هونر 8 بسعة 64 جيجابايت وذاكرة رام بسعة 3 جيجابايت - أزرق </a></h3>
-            <div class="price">
-              $117.43
-                
-            </div>
-            <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
-          </div>
-    </div>
-</div>
-  </div>
+      <?php $i++; } }?> 
+     </div>
 </div>
 <hr>
 
@@ -701,7 +481,7 @@
 
 
 <!--Start offers product-->
-<div class="container">
+<!-- <div class="container">
   <h3 class="h4 text-sm-right mb-5 text-secondary ">أقوى عروض  </h3>
   <div class="row">
       <div class="col-md-3 col-sm-6">
@@ -802,7 +582,7 @@
         </div>
       </div>
   </div>
-</div>
+</div> -->
 
 <!--End offers product-->
 
@@ -926,7 +706,23 @@
       </div>
 
     </div>
-
     <!-- end copyRight  -->
+    <script type="text/javascript" src="/Ecom-store-project/app/assets/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="/Ecom-store-project/app/assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="/Ecom-store-project/app/assets/js/all.js"></script>
+    <script type="text/javascript" src="/Ecom-store-project/app/assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/Ecom-store-project/app/assets/js/main.js"></script>
+   
+   
+    <script>
+    $(document).ready(function(){
+    $('.cart').click(function(){
+      var productid = $(this).data('id');
+      alert(productid);
+    });
+    });
+    </script>
 
+
+</body>
 </html>
