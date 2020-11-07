@@ -103,10 +103,8 @@ class main{
         }
     }
         
-    function getproduct_details(){
-        return  $this->db->innerJoine();
-    }
-      
+    
+    
 }
 
 
