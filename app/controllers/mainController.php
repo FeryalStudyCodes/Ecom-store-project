@@ -35,11 +35,24 @@ class mainController extends Controller{
        }
        function categories(){   
         $this->controller->view_object->create_view('categories');
-    }
+       }
+
+       function getcategories(){
+        $this->cat_model=$this->controller->model_object->create_model('main');
+        $items=array(
+            'categories'=>$cat_model->getCategory(),
+        
+        );
+
+        $this->controller->view_object->create_view('product',$items);
+       }
+
+
 
     function product(){   
         $this->controller->view_object->create_view('product');
     }
+
 
     function wishlist(){   
         $this->controller->view_object->create_view('wishlist');

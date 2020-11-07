@@ -27,16 +27,7 @@ class DB{
         $this->columns="select ".implode(",",$cols)." ";
         return $this;
     }
-    function innerJoine($cols,$tbls){
-        $stmt=$this->connection->prepare("select product_name product_details product_quantity product_main_image product_images product_short_desc product_long_desc product_price is_active creation_date
-        brand_name category_name
-        from product 
-        join category 
-        on product.category_id = category.category_id 
-        join brand 
-        on product.brand_id = brand.brand_id 
-        join color 
-        on product.color_id = color.color_id ");
+
         $stmt->execute();
         $result= $stmt->fetchAll(PDO::FETCH_OBJ);
         return $result;
@@ -180,8 +171,6 @@ function updateBrand($tbls,$items,$value){
     }
      
  }
-
-
 
 
 

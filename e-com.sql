@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 02, 2020 at 08:13 AM
+
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -63,14 +63,7 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`category_id`, `category_name`, `is_active`, `creation_date`, `parent_catergory`, `modification_date`) VALUES
-(2, 'جوالات و أجهزة تابلت', 1, '2020-10-25 00:00:00.000000', 0, '2020-11-01 00:00:00.000000'),
-(16, 'كمبوتر', 1, '2020-10-30 00:00:00.000000', 0, '2020-11-01 00:00:00.000000'),
-(17, 'تابليت', 1, '2020-10-30 00:00:00.000000', 0, '2020-10-31 00:00:00.000000'),
-(18, 'ايبادات', 1, '2020-10-31 00:00:00.000000', 0, '2020-11-01 00:00:00.000000'),
-(19, 'جوالات ', 1, '2020-10-31 00:00:00.000000', 0, '2020-10-31 00:00:00.000000'),
-(20, 'كمبوتر', 1, '2020-10-31 00:00:00.000000', 0, '2020-11-01 00:00:00.000000'),
-(21, 'جوالات هواووي', 1, '2020-11-01 00:00:00.000000', 0, '0000-00-00 00:00:00.000000'),
-(23, 'جوالات و أجهزة تابلت', 1, '2020-11-01 00:00:00.000000', 0, '0000-00-00 00:00:00.000000');
+
 
 -- --------------------------------------------------------
 
@@ -232,8 +225,7 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `product_name`, `product_details`, `category_id`, `brand_id`, `product_quantity`, `product_main_image`, `product_images`, `color_id`, `product_short_desc`, `product_long_desc`, `product_price`, `is_active`, `creation_date`) VALUES
-(78, 'iphone pro', 'good', 2, 5, '', '5qF9TmS51568312922.jpg', ',', 1, 'ديل كمبيوتر محمول E7440 معالج كورi5', 'dfghjk', 2000.00, 1, '2020-10-31 00:00:00.000000'),
-(79, 'ibad', '0', 2, 5, '29', '5qF9TmS51568312922.jpg', ',', 1, 'fhgjhljlknk', 'dfghjkl', 30.00, 1, '2020-11-01 00:00:00.000000');
+
 
 -- --------------------------------------------------------
 
@@ -391,7 +383,7 @@ ALTER TABLE `brand`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(60) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
 
 --
 -- AUTO_INCREMENT for table `color`
@@ -451,7 +443,6 @@ ALTER TABLE `payment`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(60) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- AUTO_INCREMENT for table `shoping_cart`
@@ -512,8 +503,7 @@ ALTER TABLE `payment`
 -- Constraints for table `product`
 --
 ALTER TABLE `product`
-  ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`brand_id`) REFERENCES `brand` (`brand_id`),
-  ADD CONSTRAINT `product_ibfk_4` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`);
+  ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`brand_id`) REFERENCES `brand` (`brand_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
