@@ -108,26 +108,37 @@
     
          </li>
          <li class="nav-item ">
-           <a class="nav-link" href="#">المدونة</a>
+           <a class="nav-link" href="#">المنتجات</a>
          </li>
          <li class="nav-item">
-           <a class="nav-link" href="#">صفحات</a>
+           <a class="nav-link" href="#">العروض</a>
          </li>
         
          <li class="nav-item">
            <a class="nav-link" href="#">تواصل معنا</a>
          </li>
-         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fa fa-shopping-cart"></i><span class="ty-minicart-count">1</span></a>
+         <li>
+         <a class="nav-link" href="main/displayShopingCartItems">
+            <?php
+             // count products in cart
+             $cart_count=count($_SESSION['cart']);
+             ?>
+             <i class="fa fa-shopping-cart"></i> <span class=" ty-minicart-count badge" id="comparison-count"><?php echo $cart_count; ?></span>
+         </a>
          </li>
          <li class="nav-item">
-         <a class="nav-link" href="#"><i class="fa fa-heart"></i><span class="ty-miniwish-count">1</span></a>
+         <a class="nav-link" href="main/displayWishListItems">
+         <?php
+             $wish_count=count($_SESSION['wish']);
+             ?>
+         <i class="fa fa-heart"></i><span class=" ty-miniwish-count badge" id="comparison-count"><?php echo $wish_count; ?></span></a>
+         
         </li>
-        <div class="buscar-caja"> 
+        <!-- <div class="buscar-caja"> 
           <input type="text" name="" class="buscar-txt" placeholder="Search ....."/> 
           <a class="buscar-btn"> <i class="fa fa-search"></i> </a> 
           
-      </div>
+      </div> -->
        </ul>
      </div>
    </div>
@@ -142,12 +153,24 @@
              <div class="products">
                  <div class="product-listy">
                      <h2>الأقسام</h2>
-                     <ul class="product-list">
+                     <!-- <ul class="product-list">
                         
                          <li class="cat-list"><a href="#">جوالات</a></li>
                          <li class="cat-list"><a href="#">تابلت</a></li>
                          <li class="cat-list"><a href="#">الإكسسوارات</a></li> 
-                    </ul>
+                    </ul> -->
+                    <?PHP
+                        $rows=$data['categories'];
+                        
+                        foreach($rows as $row){
+                          if($row->parent_catergory==38){
+                            echo "<h6> ".$row->category_name."</h6>";
+                          }else{
+                            echo "<li><a href='categories/'>".$row->category_name."</a></li>";
+                          }
+                            
+                        }
+                        ?>
                    
                  </div>
                  <div class="product-listy">
@@ -178,7 +201,44 @@
              <div class="new-product">
              <div class="container">
           <div class="row">
-              <div class="col-md-3 col-sm-6">
+          <?php 
+            $i=0;
+            $rows=$data['products'];
+           // print_r($rows);
+            foreach($rows as $row)
+            {   
+              $id = $row->product_id;
+              if($row->category_id==38){
+                  
+              
+              $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+          ?>
+      <div class="col-md-3 col-sm-6">
+          <div class="product-store">
+              <div class="product-img">
+                  <a href="#">
+                      <img  width="60" height="60"  src='<?php  echo $imageURl; ?>'>
+
+                  </a>
+                  <ul class="social">
+                      <li><a href="main/product_details?action=product_details&product_id=<?PHP echo $id?>" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                      <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                      <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                  </ul>
+                 
+              </div>
+              <div class="product-content">
+                  <h3 class="title"><a href="#"><a href="#"> <?php  echo $row->product_short_desc ?></a></h3>
+                  <div class="price">
+                  <?php  echo $row->product_price ?>
+                      
+                  </div>
+                  <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
+                </div>
+          </div>
+      </div>
+      <?php $i++; } }?>  
+              <!-- <div class="col-md-3 col-sm-6">
                   <div class="product-store">
                       <div class="product-img">
                           <a href="#">
@@ -270,13 +330,13 @@
                     <a class="add-to-cart" href="">أضف الى عربة </a>
                   </div>
             </div>
-        </div>
+        </div> -->
           </div>
         </div>
 
 <div class="container">
   <div class="row">
-      <div class="col-md-3 col-sm-6">
+      <!-- <div class="col-md-3 col-sm-6">
           <div class="product-store">
               <div class="product-img">
                   <a href="#">
@@ -368,13 +428,13 @@
             <a class="add-to-cart" href="">أضف الى عربة </a>
           </div>
     </div>
-</div>
+</div> -->
   </div>
 </div>
 
 <div class="container">
   <div class="row">
-      <div class="col-md-3 col-sm-6">
+      <!-- <div class="col-md-3 col-sm-6">
           <div class="product-store">
               <div class="product-img">
                   <a href="#">
@@ -466,7 +526,7 @@
             <a class="add-to-cart" href="">أضف الى عربة </a>
           </div>
     </div>
-</div>
+</div> -->
   </div>
 </div>
                 

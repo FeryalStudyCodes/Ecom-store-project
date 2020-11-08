@@ -108,26 +108,37 @@
     
          </li>
          <li class="nav-item ">
-           <a class="nav-link" href="#">المدونة</a>
+           <a class="nav-link" href="#">المنتجات</a>
          </li>
          <li class="nav-item">
-           <a class="nav-link" href="#">صفحات</a>
+           <a class="nav-link" href="#">العروض</a>
          </li>
         
          <li class="nav-item">
            <a class="nav-link" href="#">تواصل معنا</a>
          </li>
-         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fa fa-shopping-cart"></i><span class="ty-minicart-count">1</span></a>
+         <li>
+         <a class="nav-link" href="main/displayShopingCartItems">
+            <?php
+             // count products in cart
+             $cart_count=count($_SESSION['cart']);
+             ?>
+             <i class="fa fa-shopping-cart"></i> <span class=" ty-minicart-count badge" id="comparison-count"><?php echo $cart_count; ?></span>
+         </a>
          </li>
          <li class="nav-item">
-         <a class="nav-link" href="#"><i class="fa fa-heart"></i><span class="ty-miniwish-count">1</span></a>
+         <a class="nav-link" href="main/displayWishListItems">
+         <?php
+             $wish_count=count($_SESSION['wish']);
+             ?>
+         <i class="fa fa-heart"></i><span class=" ty-miniwish-count badge" id="comparison-count"><?php echo $wish_count; ?></span></a>
+         
         </li>
-        <div class="buscar-caja"> 
+        <!-- <div class="buscar-caja"> 
           <input type="text" name="" class="buscar-txt" placeholder="Search ....."/> 
           <a class="buscar-btn"> <i class="fa fa-search"></i> </a> 
           
-      </div>
+      </div> -->
        </ul>
      </div>
    </div>

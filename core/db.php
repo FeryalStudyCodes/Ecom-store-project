@@ -177,10 +177,17 @@ function updateBrand($tbls,$items,$value){
      
  }
 
+ function readByIds($ids){
+    $ids_arr = str_repeat('?,', count($ids) - 1) . '?';
+    $query = "select  product_id, product_name, product_price, product_main_image, product_short_desc FROM product WHERE product_id IN ({$ids_arr}) ORDER BY product_name";
+
+    $stmt = $this->connection->prepare($query);
+    $stmt->execute($ids);
+    $result= $stmt->fetchAll(PDO::FETCH_OBJ);
+    return $result;
+}
+
  
-
-
-
 
 
 }
