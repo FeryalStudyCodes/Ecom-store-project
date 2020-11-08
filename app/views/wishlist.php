@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?PHP
+$action = isset($_GET['action']) ? $_GET['action'] : "";
+$_SESSION['wish'];
+?>
 <html lang="en" dir="ltr">
   <head>
   <meta charset="utf-8">
@@ -108,33 +112,74 @@
     
          </li>
          <li class="nav-item ">
-           <a class="nav-link" href="#">المدونة</a>
+           <a class="nav-link" href="#">المنتجات</a>
          </li>
          <li class="nav-item">
-           <a class="nav-link" href="#">صفحات</a>
+           <a class="nav-link" href="#">العروض</a>
          </li>
         
          <li class="nav-item">
            <a class="nav-link" href="#">تواصل معنا</a>
          </li>
-         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fa fa-shopping-cart"></i><span class="ty-minicart-count">1</span></a>
+         <li>
+         <a class="nav-link" href="main/displayShopingCartItems">
+            <?php
+             // count products in cart
+             $cart_count=count($_SESSION['cart']);
+             ?>
+             <i class="fa fa-shopping-cart"></i> <span class=" ty-minicart-count badge" id="comparison-count"><?php echo $cart_count; ?></span>
+         </a>
          </li>
          <li class="nav-item">
-         <a class="nav-link" href="#"><i class="fa fa-heart"></i><span class="ty-miniwish-count">1</span></a>
+         <a class="nav-link" href="main/displayWishListItems">
+         <?php
+             $wish_count=count($_SESSION['wish']);
+             ?>
+         <i class="fa fa-heart"></i><span class=" ty-miniwish-count badge" id="comparison-count"><?php echo $wish_count; ?></span></a>
+         
         </li>
-        <div class="buscar-caja"> 
+        <!-- <div class="buscar-caja"> 
           <input type="text" name="" class="buscar-txt" placeholder="Search ....."/> 
           <a class="buscar-btn"> <i class="fa fa-search"></i> </a> 
           
-      </div>
+      </div> -->
        </ul>
      </div>
    </div>
    </nav>
 
    <!-- end Navbar -->
- 
+   <?PHP
+echo "<div class='col-md-12'>";
+if($action=='removed'){
+    echo "<div class='alert alert-info'>";
+    echo "<a class='close' data-dismiss='alert' aria-label='close'>x</a>";
+        echo "Product was removed from your wishlist!";
+    echo "</div>";
+}
+else if($action=='added'){
+    
+  echo "<div class='alert alert-info'>";
+  echo "<a class='close' data-dismiss='alert' aria-label='close'>x</a>";
+      echo "Product was added to your cart!";
+  echo "</div>";
+}
+else if($action=='exists'){
+  echo "<div class='alert alert-info'>";
+  echo "<a class='close' data-dismiss='alert' aria-label='close'>x</a>";
+      echo "Product already exists in your cart!";
+  echo "</div>";
+}
+else if($action=='emptyitem'){
+    echo "<div class='col-md-12'>";
+    echo "<div class='alert alert-danger'>";
+        echo "No products found in your wishlist!";
+    echo "</div>";
+echo "</div>";
+}
+echo "</div>";
+
+?>
   	
       
   <!-- checkout Page Start -->
@@ -153,30 +198,29 @@
                     <th scope="col">المواصفات</th>
                     <th scope="col">السعر</th>
                     <th scope="col" width="60"></th>
+                    <th scope="col" width="60"></th>
                     </tr>
                 </thead>
                 <tbody>
+                <?PHP
+                  $rows = $data['wishlisttItems'];
+                  $i=1;
+                  foreach($rows as $row){
+                  $id = $row->product_id;
+                  $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+                ?>
                     <tr>
-                    <th scope="row" width="50"><a href="#" data-toggle="tooltip" data-placement="top" title="Remove"><i  class="fa fa-times-circle-o"></a></i></th>
-                    <td width="60"><img src="/Ecom-store-project/app/assets/images/Asus.jpg" height="80"></td>
-                    <td width="110">ديل كمبيوتر محمول E7440 معالج كورi5</td>
-                    <td width="40"> $260.00</td>
-                    <td width="80" ><a href="#" class="btn btn-success " styl=""><i  class="fa fa-shopping-cart"> أضف الى السلة</a></i></td>
+                    <th><?= $i; ?></th>
+                    <td width="60"><img src="<?=$imageURl?>" height="80"></td>
+                    <td width="110"><?=$row->product_short_desc?></td>
+                    <td width="40">$<?= $row->product_price ?></td>
+                    <td width="80" ><a href="main/shopingCartinwishlis?id=<?=$id?>" class="btn btn-success " styl=""><i  class="fa fa-shopping-cart"></i></a></td>
+                    <td>
+                  <a href='removeWishListItems?id=<?=$row->product_id?>'  class="text-danger lead" onclick="return confirm('Are you sure want to remove this item?');">
+                  <i class="fas fa-trash-alt"></i></a>
+                </td>
                     </tr>
-                    <tr>
-                    <th scope="row" width="50"><a href="#" data-toggle="tooltip" data-placement="top" title="Remove"><i  class="fa fa-times-circle-o"></a></i></th>
-                    <td width="60"><img src="/Ecom-store-project/app/assets/images/Asus.jpg" height="80"></td>
-                    <td width="110">ديل كمبيوتر محمول E7440 معالج كورi5</td>
-                    <td width="40"> $260.00</td>
-                    <td width="80" ><a href="#" class="btn btn-success"><i class="fa fa-shopping-cart"> أضف الى السلة</a></i></td>
-                    </tr>
-                    <tr>
-                    <th scope="row" width="50"><a href="#" data-toggle="tooltip" data-placement="top" title="Remove"><i  class="fa fa-times-circle-o"></a></i></th>
-                    <td width="60"><img src="/Ecom-store-project/app/assets/images/Asus.jpg" height="80"></td>
-                    <td width="110">ديل كمبيوتر محمول E7440 معالج كورi5</td>
-                    <td width="40"> $260.00</td>
-                    <td width="80" ><a href="#" class="btn btn-success"><i class="fa fa-shopping-cart"> أضف الى السلة</a></i></td>
-                    </tr>
+                    <?PHP $i++; }?>
                 </tbody>
                 </table>
             </div>
@@ -296,11 +340,12 @@
    
     
     <!-- Jquery V.3.3.1 -->
-    <script src="/Ecom-store-project/app/assets/js/jquery-3.3.1.min.js"></script>
-    <script src="/Ecom-store-project/app/assets/js/jquery.cycle.js"></script>
-    <script src="/Ecom-store-project/app/assets/js/owl.carousel.min.js"></script>
-    <script src="/Ecom-store-project/app/assets/js/smoothproducts.min.js"></script>
-    <script>
+    <script type="text/javascript" src="http://localhost:81/Ecom-store-project/app/assets/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="http://localhost:81/Ecom-store-project/app/assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="http://localhost:81/Ecom-store-project/app/assets/js/all.js"></script>
+    <script type="text/javascript" src="http://localhost:81/Ecom-store-project/app/assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="http://localhost:81/Ecom-store-project/app/assets/js/main.js"></script>
+  <script>
       $("#sliderShuffle").cycle({
         next: '#next',
         prev: '#prev'

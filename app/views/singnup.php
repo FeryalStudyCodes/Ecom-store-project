@@ -108,10 +108,10 @@
     
          </li>
          <li class="nav-item ">
-           <a class="nav-link" href="#">المدونة</a>
+           <a class="nav-link" href="#">المنتجات</a>
          </li>
          <li class="nav-item">
-           <a class="nav-link" href="#">صفحات</a>
+           <a class="nav-link" href="#">العروض</a>
          </li>
         
          <li class="nav-item">

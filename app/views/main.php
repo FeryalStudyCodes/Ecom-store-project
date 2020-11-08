@@ -1,4 +1,15 @@
- 
+<?php session_start();
+$_SESSION['cart']=isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
+$action = isset($_GET['action']) ? $_GET['action'] : "";
+if(!isset($_SESSION['cart'])){
+    $_SESSION['cart']=array();
+}
+
+?>
+<?php 
+$_SESSION['wish']=isset($_SESSION['wish']) ? $_SESSION['wish'] : array();
+?>
+
  <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -12,8 +23,12 @@
     <link rel="stylesheet" href="/Ecom-store-project/app/assets/css/bootstrap.css" />
        <link rel="stylesheet" href="/Ecom-store-project/app/assets/css/font-awesome.css">
     <link rel="stylesheet" href="/Ecom-store-project/app/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="/Ecom-store-project/app/assets/css/smoothproducts.css">
     <link rel="stylesheet" type="text/css" href="/Ecom-store-project/app/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/Ecom-store-project1/app/assets/css/bars-style.css">
+  <script src="https://kit.fontawesome.com/ca3696487d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/Ecom-store-project/app/assets/css/style.css" />
      
     <script>
@@ -28,6 +43,7 @@
 
   </head>
    <body>
+ 
     <!-- Start Upper Bar -->
      <div class="upper-bar">
        <div class="container">
@@ -45,10 +61,10 @@
               <a class="get-quote dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fa fa-language"></i> اللغة
               </a>
-              <a href="admin/admin_login/index">  Dashboared</a>
+              <!-- <a href="admin/admin_login/index">  Dashboared</a> -->
               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="#"><img src="app/assets/images/ar.png"> العربية</a>
-                <a class="dropdown-item" href="#"><img src="app/assets/images/en.png">  الإنجليزية</a>
+                <a class="dropdown-item" href="#"><img src="/Ecom-store-project/app/assets/images/ar.png"> العربية</a>
+                <a class="dropdown-item" href="#"><img src="/Ecom-store-project/app/assets/images/en.png">  الإنجليزية</a>
               </div>
             
           
@@ -111,33 +127,81 @@
     
          </li>
          <li class="nav-item ">
-           <a class="nav-link" href="#">المدونة</a>
+           <a class="nav-link" href="#">المنتجات</a>
          </li>
          <li class="nav-item">
-           <a class="nav-link" href="#">صفحات</a>
+           <a class="nav-link" href="#">العروض</a>
          </li>
         
          <li class="nav-item">
            <a class="nav-link" href="#">تواصل معنا</a>
          </li>
-         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fa fa-shopping-cart"></i><span class="ty-minicart-count">1</span></a>
+         <li>
+         <a class="nav-link" href="main/displayShopingCartItems">
+            <?php
+             // count products in cart
+             $cart_count=count($_SESSION['cart']);
+             ?>
+             <i class="fa fa-shopping-cart"></i> <span class=" ty-minicart-count badge" id="comparison-count"><?php echo $cart_count; ?></span>
+         </a>
          </li>
          <li class="nav-item">
-         <a class="nav-link" href="#"><i class="fa fa-heart"></i><span class="ty-miniwish-count">1</span></a>
+         <a class="nav-link" href="main/displayWishListItems">
+         <?php
+             $wish_count=count($_SESSION['wish']);
+             ?>
+         <i class="fa fa-heart"></i><span class=" ty-miniwish-count badge" id="comparison-count"><?php echo $wish_count; ?></span></a>
+         
         </li>
-        <div class="buscar-caja"> 
+        <!-- <div class="buscar-caja"> 
           <input type="text" name="" class="buscar-txt" placeholder="Search ....."/> 
           <a class="buscar-btn"> <i class="fa fa-search"></i> </a> 
           
-      </div>
+      </div> -->
        </ul>
      </div>
    </div>
    </nav>  
 
    <!-- end Navbar -->
+   <?php
+   echo "<div class='col-md-12'>";
+   if($action=='added'){
+       echo "<div class='alert alert-info text-right'>";
+           echo "تم إضافة المنتج لسلّة التسوق";
+           echo "<a class='close'data-dismiss='alert' raia-label='close'>X</a>";
+
+       echo "</div>";
+
+   }
+
+   if($action=='exists'){
+       echo "<div class='alert alert-info text-right'>";
+           echo "المنتج موجود بالفعل في سلة ";
+           echo "<a class='close'data-dismiss='alert' raia-label='close'>X</a>";
+
+       echo "</div>";
+   }
+echo "</div>";
+?>
  
+
+ <?php
+   echo "<div class='col-md-12'>";
+   if($action=='wishadded'){
+    echo "<div class='alert alert-info text-right'>";
+    echo "<a class='close' data-dismiss='alert' aria-label='close'>x</a>";
+        echo "تمت إضافة المنتج لقائمة أمنياتك";
+    echo "</div>";
+   }
+   if($action=='wishexists'){
+    echo "<div class='alert alert-info text-right'>";
+    echo "<a class='close' data-dismiss='alert' aria-label='close'>x</a>";
+        echo " المنتج موجود بالفعل في قائمة أمنياتك ";
+    echo "</div>";
+   }
+echo "</div>";
+?>
    <!-- Start  silder -->
 <div class="slider">
     <div id="mysild" class="carousel slide " data-ride="carousel" >
@@ -203,7 +267,7 @@
   <div class="container carousel-inner no-padding">
     <div class="carousel-item active">
     <div class="row">
-  <?php 
+    <?php 
             $i=0;
             $rows=$data['products'];
            // print_r($rows);
@@ -221,12 +285,12 @@
               <div class="product-img">
                   <a href="#">
                       
-                      <img  style='width="60"; height="60"'  src='<?php  echo $imageURl; ?>'>
+                      <img  width="60" height="60"  src='<?php  echo $imageURl; ?>'>
                   </a>
                   <ul class="social">
                       <li><a href="main/product_details?action=product_details&product_id=<?PHP echo $id?>" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
                       <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                      <li><a href="" data-tip="Add to Cart" class="cart"  data-id='<?= $id; ?>' ><i class="fa fa-shopping-cart "></i></a></li>
+                      <li><a href="main/shopingCart?id='<?=$id ;?>'" data-tip="Add to Cart" class="cart"  data-id='<?= $id; ?>' ><i class="fa fa-shopping-cart "></i></a></li>
                   </ul>
                  
               </div>
@@ -236,16 +300,30 @@
                   
                     <?php  echo $row->product_price ?>
                   </div>
-                  <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
+                  <?PHP
+                    // add to cart button
+         // product id for javascript access
+         echo "<div class='product-id display-none'></div>";
+        if(array_key_exists($id, $_SESSION['cart'])){
+            // echo "<a href='main/displayShopingCartItems' class='btn btn-success w-100-pct'>";
+            //     echo "Update Cart";
+            echo "<a  class='add-to-cart' href='main/shopingCart?id={$id}' class='btn btn-primary w-100-pct'>أضف الى عربة التسوق</a>";
+
+            echo "</a>";
+        }else{
+            echo "<a  class='add-to-cart' href='main/shopingCart?id={$id}' class='btn btn-primary w-100-pct'>أضف الى عربة التسوق</a>";
+        }
+    ?>
                 </div>
           </div>
       </div>
       <?php $i++; } }?> 
+   
     </div>
     </div>
     <div class="carousel-item">
     <div class="row">
-     <?php 
+    <?php 
             $i=0;
             $rows=$data['products'];
            // print_r($rows);
@@ -263,12 +341,12 @@
               <div class="product-img">
                   <a href="#">
                       
-                      <img  style='width="60"; height="60"'  src='<?php  echo $imageURl; ?>'>
+                      <img  width="60" height="60"  src='<?php  echo $imageURl; ?>'>
                   </a>
                   <ul class="social">
                       <li><a href="main/product_details?action=product_details&product_id=<?PHP echo $id?>" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
                       <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                      <li><a href="" data-tip="Add to Cart" class="cart"  data-id='<?= $id; ?>' ><i class="fa fa-shopping-cart "></i></a></li>
+                      <li><a href="main/shopingCart?id='<?=$id ;?>'" data-tip="Add to Cart" class="cart"  data-id='<?= $id; ?>' ><i class="fa fa-shopping-cart "></i></a></li>
                   </ul>
                  
               </div>
@@ -278,11 +356,25 @@
                   
                     <?php  echo $row->product_price ?>
                   </div>
-                  <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
+                  <?PHP
+                    // add to cart button
+         // product id for javascript access
+         echo "<div class='product-id display-none'></div>";
+        if(array_key_exists($id, $_SESSION['cart'])){
+            // echo "<a href='main/displayShopingCartItems' class='btn btn-success w-100-pct'>";
+            //     echo "Update Cart";
+            echo "<a  class='add-to-cart' href='main/shopingCart?id={$id}' class='btn btn-primary w-100-pct'>أضف الى عربة التسوق</a>";
+
+            echo "</a>";
+        }else{
+            echo "<a  class='add-to-cart' href='main/shopingCart?id={$id}' class='btn btn-primary w-100-pct'>أضف الى عربة التسوق</a>";
+        }
+    ?>
                 </div>
           </div>
       </div>
       <?php $i++; } }?> 
+ 
  
      </div>
      </div>
@@ -306,12 +398,12 @@
               <div class="product-img">
                   <a href="#">
                       
-                      <img  style='width="60"; height="60"'  src='<?php  echo $imageURl; ?>'>
+                      <img  width="60" height="60"  src='<?php  echo $imageURl; ?>'>
                   </a>
                   <ul class="social">
                       <li><a href="main/product_details?action=product_details&product_id=<?PHP echo $id?>" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
                       <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                      <li><a href="" data-tip="Add to Cart" class="cart"  data-id='<?= $id; ?>' ><i class="fa fa-shopping-cart "></i></a></li>
+                      <li><a href="main/shopingCart?id='<?=$id ;?>'" data-tip="Add to Cart" class="cart"  data-id='<?= $id; ?>' ><i class="fa fa-shopping-cart "></i></a></li>
                   </ul>
                  
               </div>
@@ -321,11 +413,26 @@
                   
                     <?php  echo $row->product_price ?>
                   </div>
-                  <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
+                  <?PHP
+                    // add to cart button
+         // product id for javascript access
+         echo "<div class='product-id display-none'></div>";
+        if(array_key_exists($id, $_SESSION['cart'])){
+            // echo "<a href='main/displayShopingCartItems' class='btn btn-success w-100-pct'>";
+            //     echo "Update Cart";
+            echo "<a  class='add-to-cart' href='main/shopingCart?id={$id}' class='btn btn-primary w-100-pct'>أضف الى عربة التسوق</a>";
+
+            echo "</a>";
+        }else{
+            echo "<a  class='add-to-cart' href='main/shopingCart?id={$id}' class='btn btn-primary w-100-pct'>أضف الى عربة التسوق</a>";
+        }
+    ?>
                 </div>
           </div>
       </div>
       <?php $i++; } }?> 
+  
+ 
  
      </div>
      </div>
@@ -361,9 +468,7 @@
 
 <!--Satrt Featured Product-->
 <div class="container">
-  <h3 class="h4 text-sm-right mb-5 text-secondary ">إلكترونيات  </h3>
-  
-          
+  <h3 class="h4 text-sm-right mb-5 text-secondary ">إلكترونيات  </h3>    
   <div class="row">
   <?php 
             $i=0;
@@ -383,12 +488,12 @@
               <div class="product-img">
                   <a href="#">
                       
-                      <img  style='width="60"; height="60"'  src='<?php  echo $imageURl; ?>'>
+                      <img  width="60" height="60"  src='<?php  echo $imageURl; ?>'>
                   </a>
                   <ul class="social">
                       <li><a href="main/product_details?action=product_details&product_id=<?PHP echo $id?>" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                      <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                      <li><a href="" data-tip="Add to Cart" class="cart"  data-id='<?= $id; ?>' ><i class="fa fa-shopping-cart "></i></a></li>
+                      <li><a href="main/wishlist?id=<?=$id?>" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                      <li><a href="main/shopingCart?id='<?=$id ;?>'" data-tip="Add to Cart" class="cart"  data-id='<?= $id; ?>' ><i class="fa fa-shopping-cart "></i></a></li>
                   </ul>
                  
               </div>
@@ -398,7 +503,20 @@
                   
                     <?php  echo $row->product_price ?>
                   </div>
-                  <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
+                  <?PHP
+                    // add to cart button
+         // product id for javascript access
+         echo "<div class='product-id display-none'></div>";
+        if(array_key_exists($id, $_SESSION['cart'])){
+           // echo "<a href='main/displayShopingCartItems' class='btn btn-success w-100-pct'>";
+           echo "<a  class='add-to-cart' href='main/shopingCart?id={$id}' class='btn btn-primary w-100-pct'>أضف الى عربة التسوق</a>";
+
+               // echo "Update Cart";
+            echo "</a>";
+        }else{
+            echo "<a  class='add-to-cart' href='main/shopingCart?id={$id}' class='btn btn-primary w-100-pct'>أضف الى عربة التسوق</a>";
+        }
+    ?>
                 </div>
           </div>
       </div>
@@ -406,10 +524,6 @@
  
   </div>
 </div>
-<hr>
-
-
-<!--End Featured Product-->
 
 
 
@@ -418,13 +532,13 @@
 <div class="container">
     <div class="row">
       <div class="offer-card">
-        <img src="app/assets/images/add.jpg">
+        <img src="/Ecom-store-project/app/assets/images/add.jpg">
       </div>
       <div class="offer-card">
-        <img src="app/assets/images/add2.jpg">
+        <img src="/Ecom-store-project/app/assets/images/add2.jpg">
       </div>
       <div class="offer-card">
-        <img src="app/assets/images/add2.jpg">
+        <img src="/Ecom-store-project/app/assets/images/add2.jpg">
       </div>
     </div>
   </div>
@@ -433,7 +547,7 @@
 
 <!--Satrt Featured Product-->
 <div class="container">
-  <h3 class="h4 text-sm-right mb-5 text-secondary ">جوالات  </h3>
+  <h3 class="h4 text-sm-right mb-5 text-secondary ">جوالات و أجهزة تابلت  </h3>    
   <div class="row">
   <?php 
             $i=0;
@@ -447,33 +561,49 @@
               
               $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
           ?>
+         
       <div class="col-md-3 col-sm-6">
           <div class="product-store">
               <div class="product-img">
                   <a href="#">
+                      
                       <img  width="60" height="60"  src='<?php  echo $imageURl; ?>'>
-
                   </a>
                   <ul class="social">
                       <li><a href="main/product_details?action=product_details&product_id=<?PHP echo $id?>" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                      <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                      <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                      <li><a href="main/wishlist?id=<?=$id?>" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                      <li><a href="main/shopingCart?id='<?=$id ;?>'" data-tip="Add to Cart" class="cart"  data-id='<?= $id; ?>' ><i class="fa fa-shopping-cart "></i></a></li>
                   </ul>
                  
               </div>
               <div class="product-content">
-                  <h3 class="title"><a href="#"><a href="#"> <?php  echo $row->product_short_desc ?></a></h3>
+                  <h3 class="title"><a href="#"> <?php  echo $row->product_short_desc ?></a></h3>
                   <div class="price">
-                  <?php  echo $row->product_price ?>
-                      
+                  
+                    <?php  echo $row->product_price ?>
                   </div>
-                  <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
+                  <?PHP
+                    // add to cart button
+         // product id for javascript access
+         echo "<div class='product-id display-none'></div>";
+        if(array_key_exists($id, $_SESSION['cart'])){
+            // echo "<a href='main/displayShopingCartItems' class='btn btn-success w-100-pct'>";
+            //     echo "Update Cart";
+            echo "<a  class='add-to-cart' href='main/shopingCart?id={$id}' class='btn btn-primary w-100-pct'>أضف الى عربة التسوق</a>";
+
+            echo "</a>";
+        }else{
+            echo "<a class='add-to-cart' href='main/shopingCart?id={$id}' class='btn btn-primary w-100-pct'>أضف الى عربة التسوق</a>";
+        }
+    ?>
                 </div>
           </div>
       </div>
       <?php $i++; } }?> 
-     </div>
+ 
+  </div>
 </div>
+
 <hr>
 
 
@@ -714,14 +844,14 @@
     <script type="text/javascript" src="/Ecom-store-project/app/assets/js/main.js"></script>
    
    
-    <script>
+    <!-- <script>
     $(document).ready(function(){
     $('.cart').click(function(){
       var productid = $(this).data('id');
       alert(productid);
     });
     });
-    </script>
+    </script> -->
 
 
 </body>

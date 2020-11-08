@@ -107,6 +107,111 @@ class main{
         return  $this->db->innerJoine();
     }
       
+    function addtocart(){
+        session_start();
+        $id = isset($_GET['id']) ? $_GET['id'] : "";
+        $quantity = isset($_GET['quantity']) ? $_GET['quantity'] : 1;
+        $quantity=$quantity<=0 ? 1 : $quantity;
+        $cart_item=array(
+            'quantity'=>$quantity
+        );
+        if(!isset($_SESSION['cart'])){
+            $_SESSION['cart'] = array();
+        }
+       if(array_key_exists($id, $_SESSION['cart'])){
+            header('Location: main?action=exists&id=' . $id);
+        }
+        else{
+            $_SESSION['cart'][$id]=$cart_item;
+            header('Location:main?action=added');
+        }
+    }
+    function showcartitem(){
+        session_start();
+        if(count($_SESSION['cart'])>0){
+            $ids = array();
+            foreach($_SESSION['cart'] as $id=>$value){
+                array_push($ids, $id);           
+            }
+            $stmt = $this->db->readByIds($ids);
+           return $stmt;
+           
+        }
+        else
+        {
+            header('Location:displayShopingCartItems?action=emptyitem');   
+        }
+    }
+    
+    function updatecartitem() {
+        session_start();
+        $id = isset($_GET['id']) ? $_GET['id'] : 1;
+        $quantity = isset($_GET['quantity']) ? $_GET['quantity'] : "";
+        $quantity=$quantity<=0 ? 1 : $quantity;
+        unset($_SESSION['cart'][$id]);
+        $_SESSION['cart'][$id]=array(
+            'quantity'=>$quantity
+        );
+        header('Location:displayShopingCartItems?action=quantity_updated&id=' . $id);
+    }
+     function removecartitem(){
+        session_start();
+        $id = isset($_GET['id']) ? $_GET['id'] : "";
+        $name = isset($_GET['name']) ? $_GET['name'] : "";
+        unset($_SESSION['cart'][$id]);
+        header('Location:displayShopingCartItems?action=removed&id=' . $id);
+     }
+
+     function addtowishlist(){ 
+        session_start();
+        $id = isset($_GET['id']) ? $_GET['id'] : "";
+        if(!isset($_SESSION['wish'])){
+            $_SESSION['wish'] = array();
+        }
+        if(array_key_exists($id, $_SESSION['wish'])){
+            header('Location: main?action=wishexists&id=' . $id);
+        }
+        else{
+            $_SESSION['wish'][$id]=$cart_item;
+            header('Location:main?action=wishadded');
+        }
+  }
+  function showWishlistitem(){
+        session_start();
+        if(count($_SESSION['wish'])>0){
+            $ids = array();
+            foreach($_SESSION['wish'] as $id=>$value){
+                array_push($ids, $id);
+            }
+            $stmt = $this->db->readByIds($ids);
+            return $stmt;
+        }
+        else
+        {
+            header('Location:displayWishListItems?action=emptyitem');   
+        }
+  }
+  function removeWishlistitem(){
+       session_start();
+       $id = isset($_GET['id']) ? $_GET['id'] : "";
+       unset($_SESSION['wish'][$id]);
+       header('Location:displayWishListItems?action=removed&id=' . $id);
+  }
+  function addtocartfromwishlist(){
+      session_start();
+      $id = isset($_GET['id']) ? $_GET['id'] : "";
+      if(!isset($_SESSION['wish'])){
+          $_SESSION['wish'] = array();
+      }
+         if(array_key_exists($id, $_SESSION['wish'])){
+          header('Location:displayWishListItems?action=exists&id=' . $id);
+      }
+      else{
+          $_SESSION['wish'][$id]=$cart_item;
+          header('Location:displayWishListItems?action=added');
+      }
+  }
+        
 }
 
 
