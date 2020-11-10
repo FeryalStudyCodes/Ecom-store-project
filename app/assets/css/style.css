@@ -501,7 +501,7 @@ body .no-padding{
 
 
 /*Add Banner Start*/
-.container-fluid > .container-fluid-row {
+/* .container-fluid > .container-fluid-row {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
@@ -554,7 +554,7 @@ body .no-padding{
   overflow: hidden;
   margin: 0 0 10px 0;
   text-align: center;
-}
+} */
 /*Add Banner End*/
 
 
@@ -613,7 +613,7 @@ body .no-padding{
 .product-store{font-family:Poppins,sans-serif;text-align:center;border-radius:5px;overflow:hidden;z-index:1;transition:all .3s ease 0s}
 .product-store:hover{box-shadow:0 0 10px rgba(0,0,0,.2)}
 .product-store .product-img a{display:block}
-.product-store .product-img img{width:100%;height:auto}
+.product-store .product-img img{width:100%;height:100%}
 .product-store .pic{opacity:1;transition:all .5s ease-out 0s}
 .product-store:hover .pic{opacity:0}
 .product-store .social{width:180px;padding:0;margin:0 auto;list-style:none;position:absolute;right:0;left:0;top:50%;transform:translateY(-50%);transition:all .3s ease 0s}
@@ -631,7 +631,7 @@ body .no-padding{
 .product-store .product-discount-label{left:auto;right:10px;background-color:#482C8E}
 .product-store:hover .product-new-label{opacity:0}
 .product-store .product-content{padding:25px}
-.product-store .title{font-size:15px;font-weight:400;text-transform:capitalize;margin:0 0 7px;transition:all .3s ease 0s}
+.product-store .title{font-size:15px;font-weight:400;text-transform:capitalize;margin:0 0 7px;transition:all .3s ease 0s;}
 .product-store .title a{color:#909090}
 .product-store .title a:hover{color:#F27523}
 .product-store .price{color:#F27523;font-size:17px;font-weight:700;margin:0 2px 15px 0;display:block}
@@ -641,7 +641,30 @@ body .no-padding{
 .product-store .add-to-cart:hover{background-color:#8E4469;box-shadow:0 0 10px rgba(0,0,0,.5)}
 @media only screen and (max-width:990px){.product-store{margin-bottom:30px}
 }
+ 
 /*End feature product*/
+
+
+/*Start overview*/
+.overview button {
+  background-color: #F27523;
+  color: #FFF;
+  padding: 10px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  border: 1px solid #F27523;
+}
+.overview  a
+{
+  color: #FFF;
+
+}
+
+.overview a:hover{
+  color: #FFF;
+}
+/*End overview*/
+
 
 /*Start offers product*/
 
@@ -1855,6 +1878,9 @@ ul.product-top-list li {
 /*--------------------------------------------------------------
 	#hero-style
 --------------------------------------------------------------*/
+.carsousel-inner .carousel-item{
+  margin-top: 50px;
+}
 
 .slide-title,
 .slide-text,
@@ -2006,5 +2032,26 @@ a:hover {
  }
 }
 
+/*Add**/
+.three-column-images
+{
+  background:white;
+}
+
+.three-column-images .row
+{
+  text-align:center;
+}
+.three-column-images img
+{
+  margin-bottom:10px;
+  margin-top:20px;
+}
+
+.three-column-images a
+{
+  font-weight:bold;
+}
+/*ُend Add*/
 
 

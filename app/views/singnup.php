@@ -1,3 +1,14 @@
+<?php session_start();
+$_SESSION['cart']=isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
+$action = isset($_GET['action']) ? $_GET['action'] : "";
+if(!isset($_SESSION['cart'])){
+    $_SESSION['cart']=array();
+}
+
+?>
+<?php 
+$_SESSION['wish']=isset($_SESSION['wish']) ? $_SESSION['wish'] : array();
+?>
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
   <head>

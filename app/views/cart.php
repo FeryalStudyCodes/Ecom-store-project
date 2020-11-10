@@ -57,12 +57,12 @@ echo "</div>";
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="http://localhost:81/Ecom-store-project/app/assets/css/bootstrap.css" />
-       <link rel="stylesheet" href="http://localhost:81/Ecom-store-project/app/assets/css/font-awesome.css">
-    <link rel="stylesheet" href="http://localhost:81/Ecom-store-project/app/assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="http://localhost:81/Ecom-store-project/app/assets/css/smoothproducts.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:81/Ecom-store-project/app/assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="http://localhost:81/Ecom-store-project/app/assets/css/style.css" />
+    <link rel="stylesheet" href="http://localhost/Ecom-store-project/app/assets/css/bootstrap.css" />
+       <link rel="stylesheet" href="http://localhost/Ecom-store-project/app/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="http://localhost/Ecom-store-project/app/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://localhost/Ecom-store-project/app/assets/css/smoothproducts.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost/Ecom-store-project/app/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="http://localhost/Ecom-store-project/app/assets/css/style.css" />
 
 
   </head>
@@ -258,7 +258,7 @@ echo "</div>";
        $i=1;
        foreach($rows as $row){
         $id = $row->product_id;
-        $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+        $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
            $quantity=$_SESSION['cart'][$row->product_id]['quantity'];
            $sub_total=$row->product_price*$quantity;
        ?>
@@ -304,11 +304,11 @@ echo "</div>";
     </div>
   </div>
 
-  <script type="text/javascript" src="http://localhost:81/Ecom-store-project/app/assets/js/jquery-3.5.1.min.js"></script>
-    <script type="text/javascript" src="http://localhost:81/Ecom-store-project/app/assets/js/popper.min.js"></script>
-    <script type="text/javascript" src="http://localhost:81/Ecom-store-project/app/assets/js/all.js"></script>
-    <script type="text/javascript" src="http://localhost:81/Ecom-store-project/app/assets/js/bootstrap.js"></script>
-    <script type="text/javascript" src="http://localhost:81/Ecom-store-project/app/assets/js/main.js"></script>
+  <script type="text/javascript" src="http://localhost/Ecom-store-project/app/assets/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="http://localhost/Ecom-store-project/app/assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="http://localhost/Ecom-store-project/app/assets/js/all.js"></script>
+    <script type="text/javascript" src="http://localhost/Ecom-store-project/app/assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="http://localhost/Ecom-store-project/app/assets/js/main.js"></script>
    <script>
 $(document).ready(function(){
    

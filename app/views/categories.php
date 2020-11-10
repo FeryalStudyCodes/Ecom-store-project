@@ -1,3 +1,14 @@
+<?php session_start();
+$_SESSION['cart']=isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
+$action = isset($_GET['action']) ? $_GET['action'] : "";
+if(!isset($_SESSION['cart'])){
+    $_SESSION['cart']=array();
+}
+
+?>
+<?php 
+$_SESSION['wish']=isset($_SESSION['wish']) ? $_SESSION['wish'] : array();
+?>
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
   <head>
@@ -211,7 +222,7 @@
               if($row->category_id==38){
                   
               
-              $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+              $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
           ?>
       <div class="col-md-3 col-sm-6">
           <div class="product-store">
