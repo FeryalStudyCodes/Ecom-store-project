@@ -19,6 +19,12 @@ class main{
         ->build()
         ->exeucte();
     }
+
+    function  orderby(){
+        return  $this->db->orderby();
+        
+    }
+
     function  getCategory(){
         $cols=array('*');
         $tbls=array("category");

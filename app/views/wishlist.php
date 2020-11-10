@@ -207,7 +207,7 @@ echo "</div>";
                   $i=1;
                   foreach($rows as $row){
                   $id = $row->product_id;
-                  $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+                  $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
                 ?>
                     <tr>
                     <th><?= $i; ?></th>
@@ -340,11 +340,11 @@ echo "</div>";
    
     
     <!-- Jquery V.3.3.1 -->
-    <script type="text/javascript" src="http://localhost:81/Ecom-store-project/app/assets/js/jquery-3.5.1.min.js"></script>
-    <script type="text/javascript" src="http://localhost:81/Ecom-store-project/app/assets/js/popper.min.js"></script>
-    <script type="text/javascript" src="http://localhost:81/Ecom-store-project/app/assets/js/all.js"></script>
-    <script type="text/javascript" src="http://localhost:81/Ecom-store-project/app/assets/js/bootstrap.js"></script>
-    <script type="text/javascript" src="http://localhost:81/Ecom-store-project/app/assets/js/main.js"></script>
+    <script type="text/javascript" src="http://localhost/Ecom-store-project/app/assets/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="http://localhost/Ecom-store-project/app/assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="http://localhost/Ecom-store-project/app/assets/js/all.js"></script>
+    <script type="text/javascript" src="http://localhost/Ecom-store-project/app/assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="http://localhost/Ecom-store-project/app/assets/js/main.js"></script>
   <script>
       $("#sliderShuffle").cycle({
         next: '#next',

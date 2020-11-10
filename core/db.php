@@ -27,6 +27,15 @@ class DB{
         $this->columns="select ".implode(",",$cols)." ";
         return $this;
     }
+
+    function orderby(){
+        $stmt=$this->connection->prepare("select *  FROM product ORDER BY product_id DESC LIMIT 8");
+        $stmt->execute();
+        $result= $stmt->fetchAll(PDO::FETCH_OBJ);
+        //print_r ($result);
+        return $result;
+    }
+
     function innerJoine(){
         $stmt=$this->connection->prepare("select product.product_id,product.is_active,product.product_name,product.product_images,product.product_main_image,product.product_price,product.product_short_desc,brand.brand_name,color.color_name ,category.category_name
          FROM product INNER JOIN color ON product.color_id = color.color_id

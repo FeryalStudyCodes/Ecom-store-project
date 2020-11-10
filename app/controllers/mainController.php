@@ -13,11 +13,14 @@ class mainController extends Controller{
        function main(){   
         $items=array(
             'products'=>$this->main_model->getproducts(),
+            'order_product'=>$this->main_model->orderby(),
             'color'=>$this->main_model->getColor(),
             'brand'=>$this->main_model->getBrand(),
             'categories'=>$this->main_model->getCategory(),
             );
+            // print_r($items);
        $this->controller->view_object->create_view('main',$items);
+      
        }
 
        function login(){   

@@ -2,7 +2,7 @@
 use coreAppNS\Controller;
 class categoryController extends Controller{
     public $controller;
-    public $cart_model;
+    public $catgory_model;
 
     function __construct($function="index"){
         $this->controller = new Controller();

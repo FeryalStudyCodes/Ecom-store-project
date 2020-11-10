@@ -277,7 +277,7 @@ echo "</div>";
               if($row->category_id==25){
                   
               
-              $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+              $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
           ?>
          
       <div class="col-md-3 col-sm-6">
@@ -297,8 +297,8 @@ echo "</div>";
               <div class="product-content">
                   <h3 class="title"><a href="#"> <?php  echo $row->product_short_desc ?></a></h3>
                   <div class="price">
-                  
-                    <?php  echo $row->product_price ?>
+                  $<?= $row->product_price ?>
+                    <!-- <?php  echo $row->product_price ?> -->
                   </div>
                   <?PHP
                     // add to cart button
@@ -333,7 +333,7 @@ echo "</div>";
               if($row->category_id==25){
                   
               
-              $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+              $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
           ?>
          
       <div class="col-md-3 col-sm-6">
@@ -390,7 +390,7 @@ echo "</div>";
               if($row->category_id==25){
                   
               
-              $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+              $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
           ?>
          
       <div class="col-md-3 col-sm-6">
@@ -410,8 +410,7 @@ echo "</div>";
               <div class="product-content">
                   <h3 class="title"><a href="#"> <?php  echo $row->product_short_desc ?></a></h3>
                   <div class="price">
-                  
-                    <?php  echo $row->product_price ?>
+                   $ <?php  echo $row->product_price ?>
                   </div>
                   <?PHP
                     // add to cart button
@@ -449,9 +448,38 @@ echo "</div>";
 
 <!-- Product slider End -->
 
-<hr>
+<!-- start Adds -->
+<section class="three-column-images mt-5">
+  <div class="container " >
+    <div class="row">
+      <div class="col-xs-6 col-sm-4">
+        <img src="app/assets/images/add.jpg"
+             class="img-thumbnail img-responsive">
+        <a href="#" target="_blank"></a>
+         
+      </div>
+   
+       <div class="col-xs-6 col-sm-4">
+        <img src="app/assets/images/add2.jpg"
+             class="img-thumbnail img-responsive">
+        <a href="#" target="_blank"></a>
+        
+      </div>
+   
+      <div class="col-xs-6 col-sm-4">
+        <img src="app/assets/images/add.jpg"
+             class="img-thumbnail img-responsive">
+        <a href="#" target="_blank"></a>
+        
+      </div>
+      </div> 
+     </div>  
+  </section>
+<!-- End Adds -->
+
 
 <!-- Banner Start -->
+
 <!--div class="Add-banner">
   <div class="container">
     <div class="row">
@@ -465,22 +493,24 @@ echo "</div>";
 </div-->
 <!-- Banner End -->
 
+ 
+
 
 <!--Satrt Featured Product-->
 <div class="container">
-  <h3 class="h4 text-sm-right mb-5 text-secondary ">إلكترونيات  </h3>    
+  <!-- <h3 class="h4 text-sm-right mb-5 text-secondary ">إلكترونيات  </h3>     -->
   <div class="row">
   <?php 
             $i=0;
-            $rows=$data['products'];
-           // print_r($rows);
+            $rows=$data['order_product'];
+            // print_r($rows);
             foreach($rows as $row)
             {   
               $id = $row->product_id;
-              if($row->category_id==25){
+              // if($row->category_id==25){
                   
               
-              $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+              $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
           ?>
          
       <div class="col-md-3 col-sm-6">
@@ -500,8 +530,8 @@ echo "</div>";
               <div class="product-content">
                   <h3 class="title"><a href="#"> <?php  echo $row->product_short_desc ?></a></h3>
                   <div class="price">
-                  
-                    <?php  echo $row->product_price ?>
+                  $ <?php  echo $row->product_price ?>
+
                   </div>
                   <?PHP
                     // add to cart button
@@ -520,230 +550,79 @@ echo "</div>";
                 </div>
           </div>
       </div>
-      <?php $i++; } }?> 
- 
+      <?php //$i++;
+      //  } 
+    }
+    ?> 
+
   </div>
 </div>
-
-
-
-
-<!--Start add-->
-<div class="container">
-    <div class="row">
-      <div class="offer-card">
-        <img src="/Ecom-store-project/app/assets/images/add.jpg">
-      </div>
-      <div class="offer-card">
-        <img src="/Ecom-store-project/app/assets/images/add2.jpg">
-      </div>
-      <div class="offer-card">
-        <img src="/Ecom-store-project/app/assets/images/add2.jpg">
-      </div>
-    </div>
-  </div>
-  <hr>
-<!--End add-->
-
-<!--Satrt Featured Product-->
-<div class="container">
-  <h3 class="h4 text-sm-right mb-5 text-secondary ">جوالات و أجهزة تابلت  </h3>    
-  <div class="row">
-  <?php 
-            $i=0;
-            $rows=$data['products'];
-           // print_r($rows);
-            foreach($rows as $row)
-            {   
-              $id = $row->product_id;
-              if($row->category_id==38){
-                  
-              
-              $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
-          ?>
-         
-      <div class="col-md-3 col-sm-6">
-          <div class="product-store">
-              <div class="product-img">
-                  <a href="#">
-                      
-                      <img  width="60" height="60"  src='<?php  echo $imageURl; ?>'>
-                  </a>
-                  <ul class="social">
-                      <li><a href="main/product_details?action=product_details&product_id=<?PHP echo $id?>" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                      <li><a href="main/wishlist?id=<?=$id?>" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                      <li><a href="main/shopingCart?id='<?=$id ;?>'" data-tip="Add to Cart" class="cart"  data-id='<?= $id; ?>' ><i class="fa fa-shopping-cart "></i></a></li>
-                  </ul>
-                 
-              </div>
-              <div class="product-content">
-                  <h3 class="title"><a href="#"> <?php  echo $row->product_short_desc ?></a></h3>
-                  <div class="price">
-                  
-                    <?php  echo $row->product_price ?>
-                  </div>
-                  <?PHP
-                    // add to cart button
-         // product id for javascript access
-         echo "<div class='product-id display-none'></div>";
-        if(array_key_exists($id, $_SESSION['cart'])){
-            // echo "<a href='main/displayShopingCartItems' class='btn btn-success w-100-pct'>";
-            //     echo "Update Cart";
-            echo "<a  class='add-to-cart' href='main/shopingCart?id={$id}' class='btn btn-primary w-100-pct'>أضف الى عربة التسوق</a>";
-
-            echo "</a>";
-        }else{
-            echo "<a class='add-to-cart' href='main/shopingCart?id={$id}' class='btn btn-primary w-100-pct'>أضف الى عربة التسوق</a>";
-        }
-    ?>
-                </div>
-          </div>
-      </div>
-      <?php $i++; } }?> 
- 
-  </div>
-</div>
-
-<hr>
-
-
 <!--End Featured Product-->
 
-
-<!--Start offers product-->
-<!-- <div class="container">
-  <h3 class="h4 text-sm-right mb-5 text-secondary ">أقوى عروض  </h3>
-  <div class="row">
-      <div class="col-md-3 col-sm-6">
-          <div class="product-offers">
-              <div class="product-image">
-                  <a href="#">
-                      <img class="pic-1" src="app/assets/images/iphone.jpg">
-                  </a>
-                  <ul class="social">
-                      <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                      <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                      <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                  </ul>
-                  <span class="product-discount-label">خصم %25</span>
-              </div>
-              <div class="product-content">
-                  <h3 class="title"><a href="#">أيفون 7 مجدد أصلي 32 جيجابايت+ 128 جيجابايت بضمان لمدة سنة   </a></h3>
-                  <div class="price">
-                       $291.63
-                      <span class="old-price">$370.49</span>
-                  </div>
-                  <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
-                </div>
-          </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="product-offers">
-            <div class="product-image">
-                <a href="#">
-                    <img class="pic-1" src="app/assets/images/5VQ9ZQoC1590590122.jpg">
-                </a>
-                <ul class="social">
-                    <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                    <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                    <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                </ul>
-                <span class="product-discount-label">خصم %15</span>
-            </div>
-            <div class="product-content">
-                <h3 class="title"><a href="#">فكتوس ثول فكتوس 13 "ماك بوك اير - اسود</a></h3>
-                <div class="price">
-                  $360.24
-                    <span class="old-price">$450.30</span>
-                </div>
-                <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
-              </div>
-        </div>
-      </div>
-    <div class="col-md-3 col-sm-6">
-      <div class="product-offers">
-          <div class="product-image">
-              <a href="#">
-                  <img class="pic-1" src="app/assets/images/telephone.jpg">
-              </a>
-              <ul class="social">
-                  <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                  <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                  <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-              </ul>
-              <span class="product-discount-label">%خصم 10</span>
-          </div>
-          <div class="product-content">
-              <h3 class="title"><a href="#">  
-                تليفون أحادي الخط بسلك من باناسونيك - ابيض
-                </a></h3>
-              <div class="price">
-                $17.51
-                  <span class="old-price">$22.76</span>
-              </div>
-              <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
-          </div>
-      </div>
-    </div>
-    
-      
-      <div class="col-md-3 col-sm-6">
-        <div class="product-offers">
-            <div class="product-image">
-                <a href="#">
-                    <img class="pic-1" src="app/assets/images/ph-1-color-black-moon-essential.jpg">
-                </a>
-                <ul class="social">
-                    <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                    <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                    <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                </ul>
-                <span class="product-new-label">New</span>
-                <span class="product-discount-label">خصم %23</span>
-            </div>
-            <div class="product-content">
-                <h3 class="title"><a href="#">سامسونج هاتف جالاكسي S20 الترا ثنائي الشريحة ذاكرة رام 12 جيجابايت وذاكرة داخلية 128 ...</a></h3>
-                <div class="price">
-                     $156.00
-                    <span class="old-price">$669.17</span>
-                </div>
-                <a class="add-to-cart" href="">أضف الى عربة التسوق</a>
-              </div>
-        </div>
-      </div>
-  </div>
-</div> -->
-
-<!--End offers product-->
-
-<!--Add Banner Start-->
-
-<div class="container-fluid-row mt-12">
-  <div class="row-fluid ">
-    <div class="span16  ut2-bottom">
-      <div class="row-fluid">
-        <div class="span8 hidden-phone ">
-          <div class="ty-banner__image-wrapper">
-            <a href="#"><img src="app/assets/images/add (2).jpg"></a>
-            
-          </div>
-      </div>
-      <div class="span8 hidden-phone ">
-        <div class="ty-banner__image-wrapper">
-          <a href="#"><img src="app/assets/images/add (1).jpg"></a>
+<!--Start View Moer-->
+<div class="overview text-center mt-5">
+         <div class="container">
           
-        </div>
+           <button><a href="main/categories">عرض المزيد</a></button>
+          </div>
+       </div>
+
+<!--End View Moer-->
+
+
+<!-- start Adds -->
+<section class="three-column-images mt-5">
+  <div class="container " >
+    <div class="row">
+      <div class="col-xs-6 col-sm-4">
+        <img src="app/assets/images/add.jpg"
+             class="img-thumbnail img-responsive">
+        <a href="#" target="_blank"></a>
+         
+      </div>
+   
+       <div class="col-xs-6 col-sm-4">
+        <img src="app/assets/images/add2.jpg"
+             class="img-thumbnail img-responsive">
+        <a href="#" target="_blank"></a>
+        
+      </div>
+   
+      <div class="col-xs-6 col-sm-4">
+        <img src="app/assets/images/add.jpg"
+             class="img-thumbnail img-responsive">
+        <a href="#" target="_blank"></a>
+        
+      </div>
+      </div> 
+     </div>  
+  </section>
+<!-- End Adds -->
+
+
+
+
+      
+  <!-- <div class="container">
+	<div class="row">
+		<div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="/Ecom-store-project/app/assets/images/barndsam.png" width="100%" /></div>
+        <div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="/Ecom-store-project/app/assets/images/barndsam.png" /></div>
+        <div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="/Ecom-store-project/app/assets/images/barndsam.png" /></div>
+        <div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="/Ecom-store-project/app/assets/images/barndsam.png" /></div>
+    	<div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="/Ecom-store-project/app/assets/images/barndsam.png" /></div>
+        <div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="/Ecom-store-project/app/assets/images/barndsam.png" /></div>
+	    <div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="/Ecom-store-project/app/assets/images/barndsam.png" /></div>
+        <div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="/Ecom-store-project/app/assets/images/barndsam.png" /></div>
     </div>
+</div> -->
+   
 
-    </div>
-  </div>
-</div>
 
-<!--Add Banner End-->
 
- 
-  
-    
+
+
+
+
     
  
 
