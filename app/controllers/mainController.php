@@ -12,6 +12,7 @@ class mainController extends Controller{
     }
        function main(){   
         $items=array(
+            
             'products'=>$this->main_model->getproducts(),
             'order_product'=>$this->main_model->orderby(),
             'color'=>$this->main_model->getColor(),
@@ -93,10 +94,28 @@ class mainController extends Controller{
         $this->main_model->addtocartfromwishlist($_POST);
     }
    function getcat(){
-      // print_r($_POST);
-       $this->main_model->getcatbyid($_POST);
-
-   }
+     if(isset($_GET['category_id'])) {
+     $items=array(
+        'categories'=>$this->main_model->Category(),
+        'category'=> $this->main_model->getcatbyid($_GET['category_id']),
+        );
+        $this->controller->view_object->create_view('categories',$items);
+    }
+    else{
+        $_GET['category_id'] = 25;
+        $items=array(
+            'categories'=>$this->main_model->Category(),
+            'category'=> $this->main_model->getcatbyid($_GET['category_id']),
+            );
+            $this->controller->view_object->create_view('categories',$items);
+        }
+    }
+    function categorycart(){   
+        $this->main_model->addcartformcategory($_POST);
+    }
+    function categorywishlist(){   
+        $this->main_model->addwishlistformcategory($_POST);
+    }
     
 }
 

@@ -1,3 +1,4 @@
+
 <?PHP
 require("database.php");
 require("core/db.php");
@@ -132,11 +133,11 @@ class main{
             $_SESSION['cart'] = array();
         }
        if(array_key_exists($id, $_SESSION['cart'])){
-            header('Location: categories?action=exists&id=' . $id);
+            header('Location: main?action=exists&id=' . $id);
         }
         else{
             $_SESSION['cart'][$id]=$cart_item;
-            header('Location:categories?action=added');
+            header('Location:main?action=added');
         }
     }
     function showcartitem(){
@@ -182,11 +183,11 @@ class main{
             $_SESSION['wish'] = array();
         }
         if(array_key_exists($id, $_SESSION['wish'])){
-            header('Location: categories?action=wishexists&id=' . $id);
+            header('Location: main?action=wishexists&id=' . $id);
         }
         else{
             $_SESSION['wish'][$id]=$cart_item;
-            header('Location:categories?action=wishadded');
+            header('Location:main?action=wishadded');
         }
   }
   function showWishlistitem(){
@@ -224,46 +225,47 @@ class main{
           $_SESSION['wish'][$id]=$cart_item;
           header('Location:displayWishListItems?action=added');
       }
-  }
+  } 
+  function addcartformcategory(){
+    session_start();
+    $id = isset($_GET['id']) ? $_GET['id'] : "";
+    if(!isset($_SESSION['wish'])){
+        $_SESSION['wish'] = array();
+    }
+       if(array_key_exists($id, $_SESSION['wish'])){
+        header('Location:getcat?action=exists&id=' . $id);
+    }
+    else{
+        $_SESSION['wish'][$id]=$cart_item;
+        header('Location:getcat?action=added');
+    }
+}
+function addwishlistformcategory(){
+    session_start();
+    $id = isset($_GET['id']) ? $_GET['id'] : "";
+    if(!isset($_SESSION['wish'])){
+        $_SESSION['wish'] = array();
+    }
+       if(array_key_exists($id, $_SESSION['wish'])){
+        header('Location:getcat?action=exists&id=' . $id);
+    }
+    else{
+        $_SESSION['wish'][$id]=$cart_item;
+        header('Location:getcat?action=added');
+    }
+}
  function getcatbyid(){
-    $id= $_POST['category_id'];
+    $id= $_GET['category_id'];
     $cols=array('*');
     $tbls=array("product");
-    $result =  $this->db
+    return $this->db
     ->select($cols)
     ->from($tbls)
     ->whereselect("category_id","=",$id)
     ->build()
     ->exeucte();
-    
-    $i=0;
-    $rows=$result;
-   // print_r($rows);
-    foreach($rows as $row)
-    {   
-        $id = $row->product_id;
-        $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;  
-        echo "
-        <div class='col-md-4'>
-                    <div class='panel panel-info'>
-                        <div class='panel-heading'>$row->product_name</div>
-                        <div class='panel-body'>
-                        <img  width='60' height='60'  src=' $imageURl'>
-                        </div>
-                        <div class='panel-heading'>$.$row->product_price
-                            
-                            <a href='main/product_details?action=product_details&product_id $id'class='btn btn-danger btn-xs' data-tip='Quick View'><i class='fa fa-eye'></i></a>
-                           <a href='main/wishlist?id=$id' data-tip='Add to Wishlist' class='btn btn-danger btn-xs'><i class='fa fa-heart'></i></a></li>
-                            <a href='main/shopingCart?id=$id' data-tip='Add to Cart' class='btn btn-danger btn-xs' class='cart'  data-id='$id' ><i class='fa fa-shopping-cart'></i></a>
-                        </ul>
-                        </div>
-                    </div>
-                </div>	
-    ";
-   $i++; }
+  // return $result; 
  }
         
 }
-
-
 ?>

@@ -105,7 +105,7 @@ echo "</div>";
                 <td>  <h4 class='m-b-10px'><?="  ".$item_count?>items</h4>
                     <h4>$<?=number_format($total, 2, '.', ',') ?></h4></td>
                 <td>
-                  <a href="checkout.php" class="btn btn-info "><i class="far fa-credit-card"></i>&nbsp;&nbsp;إتمام الشراء</a>
+                  <a href="#" class="btn btn-info "><i class="far fa-credit-card"></i>&nbsp;&nbsp;إتمام الشراء</a>
                 </td>
               </tr>
             </tbody>

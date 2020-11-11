@@ -1,4 +1,4 @@
-<!--Add Banner Start-->
+<!--Add Banner Start
 
 <div class="container-fluid-row mt-12">
   <div class="row-fluid ">
@@ -21,7 +21,7 @@
   </div>
 </div>
 
-<!--Add Banner End-->
+Add Banner End-->
     <!-- satrt footer   -->
     <div class="footer mb-12">
       <div class="container ">
