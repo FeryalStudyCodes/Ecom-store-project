@@ -39,7 +39,7 @@ include "app/views/header.php";
 			<div class="product-detail-right">
       
 			<h3><?php  echo $row->product_short_desc ?></h3> 
-				<h5><b>السعر : </b> <i class="fas fa-dollar-sign"></i>  <?php  echo $row->product_price ?></h5>
+				<h5><b>السعر : </b> <i class="fas fa-dollar-sign"></i> $ <?php  echo $row->product_price ?></h5>
 				<h5><b>العلامة التجارية : </b>  <?php  echo $row->brand_name ?></h5>
 				<h5><b>اللون : </b><?php  echo $row->color_name ?></h5>
 				<h5><b>متوفر : </b> <?php if($row->is_active==1)  echo "نعم"; else echo "لا"  ?></h5></h5>
