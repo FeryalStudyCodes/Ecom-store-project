@@ -25,7 +25,9 @@ class mainController extends Controller{
        }
        function checklogin(){
         $this->main_model->check($_POST); 
-       
+       }
+       function logout(){
+        $this->controller->view_object->create_view('logout');
        }
        function singnup(){   
         $this->controller->view_object->create_view('singnup');
@@ -34,42 +36,29 @@ class mainController extends Controller{
         $this->main_model->addusers($_POST);
        }
        function categories(){   
-        $this->controller->view_object->create_view('categories');
+        $items=array(
+            'categories'=>$this->main_model->Category(),
+            );
+        $this->controller->view_object->create_view('categories',$items);
        }
 
        function getcategories(){
         $this->cat_model=$this->controller->model_object->create_model('main');
         $items=array(
             'categories'=>$cat_model->getCategory(),
-        
         );
-
         $this->controller->view_object->create_view('product',$items);
-     //   $this->controller->view_object->create_view('categories',$items);
-
        }
-
-
-
     function product(){   
         $this->controller->view_object->create_view('product');
-
     }
-   
     function product_details(){   
         $items=array(
             'products'=>$this->main_model->getproduct_details(),
             'categories'=>$this->main_model->getCategory(),
             );
-          //  print_r($items);
        $this->controller->view_object->create_view('product',$items);
     }
-
-    // function wishlist(){   
-    //     $this->controller->view_object->create_view('wishlist');
-    // }
-
-
     function shopingCart(){   
         $this->main_model->addtocart($_POST);
     }
@@ -77,7 +66,6 @@ class mainController extends Controller{
         $items=array(
             'cartItems'=>$this->main_model->showcartitem($_POST),
             );
-       // print_r($items);
             $this->controller->view_object->create_view('cart',$items);
     }
     function  updateShopingCartItems(){  
@@ -86,10 +74,6 @@ class mainController extends Controller{
     function  removeShopingCartItems(){  
         $this->main_model->removecartitem($_POST);
     }
-
-
-
-
     function wishlist(){   
         $this->main_model->addtowishlist($_POST);
     }
@@ -105,16 +89,12 @@ class mainController extends Controller{
     function shopingCartinwishlis(){
         $this->main_model->addtocartfromwishlist($_POST);
     }
+   function getcat(){
+      // print_r($_POST);
+       $this->main_model->getcatbyid($_POST);
+
+   }
     
-        
-    }
-
-  
-
- 
-    
-
-  
-
+}
 
 ?>

@@ -21,6 +21,15 @@ public $cat_model;
                 );
         $this->controller->view_object->create_view('admin/products/show_products',$items);
        }
+       function login(){
+        $this->controller->view_object->create_view('admin/login');
+       }
+       function checklogin(){
+        $this->cat_model->check($_POST);
+      }
+       function logout(){
+        $this->controller->view_object->create_view('admin/logout');   
+       }
        function add_pro(){
        $items=array(
         'color'=>$this->cat_model->getColor(),
@@ -111,6 +120,17 @@ public $cat_model;
         $this->controller->view_object->create_view('admin/products/edite_product',$items);
        }
        function update(){
+        /*if (is_uploaded_file($_FILES['product_main_image']['tmp_name'])){
+          echo (" uploaded");
+        } else {
+          echo (" not uploaded");
+        }if(!isset($_FILES['product_images'])){
+        //if (!empty($_FILES['product_images']['size']['name'])){
+          echo (" true");
+        } else {
+          echo (" else");
+        }
+       // is_upload_file($_FILES['product_images']['gfg.txt']);*/
         function img($img){
             $images = '';
             $uploadFolder = 'app/assets/images/';
@@ -145,15 +165,34 @@ public $cat_model;
      }
      $img = img($_FILES['product_images']);
      $main_image = main_image($_FILES['product_main_image']); 
-     // print_r($_POST); 'product_id' => $_POST['product_id'], 
-    // if($_FILES['product_images']['size'] = 0 || $_FILES['product_main_image']['size'] = 0){
-      $data = array( 
+
+     if(isset($_FILES['product_main_image']) && !empty($_FILES['product_main_image']['size'])){
+     // echo "test1"."<br>";
+     $data = array( 
         'product_name' => $_POST['product_name'], 
         'product_details' => $_POST['product_details'], 
         'category_id' => $_POST['category_id'], 
         'brand_id' => $_POST['brand_id'], 
         'product_quantity' => $_POST['product_quantity'], 
         'product_main_image' => $main_image,
+        'color_id' => $_POST['color_id'], 
+        'product_short_desc' => $_POST['product_short_desc'], 
+        'product_long_desc' => $_POST['product_long_desc'], 
+        'product_price' => $_POST['product_price'], 
+        'is_active' => $_POST['is_active'], 
+     );
+        $this->cat_model->updatewithmainimage($data);      
+     } 
+      
+     if(isset($_FILES['product_images']) && !empty($_FILES['product_images']['size'])){
+      echo "test2"."<br>";
+      
+        $data = array( 
+        'product_name' => $_POST['product_name'], 
+        'product_details' => $_POST['product_details'], 
+        'category_id' => $_POST['category_id'], 
+        'brand_id' => $_POST['brand_id'], 
+        'product_quantity' => $_POST['product_quantity'], 
         'product_images' => $img,
         'color_id' => $_POST['color_id'], 
         'product_short_desc' => $_POST['product_short_desc'], 
@@ -161,27 +200,31 @@ public $cat_model;
         'product_price' => $_POST['product_price'], 
         'is_active' => $_POST['is_active'], 
      );
-        print_r($_POST);
-        $this->cat_model->update($data);
-   /*  }
-     else
-     {
-        $data = array( 
-          'product_name' => $_POST['product_name'], 
-          'product_details' => $_POST['product_details'], 
-          'category_id' => $_POST['category_id'], 
-          'brand_id' => $_POST['brand_id'], 
-          'product_quantity' => $_POST['product_quantity'], 
-          'color_id' => $_POST['color_id'], 
-          'product_short_desc' => $_POST['product_short_desc'], 
-          'product_long_desc' => $_POST['product_long_desc'], 
-          'product_price' => $_POST['product_price'], 
-          'is_active' => $_POST['is_active'], 
-       );
- 
-          $this->cat_model->updatewithoutimage($data);  
-        }*/
-         $items=array(
+        $this->cat_model->updatewithproductimage($data);  
+     }
+    if(!isset($_FILES['product_main_image']) && !isset($_FILES['product_images'])){
+      echo "test3"."<br>";
+    
+     $data = array( 
+      'product_name' => $_POST['product_name'], 
+      'product_details' => $_POST['product_details'], 
+      'category_id' => $_POST['category_id'], 
+      'brand_id' => $_POST['brand_id'], 
+      'product_quantity' => $_POST['product_quantity'], 
+      'color_id' => $_POST['color_id'], 
+      'product_short_desc' => $_POST['product_short_desc'], 
+      'product_long_desc' => $_POST['product_long_desc'], 
+      'product_price' => $_POST['product_price'], 
+      'is_active' => $_POST['is_active'], 
+   );
+      $this->cat_model->updatewithoutimage($data); 
+      
+  }
+ // die();
+       
+       
+        $items=array(
+           // 'productsdetails'=>$this->cat_model->getproduct_details(),
             'products'=>$this->cat_model->getproducts(),
             'color'=>$this->cat_model->getColor(),
             'brand'=>$this->cat_model->getBrand(),

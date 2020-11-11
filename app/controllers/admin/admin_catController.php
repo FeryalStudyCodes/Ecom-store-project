@@ -17,7 +17,15 @@ public $cat_model;
        function index(){   
         $this->controller->view_object->create_view('admin/admin_home');
        }
-
+       function login(){
+        $this->controller->view_object->create_view('admin/login');
+       }
+       function checklogin(){
+        $this->cat_model->check($_POST);
+      }
+       function logout(){
+        $this->controller->view_object->create_view('admin/logout');   
+       }
        function show(){   
         $items=array(
             'categories'=>$this->cat_model->getData(),

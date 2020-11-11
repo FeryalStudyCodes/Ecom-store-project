@@ -1,169 +1,7 @@
-<?php session_start();
-$_SESSION['cart']=isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
-$action = isset($_GET['action']) ? $_GET['action'] : "";
-if(!isset($_SESSION['cart'])){
-    $_SESSION['cart']=array();
-}
-
+<?PHP
+ session_start();
+include "app/views/header.php"; 
 ?>
-<?php 
-$_SESSION['wish']=isset($_SESSION['wish']) ? $_SESSION['wish'] : array();
-?>
-
- <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Login Store</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="/Ecom-store-project/app/assets/css/bootstrap.css" />
-       <link rel="stylesheet" href="/Ecom-store-project/app/assets/css/font-awesome.css">
-    <link rel="stylesheet" href="/Ecom-store-project/app/assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel="stylesheet" href="/Ecom-store-project/app/assets/css/smoothproducts.css">
-    <link rel="stylesheet" type="text/css" href="/Ecom-store-project/app/assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="/Ecom-store-project1/app/assets/css/bars-style.css">
-  <script src="https://kit.fontawesome.com/ca3696487d.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/Ecom-store-project/app/assets/css/style.css" />
-     
-    <script>
-        window.console = window.console || function (t) {};
-      </script>
-
-      <script>
-        if (document.location.search.match(/type=embed/gi)) {
-          window.parent.postMessage("resize", "*&");
-        }
-      </script>
-
-  </head>
-   <body>
- 
-    <!-- Start Upper Bar -->
-     <div class="upper-bar">
-       <div class="container">
-         <div class="row">
-         <div class="col-sm info text-center text-sm-right">
-       
-            <i class="fa fa-phone"></i> <span class="fa-sphone"> +967 777 777 777. </span>
-            <i class="fa fa-envelope" ></i> <span class="fa-semail"> login@gmail.com </span>
-           
-            </div>
-
-          <div class="col-sm info text-center text-sm-left">
-            <button class="get-quote"> <a class="usr-login" href="main/login"><i class="fa fa-user"></i> دخول</a></button>
-            
-              <a class="get-quote dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fa fa-language"></i> اللغة
-              </a>
-              <!-- <a href="admin/admin_login/index">  Dashboared</a> -->
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="#"><img src="/Ecom-store-project/app/assets/images/ar.png"> العربية</a>
-                <a class="dropdown-item" href="#"><img src="/Ecom-store-project/app/assets/images/en.png">  الإنجليزية</a>
-              </div>
-            
-          
-          </div>
-
-         </div>
-       </div>
-     </div>
-   <!-- End Upper Bar -->
-
-   <!-- start Navbar -->
-   <nav class="navbar navbar-expand-lg navbar-light ">
-     <div class="container">
-     <a class="navbar-brand" href="#">
-       <img src="app/assets/images/login_store_logos-1 (1).png" style="width:20%;height:20%;">
-     
-     </a>
-     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-       <span class="navbar-toggler-icon"></span>
-     </button>
-
-     <div class="collapse navbar-collapse" id="main-nav" >
-       <ul class="navbar-nav ml-auto">
-         <li class="nav-item active">
-           <a class="nav-link" href="#">الرئيسية <span class="sr-only">(current)</span></a>
-         </li>
-         <li class="nav-item">
-          <div class="dropdown show">
-            <a href="#" class="nav-link dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              الأقسام<b class="caret"></b>
-            </a>
-          
-          <ul class="dropdown-menu multi-column columns-3">
-            <div class="row">
-              <div class="col-sm-4">
-                <ul class="multi-column-dropdown">
-                <?PHP
-                        $rows=$data['categories'];
-                        
-                        foreach($rows as $row){
-                          if($row->parent_catergory==0){
-                            echo "<h6> ".$row->category_name."</h6>";
-                          }else{
-                            echo "<li><a href='main/categories'>".$row->category_name."</a></li>";
-                          }
-                            
-                        }
-                        ?>
-          
-                  
-                </ul>
-              </div>
-              
-             
-            
-        <div class="clearfix"></div>
-            </div>
-          </ul>
-      </li>
-    
-         </li>
-         <li class="nav-item ">
-           <a class="nav-link" href="#">المنتجات</a>
-         </li>
-         <li class="nav-item">
-           <a class="nav-link" href="#">العروض</a>
-         </li>
-        
-         <li class="nav-item">
-           <a class="nav-link" href="#">تواصل معنا</a>
-         </li>
-         <li>
-         <a class="nav-link" href="main/displayShopingCartItems">
-            <?php
-             // count products in cart
-             $cart_count=count($_SESSION['cart']);
-             ?>
-             <i class="fa fa-shopping-cart"></i> <span class=" ty-minicart-count badge" id="comparison-count"><?php echo $cart_count; ?></span>
-         </a>
-         </li>
-         <li class="nav-item">
-         <a class="nav-link" href="main/displayWishListItems">
-         <?php
-             $wish_count=count($_SESSION['wish']);
-             ?>
-         <i class="fa fa-heart"></i><span class=" ty-miniwish-count badge" id="comparison-count"><?php echo $wish_count; ?></span></a>
-         
-        </li>
-        <!-- <div class="buscar-caja"> 
-          <input type="text" name="" class="buscar-txt" placeholder="Search ....."/> 
-          <a class="buscar-btn"> <i class="fa fa-search"></i> </a> 
-          
-      </div> -->
-       </ul>
-     </div>
-   </div>
-   </nav>  
-
-   <!-- end Navbar -->
    <?php
    echo "<div class='col-md-12'>";
    if($action=='added'){
@@ -184,8 +22,6 @@ $_SESSION['wish']=isset($_SESSION['wish']) ? $_SESSION['wish'] : array();
    }
 echo "</div>";
 ?>
- 
-
  <?php
    echo "<div class='col-md-12'>";
    if($action=='wishadded'){
@@ -277,7 +113,7 @@ echo "</div>";
               if($row->category_id==25){
                   
               
-              $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+              $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
           ?>
          
       <div class="col-md-3 col-sm-6">
@@ -333,7 +169,7 @@ echo "</div>";
               if($row->category_id==25){
                   
               
-              $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+              $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
           ?>
          
       <div class="col-md-3 col-sm-6">
@@ -390,7 +226,7 @@ echo "</div>";
               if($row->category_id==25){
                   
               
-              $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+              $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
           ?>
          
       <div class="col-md-3 col-sm-6">
@@ -480,7 +316,7 @@ echo "</div>";
               if($row->category_id==25){
                   
               
-              $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+              $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
           ?>
          
       <div class="col-md-3 col-sm-6">
@@ -559,7 +395,7 @@ echo "</div>";
               if($row->category_id==38){
                   
               
-              $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+              $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
           ?>
          
       <div class="col-md-3 col-sm-6">
@@ -716,142 +552,16 @@ echo "</div>";
 
 <!--End offers product-->
 
-<!--Add Banner Start-->
 
-<div class="container-fluid-row mt-12">
-  <div class="row-fluid ">
-    <div class="span16  ut2-bottom">
-      <div class="row-fluid">
-        <div class="span8 hidden-phone ">
-          <div class="ty-banner__image-wrapper">
-            <a href="#"><img src="app/assets/images/add (2).jpg"></a>
-            
-          </div>
-      </div>
-      <div class="span8 hidden-phone ">
-        <div class="ty-banner__image-wrapper">
-          <a href="#"><img src="app/assets/images/add (1).jpg"></a>
-          
-        </div>
-    </div>
-
-    </div>
-  </div>
-</div>
-
-<!--Add Banner End-->
 
  
   
-    
+
+<?PHP
+include "app/views/footer.php"; 
+?>
     
  
-
-    <!-- satrt footer   -->
-    <div class="footer mb-12">
-      <div class="container ">
-          <div class="row">
-                 <div class="col-lg-3 col-md-6 col-sm-6 ">
-                     <div class="web-info">
-                      <div class="footer-about-logo">
-                        <a href="#"><img src="app/assets/images/login_store_logos-1 (1).png" style="width: 30%;height: 30%;" alt=""></a>
-                    </div>
-                    <ul >
-                      
-                      <li> <i class="fa fa-cloud"></i> اليمن -صنعاء</li>
-                      <li> <i class="fa fa-phone"></i>  967-777777777</li>
-                      <li><i class="fa fa-envelope"></i><a href="mailto: loginstore@gmail.com?subject=Contact">Login@gmail.com</a></li>
-
-                    </ul>
-                     </div>
-                 </div>
-                 <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1 ">
-                   <div class="helpful-links">
-                        <h2>عن الموقع </h2>
-                        <div class="row">
-                          <div class="col">
-                             <ul class="list-unstyled">
-                                <li><a href="#">عن لوجن ستور</a></li>
-                                <li><a href="#">تعليمات الاستخدام</a></li>
-                                <li><a href="#"> سياسة التوصيل</a> </li>
-                                <li><a href="#">سياسة الخصوصية</a></li>
-                                <li><a href="#">سياسة الخصوصية</a></li>
-
-                             </ul>
-                          </div>
-
-                          <div class="col">
-                             <ul class="list-unstyled">
-                                <li><a href="#">من نحن</a></li>
-                                <li><a href="#">اتصل بنا</a></li>
-                                <li><a href="#">كيف تشتري</a></li>
-                                <li><a href="#">سياسة الخصوصية</a> </li>
-                                <li><a href="#">سياسة التوصيل</a></li>
-                                
-                                  
-                             </ul>
-                          </div>
-
-                        </div>
-                   </div>
-
-                 </div>
-                 <div class="col-lg-4 col-md-12 ">
-                  <div class="footer__widget">
-                    <h6>الانضمام إلى النشرة الإخبارية الآن</h6>
-                    <p>الحصول على التحديثات حو ل أحدث منجاتنا متجر العروض الخاصة </p>
-
-                    <form action="#">
-                      <input class="form-control mr-sm-2" type="email" placeholder=" أدخل إيميلك" aria-label=" Email" width="50%">
-                      <button class="btn  my-2 my-lg-0" type="submit">الأشتراك</button>
-                    </form>
-                    <!-- <div class="socials">
-                      <a href="#"><i class="fa  fa-facebook"></i></a> 
-                      <a href="#"><i class="fa fa-instagram"></i></a>
-                      <a href="#"><i class="fa fa-twitter"></i></a>
-                      <a href="#"><i class="fa fa-youtube"></i></a>
-                  </div> -->
-                </div>
-            </div>
-              </div>
-                
-          </div>
-      </div>
-
-    
-    <!-- end  footer  -->
-
-    <!-- start copyRight  -->
-    <div class="copy">
-      <div class="container">
-          <div class="row">
-                 <div class="col-lg-6 text-center text-md-left text-uppercase">
-                  All Rights Reserved | Design by &copy;LoginStore 2020
-                 </div>
-                 <div class="col-lg-6 text-center text-md-left ">
-                  <div class="footer__copyright__payment"><img src="app/assets/images/payment-item.png" alt=""></div>
-
-                 </div>
-          </div>
-      </div>
-
-    </div>
-    <!-- end copyRight  -->
-    <script type="text/javascript" src="/Ecom-store-project/app/assets/js/jquery-3.5.1.min.js"></script>
-    <script type="text/javascript" src="/Ecom-store-project/app/assets/js/popper.min.js"></script>
-    <script type="text/javascript" src="/Ecom-store-project/app/assets/js/all.js"></script>
-    <script type="text/javascript" src="/Ecom-store-project/app/assets/js/bootstrap.js"></script>
-    <script type="text/javascript" src="/Ecom-store-project/app/assets/js/main.js"></script>
-   
-   
-    <!-- <script>
-    $(document).ready(function(){
-    $('.cart').click(function(){
-      var productid = $(this).data('id');
-      alert(productid);
-    });
-    });
-    </script> -->
 
 
 </body>

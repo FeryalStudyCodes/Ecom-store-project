@@ -19,6 +19,15 @@ public $cat_model;
         );  
         $this->controller->view_object->create_view('admin/brand/show_brand',$items);
        }
+       function login(){
+        $this->controller->view_object->create_view('admin/login');
+       }
+       function checklogin(){
+        $this->cat_model->check($_POST);
+      }
+       function logout(){
+        $this->controller->view_object->create_view('admin/logout');   
+       }
        function add(){
         $this->controller->view_object->create_view('admin/brand/add_brand');
       }

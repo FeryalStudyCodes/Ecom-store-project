@@ -16,19 +16,19 @@
             
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php echo ($page == '') ? 'active' : ''; ?>" href="http://localhost:81/Ecom-store-project/admin/admin_product/index">
+            <a class="nav-link <?php echo ($page == '') ? 'active' : ''; ?>" href="http://localhost/Ecom-store-project/admin/admin_product/index">
               <span data-feather="shopping-cart"></span>
               Products
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php echo ($page == 'brands.php') ? 'active' : ''; ?>" href="http://localhost:81/Ecom-store-project/admin/admin_brand/index">
+            <a class="nav-link <?php echo ($page == 'brands.php') ? 'active' : ''; ?>" href="http://localhost/Ecom-store-project/admin/admin_brand/index">
               <span data-feather="shopping-cart"></span>
               Brands
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php echo ($page == 'categories.php') ? 'active' : ''; ?>" href="http://localhost:81/Ecom-store-project/admin/admin_cat/show">
+            <a class="nav-link <?php echo ($page == 'categories.php') ? 'active' : ''; ?>" href="http://localhost/Ecom-store-project/admin/admin_cat/show">
               <span data-feather="shopping-cart"></span>
               Categories
             </a>
@@ -40,7 +40,7 @@
     </nav>
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Hello </h1>
+        <h1 class="h2">Hello <?= $_SESSION['Admin_name']?></h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
             <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>

@@ -1,7 +1,7 @@
 <?php
 use coreAppNS\Controller;
 
-class admin_loginController extends Controller{
+class adminController extends Controller{
     public $controller;
     public $login_model;
     public $link;
@@ -12,18 +12,23 @@ class admin_loginController extends Controller{
         $this->controller = new Controller();
         $this->login_model=$this->controller->model_object->create_model('admin/login');
         $this->$function();
-       
     }
        function index(){
+        $items=array(
+            'products'=>$this->login_model->getproducts(),
+            'brand'=>$this->login_model->getBrand(),
+            'categories'=>$this->login_model->getCategory(),
+            );
+        $this->controller->view_object->create_view('admin/admin_home',$items);
+       }
+       function login(){
         $this->controller->view_object->create_view('admin/login');
        }
        function checklogin(){
-        //  print_r($_POST);
           $this->login_model->check($_POST);
-          //$this->controller->view_object->create_view('admin/admin_home');
        }
-       function admin_home(){
-        $this->controller->view_object->create_view('admin/admin_home');   
-    }
+       function logout(){
+        $this->controller->view_object->create_view('admin/logout');   
+       }
 }
 ?>

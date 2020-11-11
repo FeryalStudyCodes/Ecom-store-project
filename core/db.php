@@ -66,11 +66,20 @@ class DB{
     }
 
     function exeucte(){
-       
+        try{
+          //  print_r($this->final_query);
         $stmt=$this->connection->prepare($this->final_query);
         $stmt->execute();
        $result= $stmt->fetchAll(PDO::FETCH_OBJ);
+      // print_r($result);
        return $result;
+      
+    }
+    catch(Exception $ex){
+           
+        echo $ex->getMessage();
+    }
+     
     }
     function insert($tbl,$items){
         $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -117,6 +126,48 @@ class DB{
    try{
       // echo $this->final_query;
     $this->final_query="UPDATE ".$tbls." SET product_name"." = '".$items['product_name']."', product_details"." = '".$items['product_details']."', category_id "." = '".$items['category_id']."', brand_id "." = '".$items['brand_id']."', product_quantity "." = '".$items['product_quantity']."', product_main_image "." = '".$items['product_main_image']."', product_images "." = '".$items['product_images']."', color_id "." = '".$items['color_id']."', product_short_desc "." = '".$items['product_short_desc']."', product_long_desc "." = '".$items['product_long_desc']."', product_price "." = '".$items['product_price']."', is_active "." = '".$items['is_active']."' WHERE product_id = ".$value;
+    $stmt=$this->connection->prepare($this->final_query);
+    $stmt->execute();
+    echo "successfully"."<br>";
+
+   }catch(Exception $ex){
+       
+       echo $ex->getMessage();
+   }
+    return $this;
+}
+function updateproductwithmainimage($tbls,$items,$value){
+    $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $values=array();
+    foreach(array_values($items)as $item){
+        $values[]="'".$item."'";
+    }
+   try{
+    $this->final_query="UPDATE ".$tbls." SET product_name"." = '".$items['product_name']."', product_details".
+    " = '".$items['product_details']."', category_id "." = '".$items['category_id']."', brand_id "." = '".
+    $items['brand_id']."', product_quantity "." = '".$items['product_quantity']."', product_main_image ".
+    " = '".$items['product_main_image']."', color_id "." = '".$items['color_id'].
+    "', product_short_desc "." = '".$items['product_short_desc'].
+    "', product_long_desc "." = '".$items['product_long_desc']."', product_price ".
+    " = '".$items['product_price']."', is_active "." = '".$items['is_active']."' WHERE product_id = ".$value;
+    $stmt=$this->connection->prepare($this->final_query);
+    $stmt->execute();
+    echo "successfully"."<br>";
+
+   }catch(Exception $ex){
+       
+       echo $ex->getMessage();
+   }
+    return $this;
+}
+function updateproductwithproductimages($tbls,$items,$value){
+    $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $values=array();
+    foreach(array_values($items)as $item){
+        $values[]="'".$item."'";
+    }
+   try{
+    $this->final_query="UPDATE ".$tbls." SET product_name"." = '".$items['product_name']."', product_details"." = '".$items['product_details']."', category_id "." = '".$items['category_id']."', brand_id "." = '".$items['brand_id']."', product_quantity "." = '".$items['product_quantity']."', product_images "." = '".$items['product_images']."', color_id "." = '".$items['color_id']."', product_short_desc "." = '".$items['product_short_desc']."', product_long_desc "." = '".$items['product_long_desc']."', product_price "." = '".$items['product_price']."', is_active "." = '".$items['is_active']."' WHERE product_id = ".$value;
     $stmt=$this->connection->prepare($this->final_query);
     $stmt->execute();
     echo "successfully"."<br>";
@@ -185,6 +236,14 @@ function updateBrand($tbls,$items,$value){
     $stmt->execute($ids);
     $result= $stmt->fetchAll(PDO::FETCH_OBJ);
     return $result;
+}
+function getcategories(){
+    $query = "SELECT category_id , parent_catergory, category_name FROM category ORDER BY category_name";
+    $stmt = $this->connection->prepare($query);
+    $stmt->execute();
+    $result= $stmt->fetchAll(PDO::FETCH_OBJ);
+    return $result;
+   
 }
 
  

@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Dashboard Template · Bootstrap</title>
+    <title>Dashboard</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/dashboard/">
 
@@ -37,6 +37,6 @@
       }
     </style>
     <!-- Custom styles for this template -->
-    <link href="http://localhost:81//Ecom-store-project/app/assets/css/admin/dashboard.css" rel="stylesheet">
+    <link href="http://localhost/Ecom-store-project/app/assets/css/admin/dashboard.css" rel="stylesheet">
   </head>
  <body>
