@@ -92,12 +92,42 @@ class mainController extends Controller{
     function shopingCartinwishlis(){
         $this->main_model->addtocartfromwishlist($_POST);
     }
-   function getcat(){
-      // print_r($_POST);
-       $this->main_model->getcatbyid($_POST);
+  
 
-   }
+  
     
-}
 
+function getcat(){
+    // print_r($_POST);
+    // $this->main_model->getcatbyid($_POST);
+    // echo $_GET['category_id'];
+    if(isset($_GET['category_id'])){
+      $items=array(
+          'categories'=>$this->main_model->Category(),
+          'category'=>$this->main_model-> getcatbyid($_GET['category_id']),
+         
+          );
+          $this->controller->view_object->create_view('categories',$items);
+      }else{
+        $_GET['category_id']=25;
+          $items=array(
+            'categories'=>$this->main_model->Category(),
+            'category'=>$this->main_model-> getcatbyid($_GET['category_id']),
+           
+            );
+            $this->controller->view_object->create_view('categories',$items);
+            
+      }
+    }
+
+    function categorycart(){
+        $this->main_model->addtocartfromcategory($_POST);
+        
+    } 
+
+    function categoryinwishlis(){
+        $this->main_model->addtowishlistfromcategory($_POST);
+    }
+ 
+}
 ?>

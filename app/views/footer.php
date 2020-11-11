@@ -1,27 +1,4 @@
-<!--Add Banner Start-->
 
-<div class="container-fluid-row mt-12">
-  <div class="row-fluid ">
-    <div class="span16  ut2-bottom">
-      <div class="row-fluid">
-        <div class="span8 hidden-phone ">
-          <div class="ty-banner__image-wrapper">
-            <a href="#"><img src="http://localhost/Ecom-store-project/app/assets/images/add (2).jpg"></a>
-            
-          </div>
-      </div>
-      <div class="span8 hidden-phone ">
-        <div class="ty-banner__image-wrapper">
-          <a href="#"><img src="http://localhost/Ecom-store-project/app/assets/images/add (1).jpg"></a>
-          
-        </div>
-    </div>
-
-    </div>
-  </div>
-</div>
-
-<!--Add Banner End-->
     <!-- satrt footer   -->
     <div class="footer mb-12">
       <div class="container ">
@@ -112,11 +89,12 @@
 
     </div>
     <!-- end copyRight  -->
-    <script type="text/javascript" src="/Ecom-store-project/app/assets/js/jquery-3.5.1.min.js"></script>
-    <script type="text/javascript" src="/Ecom-store-project/app/assets/js/popper.min.js"></script>
-    <script type="text/javascript" src="/Ecom-store-project/app/assets/js/all.js"></script>
-    <script type="text/javascript" src="/Ecom-store-project/app/assets/js/bootstrap.js"></script>
-    <script type="text/javascript" src="/Ecom-store-project/app/assets/js/main.js"></script>
    
+    <!-- Jquery V.3.3.1 -->
+    <script src="/Ecom-store-project/app/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="/Ecom-store-project/app/assets/js/jquery.cycle.js"></script>
+    <script src="/Ecom-store-project/app/assets/js/owl.carousel.min.js"></script>
+    <script src="/Ecom-store-project/app/assets/js/smoothproducts.min.js"></script>
+      
    
 
