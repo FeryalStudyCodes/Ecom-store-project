@@ -132,11 +132,11 @@ class main{
             $_SESSION['cart'] = array();
         }
        if(array_key_exists($id, $_SESSION['cart'])){
-            header('Location: categories?action=exists&id=' . $id);
+            header('Location:main?action=exists&id=' . $id);
         }
         else{
             $_SESSION['cart'][$id]=$cart_item;
-            header('Location:categories?action=added');
+            header('Location:main?action=added');
         }
     }
     function showcartitem(){
@@ -182,11 +182,11 @@ class main{
             $_SESSION['wish'] = array();
         }
         if(array_key_exists($id, $_SESSION['wish'])){
-            header('Location: categories?action=wishexists&id=' . $id);
+            header('Location:main?action=wishexists&id=' . $id);
         }
         else{
             $_SESSION['wish'][$id]=$cart_item;
-            header('Location:categories?action=wishadded');
+            header('Location:main?action=wishadded');
         }
   }
   function showWishlistitem(){
@@ -226,10 +226,10 @@ class main{
       }
   }
  function getcatbyid(){
-    $id= $_POST['category_id'];
+    $id= $_GET['category_id'];
     $cols=array('*');
     $tbls=array("product");
-    $result =  $this->db
+    return $this->db
     ->select($cols)
     ->from($tbls)
     ->whereselect("category_id","=",$id)
@@ -242,7 +242,7 @@ class main{
     foreach($rows as $row)
     {   
         $id = $row->product_id;
-        $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;  
+        $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;  
         echo "
         <div class='col-md-4'>
                     <div class='panel panel-info'>
@@ -265,5 +265,39 @@ class main{
         
 }
 
+function addtowishlistfromcategory (){
+    session_start();
+    $id = isset($_GET['id']) ? $_GET['id'] : "";
+    if(!isset($_SESSION['wish'])){
+        $_SESSION['wish'] = array();
+    }
+       if(array_key_exists($id, $_SESSION['wish'])){
+        header('Location:getcat?action=exists&id=' . $id);
+    }
+    else{
+        $_SESSION['wish'][$id]=$cart_item;
+        header('Location:getcat?action=added');
+    }
+}
+
+function  addtocartfromcategory (){
+    session_start();
+    $id = isset($_GET['id']) ? $_GET['id'] : "";
+    $quantity = isset($_GET['quantity']) ? $_GET['quantity'] : 1;
+    $quantity=$quantity<=0 ? 1 : $quantity;
+    $cart_item=array(
+        'quantity'=>$quantity
+    );
+    if(!isset($_SESSION['cart'])){
+        $_SESSION['cart'] = array();
+    }
+   if(array_key_exists($id, $_SESSION['cart'])){
+        header('Location:getcat?action=exists&id=' . $id);
+    }
+    else{
+        $_SESSION['cart'][$id]=$cart_item;
+        header('Location:getcat?action=added');
+    }
+}
 
 ?>

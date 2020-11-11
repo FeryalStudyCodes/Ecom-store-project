@@ -56,7 +56,7 @@ echo "</div>";
                             for ($i=0, $ni=count($data); $i < $ni; $i++) {
                                 if ($data[$i]->parent_catergory == $parent) {    
                                    
-                                    $tree .= "<li><a class='get_cat' href='#' data-id=".$data[$i]->category_id.">\n";
+                                    $tree .= "<li><a class='get_cat' href=main/getcat?action=getcat&category_id=".$data[$i]->category_id." data-id=".$data[$i]->category_id.">\n";
                                     $tree .= $data[$i]->category_name;
                                     $tree .= generateTree($data, $data[$i]->category_id, $depth+1);
                                     $tree .= "</li></a>\n";
@@ -68,304 +68,68 @@ echo "</div>";
                         ?>
                  </div>
              </div>
+             
              <div class="new-product">
-             <div class="container">
-          <div id="pro">
-
-      
-              <!-- <div class="col-md-3 col-sm-6">
-                  <div class="product-store">
-                      <div class="product-img">
-                          <a href="#">
-                              <img class="pic" src="/Ecom-store-project/app/assets/images/dell-10-300x211.jpg">
-                          </a>
-                          <ul class="social">
-                              <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                              <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                              <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                          </ul>
-                        
-                      </div>
-                      <div class="product-content">
-                          <h3 class="title"><a href="#">ديل كمبيوتر محمول E7440 معالج كورi5 </a></h3>
-                          <div class="price">
-                            $260.00
-                              
-                          </div>
-                          <a class="add-to-cart" href="">أضف الى عربة </a>
-                        </div>
-                  </div>
-              </div>
-              <div class="col-md-3 col-sm-6">
-                <div class="product-store">
-                    <div class="product-img">
-                        <a href="#">
-                            <img class="pic" src="/Ecom-store-project/app/assets/images/dell-10-300x211.jpg">
-                        </a>
-                        <ul class="social">
-                            <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                            <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                            <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                        </ul>
-                      
-                    </div>
-                    <div class="product-content">
-                        <h3 class="title"><a href="#">لينوفو لابتوب 310، بشاشة 14 بوصة ومعالج كور i5/ متعدد الوسائط- اسود</a></h3>
-                        <div class="price">
-                          $675.74
-                            
-                        </div>
-                        <a class="add-to-cart" href="">أضف الى عربة </a>
-                      </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-              <div class="product-store">
-                  <div class="product-img">
-                      <a href="#">
-                          <img class="pic" src="/Ecom-store-project/app/assets/images/dell-1-20-300x203.jpg">
-                      </a>
-                      <ul class="social">
-                          <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                          <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                          <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                      </ul>
-                    
-                  </div>
-                  <div class="product-content">
-                      <h3 class="title"><a href="#">ديل لابتوب لاتيتيود 13 3350 عالج كور i3/ ذاكرة وصول عشوائي سعة 4 جيجابايت</a></h3>
-                      <div class="price">
-                        $514.74
-                          
-                      </div>
-                      <a class="add-to-cart" href="">أضف الى عربة </a>
-                  </div>
-              </div>
-          </div>
-          <div class="col-md-3 col-sm-6">
-            <div class="product-store">
-                <div class="product-img">
-                    <a href="#">
-                        <img class="pic" src="/Ecom-store-project/app/assets/images/Dell-Inspiron-11-3162-300x184.jpg">
-                    </a>
-                    <ul class="social">
-                        <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                        <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                        <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                    </ul>
-                  
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">
-                      إتش بي كمبيوتر محمول إليت بوك 8470p بشاشة قياس 14 إنشاً، معالج كورi5 </a></h3>
-                    <div class="price">
-                      $202.50
-                        
-                    </div>
-                    <a class="add-to-cart" href="">أضف الى عربة </a>
-                  </div>
-            </div>
-        </div> -->
-          </div>
-        </div>
-
+            <!--Satrt Featured Product-->
 <div class="container">
+  <h3 class="h4 text-sm-right mb-5 text-secondary ">إلكترونيات  </h3>    
   <div class="row">
-      <!-- <div class="col-md-3 col-sm-6">
-          <div class="product-store">
-              <div class="product-img">
-                  <a href="#">
-                      <img class="pic" src="/Ecom-store-project/app/assets/images/dell-10-300x211.jpg">
-                  </a>
-                  <ul class="social">
-                      <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                      <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                      <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                  </ul>
-                 
-              </div>
-              <div class="product-content">
-                  <h3 class="title"><a href="#">ديل كمبيوتر محمول E7440 معالج كورi5 </a></h3>
-                  <div class="price">
-                    $260.00
-                      
-                  </div>
-                  <a class="add-to-cart" href="">أضف الى عربة </a>
-                </div>
-          </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="product-store">
-            <div class="product-img">
-                <a href="#">
-                    <img class="pic" src="/Ecom-store-project/app/assets/images/lenovo1.png">
-                </a>
-                <ul class="social">
-                    <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                    <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                    <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                </ul>
-               
-            </div>
-            <div class="product-content">
-                <h3 class="title"><a href="#">لينوفو لابتوب 310، بشاشة 14 بوصة ومعالج كور i5/ متعدد الوسائط- اسود</a></h3>
-                <div class="price">
-                  $675.74
-                    
-                </div>
-                <a class="add-to-cart" href="">أضف الى عربة </a>
-              </div>
-        </div>
-    </div>
-    <div class="col-md-3 col-sm-6">
-      <div class="product-store">
-          <div class="product-img">
-              <a href="#">
-                  <img class="pic" src="/Ecom-store-project/app/assets/images/dell-1-20-300x203.jpg">
-              </a>
-              <ul class="social">
-                  <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                  <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                  <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-              </ul>
-             
-          </div>
-          <div class="product-content">
-              <h3 class="title"><a href="#">ديل لابتوب لاتيتيود 13 3350 عالج كور i3/ ذاكرة وصول عشوائي سعة 4 جيجابايت</a></h3>
-              <div class="price">
-                $514.74
+  <?php 
+            $i=0;
+            $rows=$data['category'];
+           // print_r($rows);
+            foreach($rows as $row)
+            {   
+              $id = $row->product_id;
                   
-              </div>
-              <a class="add-to-cart" href="">أضف الى عربة </a>
-          </div>
-      </div>
-  </div>
-  <div class="col-md-3 col-sm-6">
-    <div class="product-store">
-        <div class="product-img">
-            <a href="#">
-                <img class="pic" src="/Ecom-store-project/app/assets/images/Dell-Inspiron-11-3162-300x184.jpg">
-            </a>
-            <ul class="social">
-                <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-            </ul>
-           
-        </div>
-        <div class="product-content">
-            <h3 class="title"><a href="#">
-              إتش بي كمبيوتر محمول إليت بوك 8470p بشاشة قياس 14 إنشاً، معالج كورi5 </a></h3>
-            <div class="price">
-              $202.50
-                
-            </div>
-            <a class="add-to-cart" href="">أضف الى عربة </a>
-          </div>
-    </div>
-</div> -->
-  </div>
-</div>
-
-<div class="container">
-  <div class="row">
-      <!-- <div class="col-md-3 col-sm-6">
-          <div class="product-store">
-              <div class="product-img">
-                  <a href="#">
-                      <img class="pic" src="/Ecom-store-project/app/assets/images/dell-10-300x211.jpg">
-                  </a>
-                  <ul class="social">
-                      <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                      <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                      <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                  </ul>
-                 
-              </div>
-              <div class="product-content">
-                  <h3 class="title"><a href="#">ديل كمبيوتر محمول E7440 معالج كورi5 </a></h3>
-                  <div class="price">
-                    $260.00
-                      
-                  </div>
-                  <a class="add-to-cart" href="">أضف الى عربة </a>
-                </div>
-          </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="product-store">
-            <div class="product-img">
-                <a href="#">
-                    <img class="pic" src="/Ecom-store-project/app/assets/images/lenovo1.png">
-                </a>
-                <ul class="social">
-                    <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                    <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                    <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                </ul>
-               
-            </div>
-            <div class="product-content">
-                <h3 class="title"><a href="#">لينوفو لابتوب 310، بشاشة 14 بوصة ومعالج كور i5/ متعدد الوسائط- اسود</a></h3>
-                <div class="price">
-                  $675.74
-                    
-                </div>
-                <a class="add-to-cart" href="">أضف الى عربة </a>
-              </div>
-        </div>
-    </div>
-    <div class="col-md-3 col-sm-6">
-      <div class="product-store">
-          <div class="product-img">
-              <a href="#">
-                  <img class="pic" src="/Ecom-store-project/app/assets/images/dell-1-20-300x203.jpg">
-              </a>
-              <ul class="social">
-                  <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                  <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                  <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-              </ul>
-             
-          </div>
-          <div class="product-content">
-              <h3 class="title"><a href="#">ديل لابتوب لاتيتيود 13 3350 عالج كور i3/ ذاكرة وصول عشوائي سعة 4 جيجابايت</a></h3>
-              <div class="price">
-                $514.74
-                  
-              </div>
-              <a class="add-to-cart" href="">أضف الى عربة </a>
-          </div>
-      </div>
-  </div>
-  <div class="col-md-3 col-sm-6">
-    <div class="product-store">
-        <div class="product-img">
-            <a href="#">
-                <img class="pic" src="/Ecom-store-project/app/assets/images/Dell-Inspiron-11-3162-300x184.jpg">
-            </a>
-            <ul class="social">
-                <li><a href="main/product" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-            </ul>
-           
-        </div>
-        <div class="product-content">
-            <h3 class="title"><a href="#">
-              إتش بي كمبيوتر محمول إليت بوك 8470p بشاشة قياس 14 إنشاً، معالج كورi5 </a></h3>
-            <div class="price">
-              $202.50
-                
-            </div>
-            <a class="add-to-cart" href="">أضف الى عربة </a>
-          </div>
-    </div>
-</div> -->
-  </div>
-</div>
-</div>
               
+              $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+          ?>
+         
+      <div class="col-md-3 col-sm-6">
+          <div class="product-store">
+              <div class="product-img">
+                  <a href="#">
+                      
+                      <img  width="60" height="60"  src='<?php  echo $imageURl; ?>'>
+                  </a>
+                  <ul class="social">
+                      <li><a href="main/product_details?action=product_details&product_id=<?PHP echo $id?>" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                      <li><a href="main/wishlist?id=<?=$id ?>" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
+                      <li><a href="main/shopingCart?id=<?=$id ;?>" data-tip="Add to Cart" class="cart"  data-id='<?= $id; ?>' ><i class="fa fa-shopping-cart "></i></a></li>
+                  </ul>
+                 
+              </div>
+              <div class="product-content">
+                  <h3 class="title"><a href="#"> <?php  echo $row->product_short_desc ?></a></h3>
+                  <div class="price">
+                  
+                    <?php  echo $row->product_price ?>
+                  </div>
+                  <?PHP
+                    // add to cart button
+         // product id for javascript access
+         echo "<div class='product-id display-none'></div>";
+        if(array_key_exists($id, $_SESSION['cart'])){
+           // echo "<a href='main/displayShopingCartItems' class='btn btn-success w-100-pct'>";
+           echo "<a  class='add-to-cart' href='main/categorycart?id={$id}' class='btn btn-primary w-100-pct'>أضف الى عربة التسوق</a>";
+
+               // echo "Update Cart";
+            echo "</a>";
+        }else{
+            echo "<a  class='add-to-cart' href='main/categorycart?id={$id}' class='btn btn-primary w-100-pct'>أضف الى عربة التسوق</a>";
+        }
+    ?>
+                </div>
+          </div>
+      </div>
+      <?php $i++; } ?> 
+ 
+  </div>
+</div>
+          
+   </div>
+
                            
            
           
@@ -384,7 +148,8 @@ echo "</div>";
  
 
   
-<br>
+<br><br><br><br><br><br><br><br>
+
 <?PHP
 include "app/views/footer.php"; 
 ?>

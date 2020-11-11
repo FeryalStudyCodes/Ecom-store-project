@@ -100,10 +100,10 @@ $_SESSION['wish']=isset($_SESSION['wish']) ? $_SESSION['wish'] : array();
      <div class="collapse navbar-collapse" id="main-nav" >
        <ul class="navbar-nav ml-auto">
          <li class="nav-item active">
-           <a class="nav-link" href="#">الرئيسية <span class="sr-only">(current)</span></a>
+           <a class="nav-link" href="main/main">الرئيسية <span class="sr-only">(current)</span></a>
          </li>
          <li class="nav-item ">
-         <a  class="nav-link" href="main/categories">الأقسام </a>
+         <a  class="nav-link" href="main/getcat">الأقسام </a>
       
         </li>
          </li>
