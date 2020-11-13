@@ -68,19 +68,11 @@ echo "</div>";
                         ?>
                  </div>
              </div>
-             
-             <div class="new-product">
-            <!--Satrt Featured Product-->
-<div class="container">
-  <h3 class="h4 text-sm-right mb-5 text-secondary ">إلكترونيات  </h3>    
+
   <div class="row">
   <?php 
             $i=0;
             $rows=$data['category'];
-           // print_r($rows);
-            foreach($rows as $row)
-            {   
-              $id = $row->product_id;
                   
               
               $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
@@ -93,19 +85,12 @@ echo "</div>";
                       
                       <img  width="60" height="60"  src='<?php  echo $imageURl; ?>'>
                   </a>
-                  <ul class="social">
-                      <li><a href="main/product_details?action=product_details&product_id=<?PHP echo $id?>" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                      <li><a href="main/wishlist?id=<?=$id ?>" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                      <li><a href="main/shopingCart?id=<?=$id ;?>" data-tip="Add to Cart" class="cart"  data-id='<?= $id; ?>' ><i class="fa fa-shopping-cart "></i></a></li>
+
                   </ul>
                  
               </div>
               <div class="product-content">
-                  <h3 class="title"><a href="#"> <?php  echo $row->product_short_desc ?></a></h3>
-                  <div class="price">
-                  
-                    <?php  echo $row->product_price ?>
-                  </div>
+   </div>
                   <?PHP
                     // add to cart button
          // product id for javascript access
@@ -123,60 +108,14 @@ echo "</div>";
                 </div>
           </div>
       </div>
-      <?php $i++; } ?> 
- 
-  </div>
-</div>
-          
-   </div>
 
-                           
-           
-          
-         
+  
+ 
+ 
                   
-                
-
-
-            
-
-
- 
-  
-    
-    
- 
-
-  
-<br><br><br><br><br><br><br><br>
-
+               
 <?PHP
 include "app/views/footer.php"; 
-?>
-
-<script>
-$(document).ready(function(){
-// Delete brand 
-$('.get_cat').click(function(){
-  var el = this;
-  
-  //var deleteid = $(this).attr('id');
-  var cat_id = $(this).data("id");
-  //alert(cat_id);
-  
-     // AJAX Request
-     $.ajax({
-       url: 'main/getcat',
-       type: 'POST',
-       data: { category_id:cat_id },
-       success: function(data){
-       // alert(data);  
-        $("#pro").html(data);
-         }
-     });
-});
-});
-</script>
-   
+?>   
   </body>
 </html>
