@@ -42,8 +42,8 @@ echo "</div>";
    }
 echo "</div>";
 ?>
-   <!-- Start  silder -->
-<div class="slider">
+ <!-- Start  silder -->
+ <div class="slider">
     <div id="mysild" class="carousel slide " data-ride="carousel" >
 
          <div class="carousel-inner">
@@ -76,9 +76,6 @@ echo "</div>";
  </div>
 
 
-
-
- 
 
 <div id="demo" class="carousel slide" data-ride="carousel">
 
@@ -253,6 +250,7 @@ echo "</div>";
 
 <!-- Product slider End -->
 
+
 <!--Satrt Featured Product-->
 <div class="container">
   <!-- <h3 class="h4 text-sm-right mb-5 text-secondary ">إلكترونيات  </h3>     -->
@@ -280,7 +278,7 @@ echo "</div>";
                   <ul class="social">
                       <li><a href="main/product_details?action=product_details&product_id=<?PHP echo $id?>" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
                       <li><a href="main/wishlist?id=<?=$id?>" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                      <li><a href="main/shopingCart?id=<?=$id?>" data-tip="Add to Cart" class="cart"  data-id='<?= $id; ?>' ><i class="fa fa-shopping-cart "></i></a></li>
+
                   </ul>
                  
               </div>
@@ -319,10 +317,18 @@ echo "</div>";
 
 <!--End View Moer-->
 
+<!--Start View Moer-->
+<div class="overview text-center mt-5">
+         <div class="container">
+          
+           <button><a href="main/getcat">View Moer</a></button>
+          </div>
+       </div>
 
-<!-- start Adds -->
-<section class="three-column-images mt-5">
-  <div class="container " >
+<!--End View Moer-->
+
+
+
     <div class="row">
       <div class="col-xs-6 col-sm-4">
         <img src="http://localhost/Ecom-store-project/app/assets/images/add.jpg"
@@ -344,30 +350,6 @@ echo "</div>";
         <a href="#" target="_blank"></a>
         
       </div>
-      </div> 
-     </div>  
-  </section>
-<!-- End Adds -->
-
-
-
-
-      
-  <!-- <div class="container">
-	<div class="row">
-		<div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="/Ecom-store-project/app/assets/images/barndsam.png" width="100%" /></div>
-        <div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="/Ecom-store-project/app/assets/images/barndsam.png" /></div>
-        <div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="/Ecom-store-project/app/assets/images/barndsam.png" /></div>
-        <div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="/Ecom-store-project/app/assets/images/barndsam.png" /></div>
-    	<div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="/Ecom-store-project/app/assets/images/barndsam.png" /></div>
-        <div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="/Ecom-store-project/app/assets/images/barndsam.png" /></div>
-	    <div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="/Ecom-store-project/app/assets/images/barndsam.png" /></div>
-        <div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="/Ecom-store-project/app/assets/images/barndsam.png" /></div>
-    </div>
-</div> -->
-   
-
-
 
 
 

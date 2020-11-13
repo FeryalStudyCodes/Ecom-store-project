@@ -133,7 +133,6 @@ class main{
             $_SESSION['cart'] = array();
         }
        if(array_key_exists($id, $_SESSION['cart'])){
-            header('Location: main?action=exists&id=' . $id);
         }
         else{
             $_SESSION['cart'][$id]=$cart_item;
@@ -183,9 +182,7 @@ class main{
         if(!isset($_SESSION['wish'])){
             $_SESSION['wish'] = array();
         }
-        if(array_key_exists($id, $_SESSION['wish'])){
-            header('Location: main?action=wishexists&id=' . $id);
-        }
+
         else{
             $_SESSION['wish'][$id]=$cart_item;
             header('Location:main?action=wishadded');
@@ -270,8 +267,5 @@ function addwishlistformcategory(){
     ->whereselect("category_id","=",$id)
     ->build()
     ->exeucte();
-  // return $result; 
- }
-        
-}
+
 ?>
