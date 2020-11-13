@@ -111,12 +111,12 @@ echo "</div>";
          echo "<div class='product-id display-none'></div>";
         if(array_key_exists($id, $_SESSION['cart'])){
            // echo "<a href='main/displayShopingCartItems' class='btn btn-success w-100-pct'>";
-           echo "<a  class='add-to-cart' href='main/shopingCart?id={$id}' class='btn btn-primary w-100-pct'>أضف الى عربة التسوق</a>";
+           echo "<a  class='add-to-cart' href='main/categorycart?id={$id}' class='btn btn-primary w-100-pct'>أضف الى عربة التسوق</a>";
 
                // echo "Update Cart";
             echo "</a>";
         }else{
-            echo "<a  class='add-to-cart' href='main/shopingCart?id={$id}' class='btn btn-primary w-100-pct'>أضف الى عربة التسوق</a>";
+            echo "<a  class='add-to-cart' href='main/categorycart?id={$id}' class='btn btn-primary w-100-pct'>أضف الى عربة التسوق</a>";
         }
     ?>
                 </div>

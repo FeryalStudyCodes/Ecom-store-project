@@ -35,6 +35,7 @@ echo "</div>";
         <br><br><br><br><br><br>
         <?PHP
                 $rows = $data['cartItems']; 
+               // print_r($rows);
              if($rows == "empty")
              {
               echo "<div class='alert alert-info'>";

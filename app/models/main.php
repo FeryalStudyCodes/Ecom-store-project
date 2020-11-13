@@ -148,6 +148,7 @@ class main{
                 array_push($ids, $id);           
             }
             $stmt = $this->db->readByIds($ids);
+            //print_r($stmt);
            return $stmt;
            
         }
@@ -229,14 +230,19 @@ class main{
   function addcartformcategory(){
     session_start();
     $id = isset($_GET['id']) ? $_GET['id'] : "";
-    if(!isset($_SESSION['wish'])){
-        $_SESSION['wish'] = array();
+    $quantity = isset($_GET['quantity']) ? $_GET['quantity'] : 1;
+    $quantity=$quantity<=0 ? 1 : $quantity;
+    $cart_item=array(
+        'quantity'=>$quantity
+    );
+    if(!isset($_SESSION['cart'])){
+        $_SESSION['cart'] = array();
     }
-       if(array_key_exists($id, $_SESSION['wish'])){
-        header('Location:getcat?action=exists&id=' . $id);
+   if(array_key_exists($id, $_SESSION['cart'])){
+        header('Location: getcat?action=exists&id=' . $id);
     }
     else{
-        $_SESSION['wish'][$id]=$cart_item;
+        $_SESSION['cart'][$id]=$cart_item;
         header('Location:getcat?action=added');
     }
 }

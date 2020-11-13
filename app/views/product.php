@@ -44,7 +44,7 @@ include "app/views/header.php";
 				<h5><b>اللون : </b><?php  echo $row->color_name ?></h5>
 				<h5><b>متوفر : </b> <?php if($row->is_active==1)  echo "نعم"; else echo "لا"  ?></h5></h5>
 				<a href="main/wishlist?id=<?=$id?>" data-tip="Add to Wishlist" class="addtocart"><i class="fa fa-heart"></i>  المفضلة</a>
-				<a href="main/shopingCart?id='<?=$id ;?>'" class="buynow"><i class="fa fa-shopping-cart"></i>إضافة لسلة</a>
+				<a href="main/shopingCart?id=<?=$id?>" class="buynow"><i class="fa fa-shopping-cart"></i>إضافة لسلة</a>
 			</div>
       <?php } }?> 
 		</div>
