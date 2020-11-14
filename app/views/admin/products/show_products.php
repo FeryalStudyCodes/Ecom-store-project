@@ -39,7 +39,7 @@ include "app/views/admin/dashboard_contant/sidebar.php";
             foreach($rows as $row)
             {   
               $id = $row->product_id;
-              $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+              $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
           ?>
          
               <tr>
@@ -298,7 +298,7 @@ function refreshPage() {
                         $clean_url=rtrim($imges,',');
                         $clean_url=explode(',',$clean_url);
                         foreach($clean_url as $part){
-                        $product_images='http://localhost/Ecom-store-project/app/assets/images/'.$part;
+                        $product_images='http://localhost:81/Ecom-store-project/app/assets/images/'.$part;
                         echo "<img width='60' height='60' src=' $product_images'>";}*/?> 
                 
              

@@ -72,7 +72,7 @@ echo "</div>";
              <div class="new-product">
             <!--Satrt Featured Product-->
 <div class="container">
-  <h3 class="h4 text-sm-right mb-5 text-secondary ">إلكترونيات  </h3>    
+  <!-- <h3 class="h4 text-sm-right mb-5 text-secondary ">إلكترونيات  </h3>     -->
   <div class="row">
   <?php 
             $i=0;
@@ -83,7 +83,7 @@ echo "</div>";
               $id = $row->product_id;
                   
               
-              $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+              $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
           ?>
          
       <div class="col-md-3 col-sm-6">

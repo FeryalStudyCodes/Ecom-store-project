@@ -17,7 +17,7 @@ include "app/views/header.php";
               //echo "<br>". $row->product_id."<br>";
            if ($row->product_id == $_GET['product_id']){
               $id = $row->product_id;
-            $mainimageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+            $mainimageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
           ?>
 			<div class="product-detail-left">
 				<div class="sp-loading">
@@ -31,7 +31,7 @@ include "app/views/header.php";
             $clean_url=rtrim($imges,',');
             $clean_url=explode(',',$clean_url);
             foreach($clean_url as $part){
-            $product_images='http://localhost/Ecom-store-project/app/assets/images/'.$part;
+            $product_images='http://localhost:81/Ecom-store-project/app/assets/images/'.$part;
             echo "<a href='$product_images'><img src='  $product_images'></a>"
             ;}?> 
 				</div>

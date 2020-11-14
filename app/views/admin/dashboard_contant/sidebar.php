@@ -16,19 +16,19 @@
             
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php echo ($page == '') ? 'active' : ''; ?>" href="http://localhost/Ecom-store-project/admin/admin_product/index">
+            <a class="nav-link <?php echo ($page == '') ? 'active' : ''; ?>" href="http://localhost:81/Ecom-store-project/admin/admin_product/index">
               <span data-feather="shopping-cart"></span>
               Products
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php echo ($page == 'brands.php') ? 'active' : ''; ?>" href="http://localhost/Ecom-store-project/admin/admin_brand/index">
+            <a class="nav-link <?php echo ($page == 'brands.php') ? 'active' : ''; ?>" href="http://localhost:81/Ecom-store-project/admin/admin_brand/index">
               <span data-feather="shopping-cart"></span>
               Brands
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php echo ($page == 'categories.php') ? 'active' : ''; ?>" href="http://localhost/Ecom-store-project/admin/admin_cat/show">
+            <a class="nav-link <?php echo ($page == 'categories.php') ? 'active' : ''; ?>" href="http://localhost:81/Ecom-store-project/admin/admin_cat/show">
               <span data-feather="shopping-cart"></span>
               Categories
             </a>

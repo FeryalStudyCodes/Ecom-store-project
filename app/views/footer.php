@@ -6,7 +6,7 @@
                  <div class="col-lg-3 col-md-6 col-sm-6 ">
                      <div class="web-info">
                       <div class="footer-about-logo">
-                        <a href="#"><img src="http://localhost/Ecom-store-project/app/assets/images/login_store_logos-1 (1).png" style="width: 30%;height: 30%;" alt=""></a>
+                        <a href="#"><img src="http://localhost:81/Ecom-store-project/app/assets/images/login_store_logos-1 (1).png" style="width: 30%;height: 30%;" alt=""></a>
                     </div>
                     <ul >
                       
@@ -81,7 +81,7 @@
                   All Rights Reserved | Design by &copy;LoginStore 2020
                  </div>
                  <div class="col-lg-6 text-center text-md-left ">
-                  <div class="footer__copyright__payment"><img src="http://localhost/Ecom-store-project/app/assets/images/payment-item.png" alt=""></div>
+                  <div class="footer__copyright__payment"><img src="http://localhost:81/Ecom-store-project/app/assets/images/payment-item.png" alt=""></div>
 
                  </div>
           </div>

@@ -25,7 +25,7 @@ $_SESSION['wish']=isset($_SESSION['wish']) ? $_SESSION['wish'] : array();
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="/Ecom-store-project/app/assets/css/smoothproducts.css">
     <link rel="stylesheet" type="text/css" href="/Ecom-store-project/app/assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="/Ecom-store-project1/app/assets/css/bars-style.css">
+    <link rel="stylesheet" href="/Ecom-store-project/app/assets/css/bars-style.css">
   <script src="https://kit.fontawesome.com/ca3696487d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/Ecom-store-project/app/assets/css/style.css" />
      
@@ -90,7 +90,7 @@ $_SESSION['wish']=isset($_SESSION['wish']) ? $_SESSION['wish'] : array();
    <nav class="navbar navbar-expand-lg navbar-light ">
      <div class="container">
      <a class="navbar-brand" href="#">
-       <img src="http://localhost/Ecom-store-project/app/assets/images/login_store_logos-1 (1).png" style="width:20%;height:20%;">
+       <img src="http://localhost:81/Ecom-store-project/app/assets/images/login_store_logos-1 (1).png" style="width:20%;height:20%;">
      
      </a>
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

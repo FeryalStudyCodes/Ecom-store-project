@@ -73,7 +73,7 @@ echo "</div>";
                   $i=1;
                   foreach($rows as $row){
                   $id = $row->product_id;
-                  $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+                  $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
                 ?>
                     <tr>
                     <th><?= $i; ?></th>

@@ -379,7 +379,7 @@ echo "</div>";
 <div class="overview text-center mt-5">
          <div class="container">
           
-           <button><a href="main/getcat">View Moer</a></button>
+           <button><a href="main/getcat"> عرض المزيد</a></button>
           </div>
        </div>
 
