@@ -97,11 +97,11 @@ class mainController extends Controller{
     
 
 function getcat(){
-    // print_r($_POST);
+     print_r($_POST);
     // $this->main_model->getcatbyid($_POST);
     // echo $_GET['category_id'];
     if(isset($_GET['category_id'])){
-      $items=array(
+      $items=array(  
           'categories'=>$this->main_model->Category(),
           'category'=>$this->main_model-> getcatbyid($_GET['category_id']),
          
@@ -119,7 +119,7 @@ function getcat(){
       }
     }
 
-    function categorycart(){
+    function categorycart(){ 
         $this->main_model->addtocartfromcategory($_POST);
         
     } 
