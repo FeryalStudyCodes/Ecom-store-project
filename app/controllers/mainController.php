@@ -12,6 +12,7 @@ class mainController extends Controller{
     }
        function main(){   
         $items=array(
+            
             'products'=>$this->main_model->getproducts(),
             'order_product'=>$this->main_model->orderby(),
             'color'=>$this->main_model->getColor(),
@@ -92,9 +93,7 @@ class mainController extends Controller{
     function shopingCartinwishlis(){
         $this->main_model->addtocartfromwishlist($_POST);
     }
-  
 
-  
     
 
 function getcat(){

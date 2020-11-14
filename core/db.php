@@ -80,7 +80,7 @@ class DB{
         $stmt=$this->connection->prepare($this->final_query);
         $stmt->execute();
        $result= $stmt->fetchAll(PDO::FETCH_OBJ);
-      // print_r($result);
+     //  print_r($result);
        return $result;
       
     }
