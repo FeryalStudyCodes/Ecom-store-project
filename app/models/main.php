@@ -224,8 +224,9 @@ class main{
           header('Location:displayWishListItems?action=added');
       }
   } 
-  function addcartformcategory(){
+  function addtocartfromcategory(){ 
     session_start();
+    $category_id = $_GET['category_id'];
     $id = isset($_GET['id']) ? $_GET['id'] : "";
     $quantity = isset($_GET['quantity']) ? $_GET['quantity'] : 1;
     $quantity=$quantity<=0 ? 1 : $quantity;
@@ -236,21 +237,22 @@ class main{
         $_SESSION['cart'] = array();
     }
    if(array_key_exists($id, $_SESSION['cart'])){
-        header('Location: getcat?action=exists&id=' . $id);
+        header('Location: getcat?action=exists');
     }
     else{
         $_SESSION['cart'][$id]=$cart_item;
         header('Location:getcat?action=added');
     }
 }
-function addwishlistformcategory(){
+function addtowishlistfromcategory(){
     session_start();
+    $category_id = $_GET['category_id'];
     $id = isset($_GET['id']) ? $_GET['id'] : "";
     if(!isset($_SESSION['wish'])){
         $_SESSION['wish'] = array();
     }
        if(array_key_exists($id, $_SESSION['wish'])){
-        header('Location:getcat?action=exists&id=' . $id);
+        header('Location:getcat?action=exists');
     }
     else{
         $_SESSION['wish'][$id]=$cart_item;
@@ -267,5 +269,6 @@ function addwishlistformcategory(){
     ->whereselect("category_id","=",$id)
     ->build()
     ->exeucte();
-
+ }
+}
 ?>
