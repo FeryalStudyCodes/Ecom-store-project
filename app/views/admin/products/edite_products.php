@@ -74,7 +74,7 @@ include "app/views/admin/dashboard_contant/sidebar.php";
             </div>
            
             <?php
-            $imageURl = 'http://localhost:81/Ecom-store-project/app/assets/images/'.$row->product_main_image;
+            $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
             ?>
            <div class="col-12">
               <div class="form-group">
@@ -95,7 +95,7 @@ include "app/views/admin/dashboard_contant/sidebar.php";
                 $clean_url=rtrim($imges,',');
                 $clean_url=explode(',',$clean_url);
                 foreach($clean_url as $part){
-                    $product_images='http://localhost:81/Ecom-store-project/app/assets/images/'.$part;
+                    $product_images='http://localhost/Ecom-store-project/app/assets/images/'.$part;
                     echo "<img class='img-fluid' width='50'  src=' $product_images '>";
                 }
                 echo"<br> ";

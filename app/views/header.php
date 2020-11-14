@@ -90,7 +90,7 @@ $_SESSION['wish']=isset($_SESSION['wish']) ? $_SESSION['wish'] : array();
    <nav class="navbar navbar-expand-lg navbar-light ">
      <div class="container">
      <a class="navbar-brand" href="#">
-       <img src="http://localhost:81/Ecom-store-project/app/assets/images/login_store_logos-1 (1).png" style="width:20%;height:20%;">
+       <img src="http://localhost/Ecom-store-project/app/assets/images/login_store_logos-1 (1).png" style="width:20%;height:20%;">
      
      </a>
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
