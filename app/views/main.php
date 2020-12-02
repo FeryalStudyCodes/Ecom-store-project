@@ -1,311 +1,117 @@
 <?PHP
-session_start();
+ session_start();
 include "app/views/header.php"; 
 ?>
-   <?php
-   echo "<div class='col-md-12'>";
-   if($action=='added'){
-       echo "<div class='alert alert-info text-right'>";
-           echo "تم إضافة المنتج لسلّة التسوق";
-           echo "<a class='close'data-dismiss='alert' raia-label='close'>X</a>";
-
-       echo "</div>";
-
-   }
-
-   if($action=='exists'){
-       echo "<div class='alert alert-info text-right'>";
-           echo "المنتج موجود بالفعل في سلة ";
-           echo "<a class='close'data-dismiss='alert' raia-label='close'>X</a>";
-
-       echo "</div>";
-   }
-echo "</div>";
-?>
- 
-
- <?php
-   echo "<div class='col-md-12'>";
-   if($action=='wishadded'){
-    echo "<div class='alert alert-info text-right'>";
-    echo "<a class='close' data-dismiss='alert' aria-label='close'>x</a>";
-        echo "تمت إضافة المنتج لقائمة أمنياتك";
-    echo "</div>";
-   }
-   if($action=='wishexists'){
-    echo "<div class='alert alert-info text-right'>";
-    echo "<a class='close' data-dismiss='alert' aria-label='close'>x</a>";
-        echo " المنتج موجود بالفعل في قائمة أمنياتك ";
-    echo "</div>";
-   }
-echo "</div>";
-?>
-   <!-- Start  silder -->
-<div class="slider">
-    <div id="mysild" class="carousel slide " data-ride="carousel" >
-
-         <div class="carousel-inner">
-              <div class="carousel-item  carousel-one active">
-               <div class="slider_txt">
-            <div class="slide-title">
-              <h2>تخفيضــات</h2>
+  
+  <!-- start of hero -->
+<article class="hero-slider hero-style" id="hero" style="width:100%; margin-left:0; left:0;">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="slide-inner slide-bg-image"
+            data-background="https://www.apple.com/v/mac-mini/j/images/overview/hero__x8ruukomx2au_large.jpg">
+            <div class="black-bg"></div>
+            <div class="box">
+              <h3>Mac mini‏‏‏‏‏</h3>
+              <h1>ما في قلبه على كل لسان.</h1>
+              <p>تمنح شريحة Apple M1 جهازنا المكتبي الأكثر تنوعاً في الاستخدام والقدرات
+                 آفاقاً جديدة مع أداء وحدة معالجة مركزية أعلى لغاية 3x، ورسومات غرافيك أسرع لغاية 
+                6x، ومحرك عصبي Neural Engine هو الأكثر تطوراً حتى الآن مع تعلم آلي أسرع لغاية 15x.</p>
             </div>
-            <div class="slide-text">
-              <p>لابتوبات لينوفو الجديدة بأسعار مغرية ومميزات ممتازة.</p>
+          </div>
+          <!-- end slide-inner -->
+        </div>
+
+        <div class="swiper-slide">
+          <div class="slide-inner slide-bg-image"
+            data-background="https://www.lg.com/levant_ar/images/plp-b2c/levantar-airconditioners-hero-3-d.jpg">
+            <div class="black-bg"></div>
+            <div class=" box">
+             <h3>ARTCOOL</h3>
+             <h1>جوهر الحياة المتميزة </h1>
+             <p>جرى تصميم مكيف الهواء ARTCOOL من إل جي من أجل حياة مميزة ونيقة. سوف يتسق مظهره
+                البسيط والأساسي مع جميع أنواع التصميمات الداخلية للمنزل.</p>
             </div>
-            <div class="clearfix"></div>
-            <div class="slide-btns">
-              <a href="" class="theme-btn-s2">إضافة للسلة</a>
-              <a href="" class="theme-btn-s3">عرض تفاصيل المنتج</a>
+          </div>
+          <!-- end slide-inner -->
+        </div>
+
+        <div class="swiper-slide">
+          <div class="slide-inner slide-bg-image"
+            data-background="https://www.apple.com/v/macbook-pro-13/f/images/overview/hero_endframe__bsza6x4fldiq_large.jpg">
+            <div class="black-bg"></div>
+            <div class=" box">
+              <h3>MacBook Pro</h3>
+              <h1>كلّه على بعضه Pro</h1>
+              <p>تمنح شريحة M1 جهاز MacBook Pro مقاس 13 إنش سرعة غير عادية وقوة خيالية، 
+                مع أداء وحدة معالجة مركزية أعلى لغاية 2.8x، ورسومات غرافيك أسرع لغاية 5x، ومحرك عصبي 
+                Neural Engine هو الأكثر تطوراً مع تعلم آلي أسرع لغاية 11x، وعمر بطارية يصل إلى 20 ساعة، وهو الأطول في أي جهاز Mac على الإطلاق.</p>
             </div>
           </div>
         </div>
-             <div class="carousel-item carousel-tow"></div>
-             <div class="carousel-item carousel-three"></div>
 
-             <ol class="carousel-indicators ">
-               <li data-target="#mysild" data-slide-to="0" ></li>
-               <li data-target="#mysild" data-slide-to="1"class="active"></li>
-               <li data-target="#mysild" data-slide-to="2"></li>
-             </ol>
-
-         </div>
-     </div>
- </div>
-
-
-
-
- <!-- End  silder -->
-
-<!-- Product slider Start -->
-<!--div class="slider">
-  <div class="container">
-    <div class="owl-carousel">
-      <div class="item"><img src="app/assets/images/Acer.jpg"></div>
-      <div class="item"><img src="app/assets/images/lenovo4.png"></div>
-      <div class="item"><img src="app/assets/images/Acer_Chromebook_315_01_32ff69f880-300x274.jpg"></div>
-      <div class="item"><img src="app/assets/images/ASUS-Chromebook-C423-1-300x202 (1).jpg"></div>
-      <div class="item"><img src="app/assets/images/htc-desire-12_990b.jpg"></div>
-    </div>
-     
-  </div>
-</div-->
-
-<div id="demo" class="carousel slide" data-ride="carousel">
-
-  <!-- Indicators -->
-  <ul class="carousel-indicators">
-    <li data-target="#demo" data-slide-to="0" class="active"></li>
-    <li data-target="#demo" data-slide-to="1"></li>
-    <li data-target="#demo" data-slide-to="2"></li>
-  </ul>
-  
-  <!-- The slideshow -->
-  <div class="container carousel-inner no-padding">
-    <div class="carousel-item active">
-    <div class="row">
-    <?php 
-            $i=0;
-            $rows=$data['products'];
-           // print_r($rows);
-            foreach($rows as $row)
-            {   
-              $id = $row->product_id;
-              if($row->category_id==25){
-                  
-              
-              $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
-          ?>
-         
-      <div class="col-md-3 col-sm-6">
-          <div class="product-store">
-              <div class="product-img">
-                  <a href="#">
-                      
-                      <img  width="60" height="60"  src='<?php  echo $imageURl; ?>'>
-                  </a>
-                  <ul class="social">
-                      <li><a href="main/product_details?action=product_details&product_id=<?PHP echo $id?>" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                      <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                      <li><a href="main/shopingCart?id='<?=$id ;?>'" data-tip="Add to Cart" class="cart"  data-id='<?= $id; ?>' ><i class="fa fa-shopping-cart "></i></a></li>
-                  </ul>
-                 
-              </div>
-              <div class="product-content">
-                  <h3 class="title"><a href="#"> <?php  echo $row->product_short_desc ?></a></h3>
-                  <div class="price">
-                  $<?= $row->product_price ?>
-                    <!-- <?php  echo $row->product_price ?> -->
-                  </div>
-                  <?PHP
-                    // add to cart button
-         // product id for javascript access
-         echo "<div class='product-id display-none'></div>";
-        if(array_key_exists($id, $_SESSION['cart'])){
-            // echo "<a href='main/displayShopingCartItems' class='btn btn-success w-100-pct'>";
-            //     echo "Update Cart";
-            echo "<a  class='add-to-cart' href='main/shopingCart?id={$id}' class='btn btn-primary w-100-pct'>أضف الى عربة التسوق</a>";
-
-            echo "</a>";
-        }else{
-            echo "<a  class='add-to-cart' href='main/shopingCart?id={$id}' class='btn btn-primary w-100-pct'>أضف الى عربة التسوق</a>";
-        }
-    ?>
-                </div>
+        <div class="swiper-slide">
+          <div class="slide-inner slide-bg-image"
+            data-background="https://www.apple.com/v/macbook-air/i/images/overview/hero_endframe__ea0qze85eyi6_large.jpg">
+            <div class="black-bg"></div>
+            <div class=" box">
+              <h3>MacBook Air</h3>
+              <h1>وحش بثوب فراشة.</h1>
+              <p>أنحف وأخف نوت بوك صممناه، مع مستوى أداء من عالم آخر وغير مسبوق بفضل شريحة Apple M1 الجبارة. وحدة معالجة مركزية أسرع لغاية
+                 3.5x. وحدة معالجة رسومات غرافيك أسرع لغاية 5x. محرك عصبي Neural Engine هو الأكثر تطوراً مع تعلم آلي أسرع لغاية 9x،
+                 وبطارية هي الأطول عمراً في أي MacBook Air على الإطلاق.</p>
+            </div>
           </div>
+        </div>
       </div>
-      <?php $i++; } }?> 
-   
-    </div>
-    </div>
-    <div class="carousel-item">
-    <div class="row">
-    <?php 
-            $i=0;
-            $rows=$data['products'];
-           // print_r($rows);
-            foreach($rows as $row)
-            {   
-              $id = $row->product_id;
-              if($row->category_id==25){
-                  
-              
-              $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
-          ?>
-         
-      <div class="col-md-3 col-sm-6">
-          <div class="product-store">
-              <div class="product-img">
-                  <a href="#">
-                      
-                      <img  width="60" height="60"  src='<?php  echo $imageURl; ?>'>
-                  </a>
-                  <ul class="social">
-                      <li><a href="main/product_details?action=product_details&product_id=<?PHP echo $id?>" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                      <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                      <li><a href="main/shopingCart?id='<?=$id ;?>'" data-tip="Add to Cart" class="cart"  data-id='<?= $id; ?>' ><i class="fa fa-shopping-cart "></i></a></li>
-                  </ul>
-                 
-              </div>
-              <div class="product-content">
-                  <h3 class="title"><a href="#"> <?php  echo $row->product_short_desc ?></a></h3>
-                  <div class="price">
-                  
-                    <?php  echo $row->product_price ?>
-                  </div>
-                  <?PHP
-                    // add to cart button
-         // product id for javascript access
-         echo "<div class='product-id display-none'></div>";
-        if(array_key_exists($id, $_SESSION['cart'])){
-            // echo "<a href='main/displayShopingCartItems' class='btn btn-success w-100-pct'>";
-            //     echo "Update Cart";
-            echo "<a  class='add-to-cart' href='main/shopingCart?id={$id}' class='btn btn-primary w-100-pct'>أضف الى عربة التسوق</a>";
 
-            echo "</a>";
-        }else{
-            echo "<a  class='add-to-cart' href='main/shopingCart?id={$id}' class='btn btn-primary w-100-pct'>أضف الى عربة التسوق</a>";
-        }
-    ?>
-                </div>
-          </div>
-      </div>
-      <?php $i++; } }?> 
- 
- 
-     </div>
-     </div>
-    <div class="carousel-item">
-    <div class="row">
-    <?php 
-            $i=0;
-            $rows=$data['products'];
-           // print_r($rows);
-            foreach($rows as $row)
-            {   
-              $id = $row->product_id;
-              if($row->category_id==25){
-                  
-              
-              $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
-          ?>
-         
-      <div class="col-md-3 col-sm-6">
-          <div class="product-store">
-              <div class="product-img">
-                  <a href="#">
-                      
-                      <img  width="60" height="60"  src='<?php  echo $imageURl; ?>'>
-                  </a>
-                  <ul class="social">
-                      <li><a href="main/product_details?action=product_details&product_id=<?PHP echo $id?>" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                      <li><a href="main/wishlist" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                      <li><a href="main/shopingCart?id='<?=$id ;?>'" data-tip="Add to Cart" class="cart"  data-id='<?= $id; ?>' ><i class="fa fa-shopping-cart "></i></a></li>
-                  </ul>
-                 
-              </div>
-              <div class="product-content">
-                  <h3 class="title"><a href="#"> <?php  echo $row->product_short_desc ?></a></h3>
-                  <div class="price">
-                   $ <?php  echo $row->product_price ?>
-                  </div>
-                  <?PHP
-                    // add to cart button
-         // product id for javascript access
-         echo "<div class='product-id display-none'></div>";
-        if(array_key_exists($id, $_SESSION['cart'])){
-            // echo "<a href='main/displayShopingCartItems' class='btn btn-success w-100-pct'>";
-            //     echo "Update Cart";
-            echo "<a  class='add-to-cart' href='main/shopingCart?id={$id}' class='btn btn-primary w-100-pct'>أضف الى عربة التسوق</a>";
-
-            echo "</a>";
-        }else{
-            echo "<a  class='add-to-cart' href='main/shopingCart?id={$id}' class='btn btn-primary w-100-pct'>أضف الى عربة التسوق</a>";
-        }
-    ?>
-                </div>
-          </div>
-      </div>
-      <?php $i++; } }?> 
-  
- 
- 
-     </div>
-     </div>
+      <!-- swipper controls -->
+      <div class="swiper-pagination text-center"></div>
+      <div class="swiper-button-prev" id="prev"></div>
+      <div class="swiper-button-next" id="next"></div>
     </div>
+</article>
+<!-- end of hero slider  -->
+
+
+         
+      
   
   <!-- Left and right controls -->
-  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+  <!-- <a class="carousel-control-prev" href="#demo" data-slide="prev">
     <span class="carousel-control-prev-icon"></span>
   </a>
   <a class="carousel-control-next" href="#demo" data-slide="next">
     <span class="carousel-control-next-icon"></span>
   </a>
-</div>
+</div> -->
 
 <!-- Product slider End -->
 
-<!-- start Adds -->
-<section class="three-column-images mt-5">
+<div class="spacer-slid">
+    &nbsp;
+</div>
+
+<!-- Product slider End -->
+<section class="three-column-images mt-5"  style="margin: 10rem 0 0 0;" >
   <div class="container " >
     <div class="row">
-      <div class="col-xs-6 col-sm-4">
-        <img src="app/assets/images/add.jpg"
+      <div class="col-xs-6 col-sm-4 ">
+        <img src="/Ecom-store-project/app/assets/images/add.jpg"
              class="img-thumbnail img-responsive">
         <a href="#" target="_blank"></a>
          
       </div>
    
        <div class="col-xs-6 col-sm-4">
-        <img src="app/assets/images/add2.jpg"
+        <img src="/Ecom-store-project/app/assets/images/add2.jpg"
              class="img-thumbnail img-responsive">
         <a href="#" target="_blank"></a>
         
       </div>
    
       <div class="col-xs-6 col-sm-4">
-        <img src="app/assets/images/add.jpg"
+        <img src="/Ecom-store-project/app/assets/images/add.jpg"
              class="img-thumbnail img-responsive">
         <a href="#" target="_blank"></a>
         
@@ -313,35 +119,35 @@ echo "</div>";
       </div> 
      </div>  
   </section>
-<!-- End Adds -->
-
 
 <!-- Banner Start -->
 
-<!--div class="Add-banner">
-  <div class="container">
-    <div class="row">
-      <div class="banner">
-        <img src="app/assets/images/banner.jpg" alt="Banner">
-
-    </div>
-    
-  </div>
-</div>
-</div-->
-<!-- Banner End -->
-
- 
-
-
-<!--Satrt Featured Product-->
 <div class="container">
+<div class="pr text-right" >
+  <h1>آخر المنتجات</h1>
+</div>
+
+<!--Start View Moer-->
+<div class="overview text-left ">
+         <div class="container">
+          
+           <button><a href="main/getcat">عرض المزيد </a></button>
+          </div>
+       </div>
+
+<!--End View Moer-->
+</div>
+
+    
+<!--Satrt Featured Product-->
+<div class="container" style="padding: 0rem;">
   <!-- <h3 class="h4 text-sm-right mb-5 text-secondary ">إلكترونيات  </h3>     -->
-  <div class="row">
-  <?php 
+  <div class="active  orginize card-slider">
+    <main class="row main bg-grid product-store">
+    <?php 
             $i=0;
             $rows=$data['order_product'];
-            // print_r($rows);
+           // print_r($rows);
             foreach($rows as $row)
             {   
               $id = $row->product_id;
@@ -350,81 +156,86 @@ echo "</div>";
               
               $imageURl = 'http://localhost/Ecom-store-project/app/assets/images/'.$row->product_main_image;
           ?>
-         
-      <div class="col-md-3 col-sm-6">
-          <div class="product-store">
-              <div class="product-img">
+        <div class="col-md-3 col-sm-6 col-lg-3">
+          <div class="card">
+              <div class="card-img product-img">
                   <a href="#">
-                      
                       <img  width="60" height="60"  src='<?php  echo $imageURl; ?>'>
                   </a>
-                  <ul class="social">
+                  <ul class="social" >
                       <li><a href="main/product_details?action=product_details&product_id=<?PHP echo $id?>" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                      <li><a href="main/wishlist?id=<?=$id?>" data-tip="Add to Wishlist"><i class="fa fa-heart"></i></a></li>
-                      <li><a href="main/shopingCart?id='<?=$id ;?>'" data-tip="Add to Cart" class="cart"  data-id='<?= $id; ?>' ><i class="fa fa-shopping-cart "></i></a></li>
-                  </ul>
-                 
-              </div>
-              <div class="product-content">
-                  <h3 class="title"><a href="#"> <?php  echo $row->product_short_desc ?></a></h3>
-                  <div class="price">
-                  $ <?php  echo $row->product_price ?>
+                      <?PHP
+                      if(array_key_exists($id, $_SESSION['wish'])){
+                      echo " <li><a style='color:blue' class='Wishlist' id='wishlisticon' data-id='$id' data-tip='Add to Wishlist'><i class='fa fa-heart'></i></a></li>";
+                      }
+                      else{
+                        echo " <li><a  class='Wishlist' id='wishlisticon' data-id='$id' data-tip='Add to Wishlist'><i class='fa fa-heart'></i></a></li>";
+                     
+                      }
+                      ?>
+                      <?PHP
+                      if(array_key_exists($id, $_SESSION['cart'])){
+                      echo "<li><a style='color:blue' data-tip='Add to Cart' class='cart' id='shope' data-id='$id'><i class='fa fa-shopping-cart'></i></a></li>";
+                      }
+                      else{
+                        echo "<li><a data-tip='Add to Cart' class='cart' id='shope' data-id='$id'><i class='fa fa-shopping-cart'></i></a></li>";
+                      
+                      }
+                      ?>
+                 </ul>
+              
 
+              </div>
+              <div class="card-price product-content">
+               <div class="card-name title">
+               <!-- <h5 class="product-name"><a href="#"><p><?php  echo $row->product_name ?></p></a></h5> -->
+
+                  <h3 class="title"><a href="#"><p><?php  echo $row->product_short_desc ?></p></a></h3>
+                  <div class="price">
+                  <p>$<?= $row->product_price ?></p>
+                    <!-- <?php  echo $row->product_price ?> -->
                   </div>
                   <?PHP
-                    // add to cart button
-         // product id for javascript access
-         echo "<div class='product-id display-none'></div>";
-        if(array_key_exists($id, $_SESSION['cart'])){
-           // echo "<a href='main/displayShopingCartItems' class='btn btn-success w-100-pct'>";
-           echo "<a  class='add-to-cart' href='main/shopingCart?id={$id}' class='btn btn-primary w-100-pct'>أضف الى عربة التسوق</a>";
-
-               // echo "Update Cart";
-            echo "</a>";
-        }else{
-            echo "<a  class='add-to-cart' href='main/shopingCart?id={$id}' class='btn btn-primary w-100-pct'>أضف الى عربة التسوق</a>";
-        }
-    ?>
-                </div>
+                    echo "<div class='product-id display-none'></div>";
+                    if(array_key_exists($id, $_SESSION['cart'])){
+                      echo "<a   id='shopebtn' class='cart add-to-cart' class='btn btn-primary w-100-pct'>أضف الى عربة التسوق</a>";
+                      echo "</a>";
+                    }else{
+                        echo "<a  class='cart add-to-cart' id='shopebtn' class='btn btn-primary w-100-pct'>أضف الى عربة التسوق</a>";
+                    }
+                ?>
+                       </div>
+                 </div>
+             </div>
+             </div>
+             <?php $i++; } ?> 
           </div>
-      </div>
-      <?php  } ?> 
-
-  </div>
-</div>
 <!--End Featured Product-->
 
-<!--Start View Moer-->
-<div class="overview text-center mt-5">
-         <div class="container">
-          
-           <button><a href="main/getcat">عرض المزيد</a></button>
-          </div>
-       </div>
-
-<!--End View Moer-->
 
 
-<!-- start Adds -->
+
+
+<!-- Product slider End -->
 <section class="three-column-images mt-5">
   <div class="container " >
     <div class="row">
-      <div class="col-xs-6 col-sm-4">
-        <img src="http://localhost/Ecom-store-project/app/assets/images/add.jpg"
+      <div class="col-xs-6 col-sm-4 ">
+        <img src="/Ecom-store-project/app/assets/images/add.jpg"
              class="img-thumbnail img-responsive">
         <a href="#" target="_blank"></a>
          
       </div>
    
        <div class="col-xs-6 col-sm-4">
-        <img src="http://localhost/Ecom-store-project/app/assets/images/add2.jpg"
+        <img src="/Ecom-store-project/app/assets/images/add2.jpg"
              class="img-thumbnail img-responsive">
         <a href="#" target="_blank"></a>
         
       </div>
    
       <div class="col-xs-6 col-sm-4">
-        <img src="http://localhost/Ecom-store-project/app/assets/images/add.jpg"
+        <img src="/Ecom-store-project/app/assets/images/add.jpg"
              class="img-thumbnail img-responsive">
         <a href="#" target="_blank"></a>
         
@@ -432,35 +243,423 @@ echo "</div>";
       </div> 
      </div>  
   </section>
-<!-- End Adds -->
+
+<!-- Banner Start -->
+<div class="container">
+  <div class="text-right" >
+    <h1>العلامات التجارية</h1>
+  </div>
+</div>
+<div class="row1">
+  <div href="" class="col1 log col-span-2 ">
+           <svg class="icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512.003 512.003" style="enable-background:new 0 0 512.003 512.003;" xml:space="preserve">
+        <g>
+          <g>
+            <path d="M351.98,0c-27.296,1.888-59.2,19.36-77.792,42.112c-16.96,20.64-30.912,51.296-25.472,81.088
+              c29.824,0.928,60.64-16.96,78.496-40.096C343.916,61.568,356.556,31.104,351.98,0z"/>
+          </g>
+        </g>
+        <g>
+          <g>
+            <path d="M459.852,171.776c-26.208-32.864-63.04-51.936-97.824-51.936c-45.92,0-65.344,21.984-97.248,21.984
+              c-32.896,0-57.888-21.92-97.6-21.92c-39.008,0-80.544,23.84-106.88,64.608c-37.024,57.408-30.688,165.344,29.312,257.28
+              c21.472,32.896,50.144,69.888,87.648,70.208c33.376,0.32,42.784-21.408,88-21.632c45.216-0.256,53.792,21.92,87.104,21.568
+              c37.536-0.288,67.776-41.28,89.248-74.176c15.392-23.584,21.12-35.456,33.056-62.08
+              C387.852,342.624,373.932,219.168,459.852,171.776z"/>
+          </g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        </svg>
+  </div>
+  <div href="" class="col1 log1 col-span-2">
+           <svg class="icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+        <path style="fill:#579ADD;" d="M214.592,225.828c19.399,0,32.613,13.401,32.613,31.869v47.546c0,1.232-0.999,2.231-2.231,2.231
+          h-17.589c-1.232,0-2.231-0.999-2.231-2.231v-43.461c0-10.619-9.441-16.965-18.564-16.965c-11.805,0-18.182,8.741-18.182,16.965
+          v43.461c0,1.232-0.999,2.231-2.231,2.231h-17.584c-1.232,0-2.231-0.999-2.231-2.231v-75.837c0-1.232,0.999-2.231,2.231-2.231h17.588
+          c1.232,0,2.231,0.999,2.231,2.232l-0.004,9.274l0.004-0.004l-0.004,0.017C194.833,230.114,205.347,225.828,214.592,225.828"/>
+        <g>
+          <path style="fill:#4987CE;" d="M236.487,305.244v-43.461c0-10.619-9.441-16.965-18.564-16.965c-2.105,0-4.029,0.289-5.784,0.792
+            c7.037,1.996,13.016,7.725,13.016,16.173v43.461c0,1.232,0.999,2.231,2.231,2.231h11.333
+            C237.486,307.475,236.487,306.476,236.487,305.244z"/>
+          <path style="fill:#4987CE;" d="M177.695,305.244v-75.837c0-1.232,0.999-2.231,2.231-2.231h-11.333
+            c-1.232,0-2.231,0.999-2.231,2.231v75.837c0,1.232,0.999,2.231,2.231,2.231h11.333
+            C178.694,307.475,177.695,306.476,177.695,305.244z"/>
+        </g>
+        <path style="fill:#579ADD;" d="M405.483,227.179h20.292c1.588,0,2.667,1.612,2.063,3.08l-31.202,75.811
+          c-0.344,0.836-1.159,1.382-2.063,1.382h-21.174c-0.904,0-1.719-0.546-2.063-1.382l-31.202-75.811
+          c-0.604-1.468,0.475-3.08,2.063-3.08h20.297c0.938,0,1.775,0.586,2.096,1.467l17.303,47.479c0.713,1.956,3.479,1.956,4.192,0
+          l17.303-47.479C403.708,227.765,404.545,227.179,405.483,227.179z"/>
+        <path style="fill:#4987CE;" d="M382.668,306.07l-31.202-75.811c-0.604-1.468,0.475-3.08,2.063-3.08h-11.333
+          c-1.588,0-2.667,1.612-2.063,3.08l31.202,75.811c0.344,0.836,1.159,1.382,2.063,1.382h11.333
+          C383.827,307.452,383.012,306.906,382.668,306.07z"/>
+        <path style="fill:#579ADD;" d="M158.165,259.658c-1.406-8.011-4.604-15.158-9.353-20.681c-7.407-8.602-18.369-13.153-31.717-13.153
+          c-24.245,0-42.527,17.886-42.527,41.51c0,24.237,18.325,41.506,44.957,41.506c13.772,0,27.829-6.024,35.524-13.448
+          c0.99-0.955,0.919-2.557-0.172-3.396l-10.659-8.194c-0.775-0.596-1.854-0.618-2.65-0.049c-8.476,6.057-13.667,7.54-21.717,7.54
+          c-5.928,0-10.855-1.433-14.73-4.023c-1.479-0.989-1.249-3.236,0.395-3.918l51.299-21.281
+          C157.768,261.675,158.344,260.674,158.165,259.658z M132.308,255.548l-33.411,13.861c-1.445,0.599-3.042-0.44-3.091-2.003
+          c-0.213-6.698,1.76-12.05,4.729-16.037c3.755-5.042,9.736-8.002,16.96-8.002c6.986,0,12.49,3.508,15.836,8.907
+          C134.064,253.457,133.594,255.015,132.308,255.548z"/>
+        <path style="fill:#4987CE;" d="M85.901,267.334c0-21.813,15.591-38.721,37.066-41.188c-1.903-0.206-3.856-0.322-5.872-0.322
+          c-24.245,0-42.527,17.886-42.527,41.51c0,24.237,18.325,41.506,44.957,41.506c1.807,0,3.618-0.109,5.419-0.306
+          C101.555,306.164,85.901,289.73,85.901,267.334z"/>
+        <path style="fill:#579ADD;" d="M72.467,289.459v15.785c0,1.232-0.999,2.231-2.231,2.231H2.231c-1.232,0-2.231-0.999-2.231-2.231
+          v-99.852c0-1.232,0.999-2.231,2.231-2.231h17.888c1.232,0,2.231,0.999,2.231,2.231v79.606c0,1.232,0.999,2.231,2.231,2.231h45.655
+          C71.468,287.228,72.467,288.227,72.467,289.459z"/>
+        <path style="fill:#4987CE;" d="M11.333,305.244v-99.852c0-1.232,0.999-2.231,2.231-2.231H2.231c-1.232,0-2.231,0.999-2.231,2.231
+          v99.852c0,1.232,0.999,2.231,2.231,2.231h11.333C12.332,307.474,11.333,306.476,11.333,305.244z"/>
+        <path style="fill:#579ADD;" d="M468.995,225.824c-24.28,0-43.305,18.23-43.305,41.501c0,23.537,18.895,41.501,43.01,41.501
+          c24.28,0,43.301-18.234,43.301-41.501C512,243.789,493.11,225.824,468.995,225.824z M468.995,289.932
+          c-12.079,0-21.55-9.932-21.55-22.607c0-13.275,8.941-22.607,21.255-22.607c12.084,0,21.551,9.932,21.551,22.607
+          C490.25,280.344,481.313,289.932,468.995,289.932z"/>
+        <g>
+          <path style="fill:#4987CE;" d="M474.735,289.165c1.781,0.485,3.647,0.767,5.592,0.767c12.318,0,21.255-9.589,21.255-22.607
+            c0-12.675-9.467-22.607-21.55-22.607c-2.028,0-3.953,0.276-5.774,0.758c9.3,2.515,15.991,11.201,15.991,21.848
+            C490.25,278.213,483.987,286.678,474.735,289.165z"/>
+          <path style="fill:#4987CE;" d="M437.022,267.326c0-21.426,16.132-38.566,37.64-41.152c-1.852-0.223-3.741-0.35-5.667-0.35
+            c-24.28,0-43.305,18.23-43.305,41.501c0,23.537,18.895,41.501,43.01,41.501c1.925,0,3.813-0.127,5.665-0.35
+            C453.023,305.909,437.022,288.982,437.022,267.326z"/>
+        </g>
+        <path style="fill:#579ADD;" d="M299.234,225.824c-24.285,0-43.305,18.23-43.305,41.501c0,23.537,18.89,41.501,43.005,41.501
+          c24.28,0,43.305-18.234,43.305-41.501C342.239,243.789,323.344,225.824,299.234,225.824z M299.234,289.932
+          c-12.084,0-21.55-9.932-21.55-22.607c0-13.275,8.937-22.607,21.251-22.607c12.084,0,21.55,9.932,21.55,22.607
+          C320.484,280.344,311.547,289.932,299.234,289.932z"/>
+        <g>
+          <path style="fill:#4987CE;" d="M267.261,267.326c0-21.426,16.129-38.566,37.639-41.152c-1.852-0.223-3.74-0.35-5.666-0.35
+            c-24.284,0-43.305,18.23-43.305,41.501c0,23.537,18.89,41.501,43.005,41.501c1.925,0,3.813-0.127,5.665-0.35
+            C283.258,305.909,267.261,288.982,267.261,267.326z"/>
+          <path style="fill:#4987CE;" d="M304.973,289.165c1.781,0.485,3.648,0.767,5.594,0.767c12.314,0,21.251-9.589,21.251-22.607
+            c0-12.675-9.467-22.607-21.55-22.607c-2.028,0-3.953,0.276-5.773,0.758C325.732,251.221,325.703,283.59,304.973,289.165z"/>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+</svg>        
+  </div>
+        <div href="" class="col1 log col-span-2 ">
+            <svg class="icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+        <path style="fill:#E85454;" d="M255.891,0C166.664,0,94.23,72.392,94.23,161.804c0,89.409,72.434,161.804,161.662,161.804
+          c89.43,0,161.879-72.395,161.879-161.804C417.77,72.392,345.321,0,255.891,0z"/>
+        <path style="fill:#D84848;" d="M114.835,161.804c0-85.947,66.932-156.154,151.37-161.468C262.794,0.121,259.357,0,255.891,0
+          C166.664,0,94.23,72.392,94.23,161.804c0,89.409,72.434,161.804,161.662,161.804c3.466,0,6.902-0.121,10.314-0.336
+          C181.767,317.958,114.835,247.747,114.835,161.804z"/>
+        <g>
+          <path style="fill:#C2C2C4;" d="M234.334,473.834h-56.525c-1.209,0-2.19-0.98-2.19-2.19v-99.639c0-1.21-0.981-2.19-2.19-2.19
+            h-35.343c-1.912,0-3.462,1.55-3.462,3.462v133.084c0,1.209,0.98,2.19,2.19,2.19h97.52c1.21,0,2.19-0.98,2.19-2.19v-30.337
+            C236.523,474.814,235.543,473.834,234.334,473.834z"/>
+          <path style="fill:#C2C2C4;" d="M342.677,494.73c-7.266,11.026-20.679,17.27-37.428,17.27c-36.041,0-59.527-28.72-59.527-73.058
+            c0-44.983,26.402-72.706,70.149-72.706c17.435,0,32.332,4.676,43.856,13.468c10.629,8.426,15.143,16.717,17.266,32.076
+            c0.327,2.365-1.507,4.483-3.894,4.483h-33.65c-2.628,0-4.884-1.754-5.671-4.262c-2.582-8.227-9.773-13.291-18.832-13.291
+            c-16.576,0-26.269,15.316-26.269,40.792c0,25.838,10.07,41.35,27.002,41.35c12.062,0,19.53-6.07,23.19-19.521
+            c0.612-2.251-1.101-4.473-3.434-4.473h-16.132c-3.237,0-5.861-2.624-5.861-5.861v-18.744c0-2.539,2.059-4.598,4.598-4.598h55.772
+            c2.052,0,3.716,1.664,3.716,3.716v74.621c0,1.412-1.145,2.557-2.557,2.557h-29.713c-1.425,0-2.58-1.155-2.58-2.58L342.677,494.73"
+            />
+        </g>
+        <g>
+          <path style="fill:#B0B0B5;" d="M155.229,506.361V373.277c0-1.912,1.55-3.462,3.462-3.462h-20.605c-1.912,0-3.462,1.55-3.462,3.462
+            v133.084c0,1.209,0.98,2.19,2.19,2.19h20.605C156.209,508.551,155.229,507.57,155.229,506.361z"/>
+          <path style="fill:#B0B0B5;" d="M266.327,438.942c0-41.293,22.26-68.022,59.748-72.133c-3.296-0.374-6.696-0.572-10.204-0.572
+            c-43.747,0-70.149,27.722-70.149,72.706c0,44.338,23.486,73.058,59.527,73.058c3.572,0,6.981-0.301,10.222-0.855
+            C285.372,506.109,266.327,478.862,266.327,438.942z"/>
+        </g>
+        <g>
+          <path style="fill:#F2F2F2;" d="M259.827,89.25h-7.404c-2.438,0-4.421,1.983-4.421,4.42v135.508c0,2.759,2.245,5.004,5.004,5.004
+            h38.575c2.544,0,4.615-2.07,4.615-4.615v-6.581c0-2.518-2.048-4.567-4.567-4.567h-27.614V93.438
+            C264.016,91.129,262.136,89.25,259.827,89.25z"/>
+          <path style="fill:#F2F2F2;" d="M386.109,154.086h-88.176c-2.614,0-4.74,2.126-4.74,4.74v6.431c0,2.456,1.998,4.454,4.454,4.454
+            h79.322c-7.417,104.128-133.244,151.137-206.742,77.741c-74.336-74.17-26.007-207.68,89.663-206.907
+            c2.308,0,4.126-1.872,4.126-4.131v-7.402c0-2.3-1.87-4.197-4.169-4.229C177.864,23.7,119.038,88.394,119.038,161.759
+            c0,75.327,60.835,136.993,136.854,136.993c76.489,0,137.079-61.837,137.079-136.993
+            C392.971,156.547,389.575,154.086,386.109,154.086z"/>
+          <path style="fill:#F2F2F2;" d="M223.752,110.155c0,10.664-8.728,19.338-19.434,19.338c-10.652,0-19.38-8.674-19.38-19.338
+            c0-10.76,8.728-19.435,19.38-19.435C215.024,90.72,223.752,99.394,223.752,110.155z"/>
+        </g>
+        <path style="fill:#D6D6D8;" d="M209.188,110.155c0-6.144,2.852-11.6,7.277-15.157c-3.332-2.673-7.554-4.277-12.147-4.277
+          c-10.652,0-19.38,8.674-19.38,19.435c0,10.664,8.729,19.338,19.38,19.338c4.593,0,8.815-1.604,12.147-4.27
+          C212.04,121.676,209.188,116.244,209.188,110.155z"/>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        </svg>
+ </div>
+ <div href="" class="col1 log1 col-span-2 ">
+    <svg class="icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+          <path style="fill:#0964AF;" d="M511.686,211.219c-10.56-60.905-265.338-51.36-425.524,16.027l-12.73,5.584
+            c-48.347,22.168-76.765,46.794-73.119,67.946c10.625,61.333,267.711,51.005,426.962-16.636l18.991-8.615
+            C489.909,254.316,515.139,231.227,511.686,211.219z"/>
+          <path style="fill:#004F9C;" d="M26.615,300.776c-3.646-21.152,24.772-45.779,73.119-67.946l12.73-5.584
+            c79.585-33.479,190.439-54.642,279.424-56.575c-95.084-2.188-219.877,20.461-305.726,56.575l-12.73,5.584
+            c-48.347,22.168-76.765,46.794-73.119,67.946c4.81,27.766,63.599,42.343,146.031,40.55C77.938,339.75,30.896,325.488,26.615,300.776
+            z"/>
+          <g>
+            <path style="fill:#F2F2F2;" d="M428.577,253.821v5.189c0,0.851,0.69,1.541,1.541,1.541h2.956c0.568,0,1.029,0.461,1.029,1.029
+              v6.831c0.026,0.703-0.016,1.459-0.13,2.063c-0.229,1.469-1.609,3.954-5.531,3.954c-3.906,0-5.261-2.485-5.505-3.954
+              c-0.099-0.604-0.146-1.359-0.146-2.063v-24.809c0-0.885,0.063-1.838,0.25-2.557c0.266-1.323,1.433-3.938,5.37-3.938
+              c4.131,0,5.157,2.745,5.386,3.938c0.161,0.776,0.177,2.089,0.177,2.089v1.613c0,0.769,0.623,1.392,1.392,1.392h10.456
+              c0.962,0,1.742-0.78,1.742-1.742v-0.039c0,0,0.057-1.859-0.104-3.594c-1.016-10.183-9.36-13.391-18.939-13.391
+              c-9.584,0-17.756,3.245-18.944,13.391c-0.104,0.937-0.271,2.609-0.271,3.594v22.829c0,0.984,0.026,1.755,0.208,3.578
+              c0.849,9.474,8.719,13.089,17.762,13.376l18.991-8.615c0.625-1.386,1.042-2.969,1.219-4.761c0.146-1.823,0.161-2.594,0.198-3.578
+              v-13.304c0-0.69-0.559-1.249-1.249-1.249h-16.669C429.109,252.633,428.577,253.165,428.577,253.821z"/>
+            <path style="fill:#F2F2F2;" d="M108.658,263.941c-2.266-11.402-22.751-14.767-24.288-21.126c-0.25-1.089-0.193-2.245-0.052-2.844
+              c0.38-1.734,1.542-3.662,4.933-3.662c3.172,0,5.032,1.979,5.032,4.938v2.168c0,0.655,0.531,1.187,1.187,1.187h10.577
+              c0.939,0,1.7-0.761,1.7-1.7v-2.123c0-11.792-10.584-13.678-18.225-13.678c-1.151,0-2.276,0.042-3.36,0.146l-12.73,5.584
+              c-1.391,1.677-2.349,3.75-2.766,6.329c-0.396,2.437-0.459,4.573,0.109,7.318c2.333,11.089,21.527,14.313,24.319,21.324
+              c0.521,1.313,0.354,2.98,0.099,4.006c-0.443,1.834-1.662,3.667-5.271,3.667c-3.365,0-5.391-1.969-5.391-4.933l-0.017-4.141
+              c-0.002-0.599-0.488-1.083-1.087-1.083h-11.94c-0.804,0-1.456,0.652-1.456,1.456v2.695c0,12.131,9.475,15.782,19.616,15.782
+              c9.761,0,17.777-3.339,19.079-12.423C109.377,268.15,108.887,265.087,108.658,263.941z"/>
+            <path style="fill:#F2F2F2;" d="M147.136,281.979l-6.811-46.531c-0.065-0.442-0.702-0.443-0.768-0.001l-7.003,46.689
+              c-0.083,0.557-0.562,0.968-1.125,0.968h-12.52c-0.561,0-0.985-0.509-0.884-1.061l9.498-51.551c0.178-0.965,1.02-1.666,2.001-1.666
+              h20.882c0.822,0,1.527,0.587,1.676,1.396l9.499,51.775c0.106,0.576-0.337,1.108-0.923,1.108h-12.223
+              C147.784,283.103,147.231,282.625,147.136,281.979z"/>
+            <path style="fill:#F2F2F2;" d="M219.036,281.335l-0.338-45.918c-0.002-0.296-0.431-0.334-0.484-0.043l-8.615,46.612
+              c-0.12,0.647-0.684,1.117-1.342,1.117h-10.863c-0.982,0-1.824-0.701-2.003-1.667l-8.454-45.794
+              c-0.059-0.322-0.533-0.28-0.535,0.047l-0.341,46.338c-0.004,0.595-0.488,1.076-1.084,1.076h-10.992
+              c-0.783,0-1.414-0.644-1.397-1.427l1.112-51.257c0.019-0.886,0.743-1.595,1.63-1.595h18.912c0.87,0,1.611,0.632,1.749,1.491
+              l6.044,37.641c0.097,0.602,0.962,0.602,1.059,0l6.063-37.759c0.127-0.791,0.809-1.372,1.61-1.372h19.439
+              c0.646,0,1.174,0.516,1.188,1.162l1.146,51.248c0.023,1.025-0.802,1.869-1.827,1.869h-9.895
+              C219.839,283.103,219.044,282.314,219.036,281.335z"/>
+            <path style="fill:#F2F2F2;" d="M284.064,272.671c-1.276,8.985-9.24,12.282-18.892,12.282c-10.063,0-19.413-3.61-19.413-15.605
+              v-3.012c0-0.626,0.508-1.134,1.134-1.134h11.86c0.74,0,1.341,0.6,1.341,1.341v3.868c0,2.927,2.026,4.87,5.381,4.87
+              c3.589,0,4.792-1.808,5.204-3.61c0.25-1,0.385-2.677-0.099-3.99c-2.75-6.933-21.751-10.12-24.064-21.095
+              c-0.599-2.714-0.51-4.844-0.135-7.235c1.433-8.787,9.193-11.944,18.694-11.944c7.563,0,17.985,1.833,17.985,13.537v2.269
+              c0,0.826-0.67,1.496-1.496,1.496h-10.435c-0.763,0-1.381-0.618-1.381-1.381v-1.931c0-2.922-1.828-4.881-4.943-4.881
+              c-3.344,0-4.506,1.896-4.902,3.631c-0.125,0.588-0.182,1.729,0.052,2.813c1.536,6.271,21.783,9.657,24.012,20.918
+              C284.209,265.009,284.668,268.03,284.064,272.671"/>
+            <path style="fill:#F2F2F2;" d="M334.707,271.322c-0.958,10.141-8.896,13.428-18.84,13.428c-9.933,0-17.876-3.287-18.814-13.428
+              c-0.062-0.542-0.135-2.584-0.12-3.583V230.91c0-1.151,0.933-2.084,2.084-2.084h9.674c1.043,0,1.889,0.846,1.889,1.889v38.269
+              c-0.026,0.693,0,1.49,0.135,2.063c0.261,1.344,1.427,3.938,5.151,3.938c3.766,0,4.896-2.594,5.183-3.938
+              c0.12-0.573,0.146-1.37,0.12-2.063v-38.494c0-0.919,0.745-1.664,1.664-1.664h10.124c1.026,0,1.858,0.832,1.858,1.858v37.055
+              C334.874,268.738,334.79,270.78,334.707,271.322"/>
+            <path style="fill:#F2F2F2;" d="M393.433,282.536h-16.261c-0.732,0-1.378-0.479-1.59-1.18l-12.401-40.929
+              c-0.146-0.483-0.859-0.371-0.85,0.133l0.688,40.23c0.016,0.959-0.756,1.745-1.715,1.745h-9.806c-0.938,0-1.699-0.761-1.699-1.699
+              v-50.206c0-0.998,0.809-1.806,1.806-1.806h16.447c1.054,0,1.982,0.696,2.276,1.708l11.618,39.949
+              c0.093,0.319,0.564,0.248,0.559-0.084l-0.658-39.726c-0.017-1.015,0.802-1.848,1.817-1.848h10.115c0.761,0,1.377,0.617,1.377,1.377
+              v50.613C395.153,281.766,394.383,282.536,393.433,282.536z"/>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+  </svg>
+</div>
 
 
+     
+  
+</div>
+</div>
+
+<!-- 
+<script>
+$(document).ready(function(){
+            // add the item to cart
+            $('.cart').click(function(){
+              var id = $(this).data('id');
+            // alert(id);
+            $.ajax({
+                url: 'main/shopingCart?id='+ id,
+                method: 'post',
+                cache: false,
+                data: {
+                  id: id
+                },
+                success: function(response) {
+                  alert(response);
+                }
+             });
+          });
+          // add the item to Wishlist
+          $('.Wishlist').click(function(){
+              var id = $(this).data('id');
+            // alert(id);
+            $.ajax({
+                url: 'main/wishlist?id='+ id,
+                method: 'post',
+                cache: false,
+                data: {
+                  id: id
+                },
+                success: function(response) {
+                  alert(response);
+                }
+             });
+          });
+})
+
+</script> -->
 
 
-      
-  <!-- <div class="container">
-	<div class="row">
-		<div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="/Ecom-store-project/app/assets/images/barndsam.png" width="100%" /></div>
-        <div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="/Ecom-store-project/app/assets/images/barndsam.png" /></div>
-        <div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="/Ecom-store-project/app/assets/images/barndsam.png" /></div>
-        <div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="/Ecom-store-project/app/assets/images/barndsam.png" /></div>
-    	<div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="/Ecom-store-project/app/assets/images/barndsam.png" /></div>
-        <div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="/Ecom-store-project/app/assets/images/barndsam.png" /></div>
-	    <div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="/Ecom-store-project/app/assets/images/barndsam.png" /></div>
-        <div class="col-md-3 col-sm-4 col-xs-6"><img class="img-responsive" src="/Ecom-store-project/app/assets/images/barndsam.png" /></div>
-    </div>
-</div> -->
-   
+ 
+  
 
-
-
-
-
-
-
-    
 <?PHP
 include "app/views/footer.php"; 
-?>   
-  </body>
+?>
+    
+ 
+  
+    <script>
+$(document).ready(function(){
+            // add the item to cart
+            $('.cart').click(function(){
+              var id = $(this).data('id');
+            $.ajax({
+                url: 'main/shopingCart?id='+ id,
+                method: 'post',
+                cache: false,
+                data: {
+                  id: id
+                },
+                success: function(response) {
+                  if(response == 0){
+                   alert("تم اضافة المنتج مسبقاً");
+                  }
+                  else{
+                   alert("تم إضافة المنتج الى السلة  ");
+                    document.getElementById("comparison-count").innerHTML=response;
+                    document.getElementById("shope").style.color = "blue";
+                    // document.getElementById("shopebtn").style.backgroundColor = "#F58B20";
+                    // document.getElementById("shopebtn").style.fontcolor = "white";
+                  }
+                }
+             });
+          });
+          // add the item to Wishlist
+          $('.Wishlist').click(function(){
+              var id = $(this).data('id');
+            $.ajax({
+                url: 'main/wishlist?id='+ id,
+                method: 'post',
+                cache: false,
+                data: {
+                  id: id
+                },
+                success: function(response) {
+                  if(response == 0){
+                   alert("تم اضافة المنتج مسبقاً");
+                  }
+                  else{
+                   alert("تم إضافة المنتج الى المضلة  ");
+                    document.getElementById("wishcomparison-count").innerHTML=response;
+                    document.getElementById("wishlisticon").style.color = "blue";
+                  }
+                }
+             });
+          });
+})
+</script>
+
+</body>
 </html>

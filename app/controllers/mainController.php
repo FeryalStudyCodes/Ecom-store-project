@@ -97,7 +97,7 @@ class mainController extends Controller{
     
 
 function getcat(){
-     print_r($_POST);
+    // print_r($_POST);
     // $this->main_model->getcatbyid($_POST);
     // echo $_GET['category_id'];
     if(isset($_GET['category_id'])){
@@ -128,5 +128,44 @@ function getcat(){
         $this->main_model->addtowishlistfromcategory($_POST);
     }
  
+//     function checkout(){
+//         $this->controller->view_object->create_view('checkout');
+    
+// }
+function checkout(){
+    session_start();
+    if (isset($_SESSION['user_id'])) {
+        $this->main_model->checkout($_POST);
+        $this->controller->view_object->create_view('pymentdata',$_POST);
+    }
+    else{
+        $this->controller->view_object->create_view('logincheckout');
+    }
+}
+function pymentresult(){
+    $this->controller->view_object->create_view('pymentresult');
+}
+
+function logincheckout(){   
+    $this->controller->view_object->create_view('logincheckout');
+   }
+   function checklogincheckout(){
+    $this->main_model->checklogincheckout($_POST); 
+   }
+   function registercheckout(){   
+    $this->controller->view_object->create_view('registercheckout');
+   }
+   function addusercheckout(){
+    $this->main_model->addusercheckout($_POST);
+   }
+function about(){
+    $this->controller->view_object->create_view('about store');
+
+}
+
+function contactus(){
+    $this->controller->view_object->create_view('ContactUs');
+
+}
 }
 ?>

@@ -47,9 +47,32 @@ class product{
         ->build()
         ->exeucte();
     }
-    function innerJoine(){
-        return $this->db->innerJoine();
+    // function innerJoine(){
+    //     return $this->db->innerJoine();
         
+    // }
+    function innerJoine(){
+        return  $this->db->innerJoine();
+    }
+    
+    function getBrandwhere(){
+        $category_id = $_POST['category_id'];
+        $cols=array("*");
+        $tbls=array("brand");
+        $result = $this->db
+        ->select($cols)
+        ->from($tbls)
+        ->where("category_id ","=",$category_id)
+        ->where("is_active","=","1")
+        ->build()
+        ->exeucte();
+        $rows= $result;
+        foreach($rows as $row)
+        {
+        echo "
+        <option value=$row->brand_id >$row->brand_name</option>";
+         }
+       
     }
     function addData($data){
         $this->db->insert("product",$data);

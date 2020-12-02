@@ -47,11 +47,12 @@ echo "</div>";
                   } 
                   else{?>
         <div class="table-responsive mt-2">
+        <form method='post' action='main/checkout'>
           <table class="table table-bordered table-striped text-center">
             <thead>
               <tr>
                 <td colspan="7">
-                  <h4 class="text-center text-info m-0">محتويات سلّة التسوق</h4>
+                  <h4 class="text-center text-info m-0"  >محتويات سلّة التسوق</h4>
                 </td>
               </tr>
               <tr>
@@ -61,6 +62,8 @@ echo "</div>";
                 <th>سعر الوحدة</th>
                 <th>الكمية</th>
                 <th>إجمالي السعر</th>
+                <th>  </th>
+
                
               </tr>
             </thead>
@@ -77,18 +80,18 @@ echo "</div>";
        ?>
               <tr>
                 <td><?= $i; ?></td>
-               <td> <img  width="60"  src='<?= $imageURl; ?>'>
-               <input type="hidden" class="product-id" value="<?= $id?>"></td>
+               <td  class="something"> <img src='<?= $imageURl; ?>'  >
+               <input type="hidden" name="product[]" class="product-id" value="<?= $id?>"></td>
                 
                 <td><?=$row->product_name?></td>
                 <td>$<?= $row->product_price ?></td>
                 <input type="hidden" class="pprice" value="">
                 <td>
-                  <input type="number" class="form-control cart-quantity" value="<?= $quantity ?>"style="width:75px;">
+                  <input type="number"  class="form-control cart-quantity" name="q[]" value="<?= $quantity ?>"style="width:75px;">
                 </td>
                 <td>$<?= $sub_total?></td>
                 <td>
-                  <a href='removeShopingCartItems?id=<?=$row->product_id?>'  class="text-danger lead" onclick="return confirm('Are you sure want to remove this item?');">
+                  <a href='#'  class="delete text-danger lead" >
                   <i class="fas fa-trash-alt"></i></a>
                   
                 </td>
@@ -100,19 +103,26 @@ echo "</div>";
     }?>     
               <tr>
                 <td colspan="3">
-                  <a href="main/main" class="btn btn-success"><i class="fas fa-cart-plus"></i>&nbsp;&nbsp;تابع التسوق</a>
+                  <a href="main/main"  style='background-color: #A01C86; border:#A01C86;'class="btn btn-success"><i class="fas fa-cart-plus"></i>&nbsp;&nbsp;تابع التسوق</a>
                 </td>
                 <td colspan="2"><b>التكلفة الإجمالية</b></td>
                 <td>  <h4 class='m-b-10px'><?="  ".$item_count?>items</h4>
-                    <h4>$<?=number_format($total, 2, '.', ',') ?></h4></td>
+                    <h4 name="cost" >$<?=number_format($total, 2, '.', ',') ?></h4></td>
+                    <?PHP $order_date=date("Y-m-d"); ?>
+                    <input type="hidden" checked="" class="custom-control-input" name='order_date' value= <?PHP echo $order_date; ?>>    							
+            
+                    <input type="hidden" name="cost" class="product-id" value="<?= $total?>"></td>
                 <td>
-                  <a href="#" class="btn btn-info "><i class="far fa-credit-card"></i>&nbsp;&nbsp;إتمام الشراء</a>
+                <i class="far fa-credit-card"></i>&nbsp;&nbsp;
+                <input type='submit' type='submit' style='background-color: #F89132; border:#F89132;' value=' إتمام الشراء' class='btn btn-primary add_product'>
                 </td>
               </tr>
             </tbody>
+            </form>
           </table>
         </div>
         <?PHP } ?>
+       
       </div>
     </div>
   </div>
@@ -121,6 +131,54 @@ echo "</div>";
 include "app/views/footer.php"; 
 ?>
    <script>
+$(document).ready(function(){
+ // delet the item quantity
+$('.delete').click(function(){
+  var el = this;
+  var $el = $(this).closest('tr');  
+  var id = $el.find(".product-id").val();
+ // alert(id)
+  var confirmalert = confirm("هل تريد حذف المنتج من سلة الشراء ؟");
+  if (confirmalert == true) {
+     // AJAX Request
+     $.ajax({
+       url: 'main/removeShopingCartItems?id=' + id,
+       type: 'POST',
+       data: { id:id },
+       success: function(data){
+        document.getElementById("comparison-count").innerHTML=data;
+        $(el).closest('tr').fadeOut(800,function(){
+	       $(this).remove();
+                    });
+       }
+     });
+  }
+});
+     // Change the item quantity
+   /*  $(".cart-quantity").on('change', function() {
+      var $el = $(this).closest('tr');
+      var id = $el.find(".product-id").val();
+      var quantity = $el.find(".cart-quantity").val();
+    /  $.ajax({
+        url: 'main/updateShopingCartItems?id=' + id + '&quantity=' + quantity,
+        method: 'post',
+        cache: false,
+        data: {
+          id: id,
+          quantity: quantity
+        },
+        success: function(response) {
+          setInterval('refreshPage()', 200);
+        }
+      });
+    });*/
+ 
+})
+function refreshPage() {
+    location.reload(true);
+}
+</script>
+<script>
 $(document).ready(function(){
    
 $(".cart-quantity").on('change', function() {
@@ -136,7 +194,6 @@ $(".cart-quantity").on('change', function() {
  
 })
 </script>
- 
 </body>
 
 </html>
