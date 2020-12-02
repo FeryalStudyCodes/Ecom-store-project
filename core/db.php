@@ -36,16 +36,17 @@ class DB{
         return $result;
     }
 
-    function innerJoine(){
-        $stmt=$this->connection->prepare("select product.product_id,product.is_active,product.product_name,product.product_images,product.product_main_image,product.product_price,product.product_short_desc,brand.brand_name,color.color_name ,category.category_name
+    function innerJoine(){ 
+        $stmt=$this->connection->prepare("select product.product_id,product.is_active,product.product_quantity,product.creation_date ,product.product_details,product.product_name,product.product_images,product.product_main_image,product.product_price,product.product_short_desc,brand.brand_name,color.color_name ,category.category_name
          FROM product INNER JOIN color ON product.color_id = color.color_id
           INNER JOIN category ON product.category_id = category.category_id
            INNER JOIN brand ON product.brand_id = brand.brand_id ");
         $stmt->execute();
         $result= $stmt->fetchAll(PDO::FETCH_OBJ);
-      //  print_r ($result);
         return $result;
     }
+
+
     function from($tbls){
         $this->tables="from ".implode(",",$tbls)." ";
         return $this;
@@ -80,7 +81,7 @@ class DB{
         $stmt=$this->connection->prepare($this->final_query);
         $stmt->execute();
        $result= $stmt->fetchAll(PDO::FETCH_OBJ);
-     //  print_r($result);
+      // print_r($result);
        return $result;
       
     }
@@ -255,7 +256,29 @@ function getcategories(){
    
 }
 
- 
+function insertorder($order_data,$data_details){
+    $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $tbl = "orders";
+    $values=array();
+    foreach(array_values($order_data)as $item){
+        $values[]="'".$item."'";
+    }
+    
+   $this->final_query="insert into ".$tbl."(".implode(",",array_keys($order_data)).") values (".implode(",",$values).")";
+    $stmt=$this->connection->prepare($this->final_query);
+    $result = $stmt->execute();
+    if($result === TRUE){
+        $id = $this->connection->lastInsertId();
+       for ($i = 0; $i < count($data_details['quantity']); $i++){
+            $quantity = $data_details['quantity'][$i];
+            $product_id = $data_details['product_id'][$i];
+               $this->final_query="INSERT INTO `order_details`(id, order_id, product_id, quantity) VALUES('', '$id', '$product_id','$quantity')"; 
+               $stmt=$this->connection->prepare($this->final_query);
+               $stmt->execute(); 
+           }
+    }
+  
+    }
 
 
 }

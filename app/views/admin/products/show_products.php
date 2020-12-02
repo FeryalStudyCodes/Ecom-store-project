@@ -8,6 +8,9 @@ include "app/views/admin/dashboard_contant/sidebar.php";
       <div class="row">
       	<div class="col-10">
       		<h2>Product List</h2>
+          <div class="form-group">
+       
+                        </div>
       	</div>
       	<div class="col-2">
       		<a href="#" data-toggle="modal" data-target="#add_product_modal" class="btn btn-primary btn-sm">Add Product</a>
@@ -24,7 +27,7 @@ include "app/views/admin/dashboard_contant/sidebar.php";
               <th>Brand</th>
               <th>Quantity</th>
               <th>main_image</th>
-                
+             
               <th>Price</th>
               <th>Active</th>
               <th>Creation Date</th>
@@ -33,6 +36,7 @@ include "app/views/admin/dashboard_contant/sidebar.php";
           </thead>
           <tbody id="product_list">
           <?php 
+         
             $i=0;
             $rows=$data['products'];
            // print_r($rows);
@@ -46,11 +50,12 @@ include "app/views/admin/dashboard_contant/sidebar.php";
                 <td></td>
                 <td> <?php  echo $row->product_name ?> </td>
                 <td> <?php  echo $row->product_details ?> </td>
-                <td> <?php  echo $row->category_id ?> </td>
-                <td> <?php  echo $row->brand_id ?> </td>
+                <td> <?php  echo $row->category_name ?> </td>
+                <td> <?php  echo $row->brand_name ?> </td>
                 <td> <?php  echo $row->product_quantity ?> </td>
                 <td> <img  width="60" height="60"  src='<?php  echo $imageURl; ?>'> </td>
-               
+                <td> 
+                  </td>
                 <td> <?php  echo $row->product_price ?> </td>
                 <td> <?php if($row->is_active == 1) echo " active "; else echo " not active ";?> </td>
                 <td> <?php  echo $row->creation_date ?> </td>
@@ -103,37 +108,31 @@ include "app/views/admin/dashboard_contant/sidebar.php";
                         <div class="form-group">
                                     <label for="input-select">Brand</label>
                                     <select class="form-control" id="brand_id" name='brand_id'>
-                                    <?php
-                                    $rows=$data['brand'];
-                                    foreach($rows as $row)
-                                    {
-                                    echo "
-                                    <option value=$row->brand_id >$row->brand_name</option>";
-                                     }
-                                    ?>
+                                   
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="" class="col-form-label">product_quantity : </label>
                             <input  type="text" id="product_quantity" class="form-control" name='product_quantity'>
                         <div>
+                          <br>
                         <div class="form-group">
-                            <label for="exampleFormControlFile1">main image</label>
+                            <label for="exampleFormControlFile1">Main Image<small>(format: jpg, jpeg, png)</small></label>
                             <input type="file" id="file-ip-1" onchange="showPreview(event);"  accept="image/*" class="form-control-file" name='product_main_image'> 
-                            <img src=''  class="img-fluid" id="file-ip-1-preview" width="70">
-             
+                           <br>
+                            <img  class="img-fluid" id="file-ip-1-preview" width="70">
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlFile1">images</label>
-                            <input type="file" id="product_images" accept="image/*" id="gallery-photo-add" multiple class="form-control-file" name='product_images[]'>
-                            <br>
-                            <div class='gallery'> </div>
+                        <label>Product Image <small>(format: jpg, jpeg, png)</small></label>
+                        <input type="file" accept="image/*" multiple id="gallery-photo-add" class="form-control-file" name='product_images[]' value="<?= $row->product_images ?>" >
+                        <br>
+                        <div class='gallery'> </div>
                         </div>
                         <div class="form-group">
                                     <label for="input-select">color</label>
                                     <select class="form-control" id="color_id" name='color_id'>
                                     <?php
-                                    $rows=$data['color'];
+                                  $rows=$data['color'];
                                     foreach($rows as $row)
                                     {
                                     echo "
@@ -172,7 +171,59 @@ include "app/views/admin/dashboard_contant/sidebar.php";
 
 <!-- footer -->
 <?php include "app/views/admin/dashboard_contant/footer.php"; ?>
- 
+<script>
+$(function() {
+    // Multiple images preview in browser
+    var imagesPreview = function(input, placeToInsertImagePreview) {
+
+        if (input.files) {
+            var filesAmount = input.files.length;
+
+            for (i = 0; i < filesAmount; i++) {
+                var reader = new FileReader();
+               // document.getElementById("img").style.display = "none";
+                reader.onload = function(event) {
+                    $($.parseHTML('<img width="50">')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                }
+                
+                reader.readAsDataURL(input.files[i]);
+            }
+        }
+
+    };
+
+    $('#gallery-photo-add').on('change', function() {
+        imagesPreview(this, 'div.gallery');
+       
+    });
+});
+</script>
+<script type="text/javascript">
+           $(document).ready(function(){
+           	   $("#category_id").change(function(){
+                     var category_id=$("#category_id").val();
+           	   	     $.ajax({
+                      url:"admin/admin_product/getBrand",
+           	   	     	type:"post",
+                      data: { category_id :category_id },
+           	   	     	success:function(data){
+                         //  alert(data);
+                         $("#brand_id").html(data);
+           	   	     	}
+           	   	     });
+           	   });
+           });
+      </script>
+<script>
+        function showPreview(event){
+            if(event.target.files.length >0){
+                var src = URL.createObjectURL(event.target.files[0]);
+                var preview = document.getElementById("file-ip-1-preview");
+                preview.src = src;
+                preview.style.display="block";
+            }
+        } 
+</script>
     <script>
     $(document).ready(function(){
       
@@ -205,82 +256,7 @@ include "app/views/admin/dashboard_contant/sidebar.php";
         }
       });
        // Add Category
-        $('.add_product').click(function(){   
-        var el = this;
-                var product_name = $('#product_name').val();
-                var product_details = $('#product_details').val();
-                var category_id = $('#category_id').val();
-                var brand_id = $('#brand_id').val();
-                var product_quantity = $('#product_quantity').val();
-                var product_main_image = $('#product_main_image').val();
-                var product_images = $('#product_images[]').val();
-                var color_id = $('#color_id').val();
-                var product_short_desc = $('#product_short_desc').val();
-                var product_long_desc = $('#product_long_desc').val();
-                var product_price = $('#product_price').val();
-                var is_active = $('#is_active').val();
-                var creation_date = $('#creation_date').val();
-                alert(product_images);
-                   /* $.ajax({
-                      url : 'admin/admin_product/add',
-                      method : 'POST',
-                      data : {
-                         product_name:product_name,
-                         product_details:product_details,
-                         category_id:category_id,
-                         brand_id:brand_id,
-                         product_quantity:product_quantity,
-                         product_main_image:product_main_image,
-                         product_images:product_images,
-                         color_id:color_id,
-                         product_short_desc:product_short_desc,
-                         product_long_desc:product_long_desc,
-                         product_price:product_price,
-                         is_active:is_active,
-                         creation_date:creation_date
-                        },
-                      success : function(data){ 
-                        alert(data);
-                        setInterval('refreshPage()', 900);
-                        
-                        } 
-                    });*/
-                
-        }); //end add category*/
-        $(function() {
-    // Multiple images preview in browser
-    var imagesPreview = function(input, placeToInsertImagePreview) {
 
-        if (input.files) {
-            var filesAmount = input.files.length;
-
-            for (i = 0; i < filesAmount; i++) {
-                var reader = new FileReader();
-               // document.getElementById("img").style.display = "none";
-                reader.onload = function(event) {
-                    $($.parseHTML('<img width="50">')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
-                }
-                
-                reader.readAsDataURL(input.files[i]);
-            }
-        }
-
-    };
-
-    $('#gallery-photo-add').on('change', function() {
-        imagesPreview(this, 'div.gallery');
-       
-    });
-});
-
-        function showPreview(event){
-            if(event.target.files.length >0){
-                var src = URL.createObjectURL(event.target.files[0]);
-                var preview = document.getElementById("file-ip-1-preview");
-                preview.src = src;
-                preview.style.display="block";
-            }
-        } 
 });
 function refreshPage() {
     location.reload(true);
@@ -293,12 +269,5 @@ function refreshPage() {
 <!-- end footer -->
  </body>
 </html>
-<?php/*
-                        $imges = $row->product_images;
-                        $clean_url=rtrim($imges,',');
-                        $clean_url=explode(',',$clean_url);
-                        foreach($clean_url as $part){
-                        $product_images='http://localhost/Ecom-store-project/app/assets/images/'.$part;
-                        echo "<img width='60' height='60' src=' $product_images'>";}*/?> 
                 
              

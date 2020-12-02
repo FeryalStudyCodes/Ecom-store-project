@@ -77,19 +77,35 @@ echo "</div>";
                 ?>
                     <tr>
                     <th><?= $i; ?></th>
-                    <td width="60"><img src="<?=$imageURl?>" height="80"></td>
+                    <td class="something" width="60"><img src="<?=$imageURl?>" height="80"></td>
                     <td width="110"><?=$row->product_short_desc?></td>
                     <td width="40">$<?= $row->product_price ?></td>
-                    <td width="80" ><a href="main/shopingCartinwishlis?id=<?=$id?>" class="btn btn-success " styl=""><i  class="fa fa-shopping-cart"></i></a></td>
-                    <td>
+                    <!-- <td width="80" ><a href="main/shopingCartinwishlis?id=<?=$id?>" class="btn btn-success " styl=""><i  class="fa fa-shopping-cart"></i></a></td> -->
+                    <!-- <td>
                   <a href='removeWishListItems?id=<?=$row->product_id?>'  class="text-danger lead" onclick="return confirm('Are you sure want to remove this item?');">
                   <i class="fas fa-trash-alt"></i></a>
-                </td>
+                </td> -->
+                
+                <input type="hidden" name="product" class="product-id" value="<?= $id?>">
+                <td width="80" >
+                      <?PHP
+                        if(array_key_exists($id, $_SESSION['cart']))
+                        {
+                        echo"<a  style='    color: white;
+                         background-color: #F89132; border:#F89132; ' class='cart btn btn-success' id='shope'><i  class='fa fa-shopping-cart'></i></a>";
+                        }
+                        else
+                        {
+                          echo"<a style='background-color: #F89132; border:#F89132; ' class='cart btn btn-success' id='shope'><i  class='fa fa-shopping-cart'></i></a>";
+                        }
+                    ?>
+                    </td>
+                <td>   <a href='#'  class="delete text-danger lead" > <i class="fas fa-trash-alt"></i></a></td>
                     </tr>
-                    <?PHP $i++; }}?>
+                     <?PHP $i++; }}?>
                 </tbody>
                 </table>
-            </div>
+                </div>
 
             <!-- <div class="col-md-12">
              <div class="pull-left">
@@ -102,6 +118,50 @@ echo "</div>";
           </div>
         </div>
   <!-- checkout Page End -->
+
+
+  <script>
+$(document).ready(function(){
+            // delete the item from WishList
+            $('.delete').click(function(){
+              // alert("hi");
+            var el = this;
+            var $el = $(this).closest('tr');  
+            var id = $el.find(".product-id").val();
+            var confirmalert = confirm("Are you sure want to remove this item?");
+            if (confirmalert == true) {
+                $.ajax({
+                url: 'main/removeWishListItems?id=' + id,
+                type: 'POST',
+                data: { id:id },
+                success: function(data){
+                    $(el).closest('tr').fadeOut(800,function(){
+                    $(this).remove();
+                                });
+                }
+                });
+            }
+            });
+                // add the item to cart
+                $('.cart').click(function(){
+                  var $el = $(this).closest('tr'); 
+              var id = $el.find(".product-id").val();
+            // alert(id);
+            $.ajax({
+                url: 'main/shopingCart?id='+ id,
+                method: 'post',
+                cache: false,
+                data: {
+                  id: id
+                },
+                success: function(response) {
+                  alert(response);
+                }
+             });
+          });
+             
+})
+</script>
 
   <br><br><br><br><br><br>
 <?PHP
@@ -176,7 +236,55 @@ include "app/views/footer.php";
       });
     </script>
       
-        
+      <script>
+$(document).ready(function(){
+            // delete the item from WishList
+            $('.delete').click(function(){
+            var el = this;
+            var $el = $(this).closest('tr');  
+            var id = $el.find(".product-id").val();
+            var confirmalert = confirm("هل تريد حذف المنتج من قائمة المفضلة");
+            if (confirmalert == true) {
+                $.ajax({
+                url: 'main/removeWishListItems?id=' + id,
+                type: 'POST',
+                data: { id:id },
+                success: function(data){
+                    document.getElementById("wishcomparison-count").innerHTML=data;
+                    $(el).closest('tr').fadeOut(800,function(){
+                    $(this).remove();
+                                });
+                }
+                });
+            }
+            });
+                // add the item to cart
+                $('.cart').click(function(){
+                  var $el = $(this).closest('tr'); 
+              var id = $el.find(".product-id").val();
+          
+            $.ajax({
+                url: 'main/shopingCart?id='+ id,
+                method: 'post',
+                cache: false,
+                data: {
+                  id: id
+                },
+                success: function(response) {
+                  if(response == 0){
+                   alert("تم اضافة المنتج مسبقاً");
+                  }
+                  else{
+                   alert("تم إضافة المنتج الى السلة  ");
+                    document.getElementById("comparison-count").innerHTML=response;
+                    document.getElementById("shope").style.color = "blue";
+                  }
+                }
+             });
+          });
+             
+})
+</script>
   
   </body>
 </html>

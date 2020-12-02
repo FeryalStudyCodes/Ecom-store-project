@@ -1,17 +1,13 @@
 <?PHP
+session_start();
 include "app/views/header.php"; 
 ?>
-
-<div class="spacer-con">
-    &nbsp;
-</div>
-    
         <div class="container">
           <div class="row">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
               <div class="signin my-5">
                 <div class="signin-body" style="direction: rtl;">
-                  <h5 class="signin-title text-center">الدخول</h5>
+                  <h5 class="signin-title text-center">التسجيل</h5>
                   <div class="error" id="div_erroe"></div>
                   <div class="success"></div>
                     <?php if (isset($_GET['error'])) { ?>
@@ -20,68 +16,43 @@ include "app/views/header.php";
                     <?php if (isset($_GET['success'])) { ?>
                         <p class="success"><?php echo $_GET['success']; ?></p>
                     <?php } ?>
-                  <form class="form-signin" action="main/checklogin" method="post">
+                  <form class="form-signin" action="main/addusercheckout" method="post" >
                     <div class="form-label-group">
-                      <input type="email" id="inputEmail" class="form-control"placeholder="الإيميل" name="email" required autofocus >
+                        <input type="text" id="inputName" class="form-control"placeholder="الإسم " name="full_name" required autofocus>
+                        <label for="inputName" ></label>
+                      </div>
+                      <div class="form-label-group">
+                        <input type="text" id="inputName" class="form-control"placeholder="اسم المستخدم " name="user_name" required autofocus>
+                        <label for="inputName" ></label>
+                      </div>
+                    <div class="form-label-group">
+                      <input type="email" id="inputEmail" class="form-control"placeholder="الإيميل" name="email" required autofocus>
                       <label for="inputEmail" ></label>
                     </div>
-      
                     <div class="form-label-group">
-                      <input type="password" id="inputPassword" class="form-control" placeholder=" كلمة المرور" name="password" required>
-                      <label for="inputPassword"> </label>
-                    </div>
-      
-                    <div class="custom-control custom-checkbox mb-3">
-                      <input type="checkbox" class="custom-control-input" id="customCheck1">
-                      <label class="custom-control-label" for="customCheck1" style="float: right;">تذكر الباسورد</label>
-                    </div>
-                    <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">الدخول</button>
-                    <!--span class="psw"><a href="#">Forgot password?</a></span-->
-
-                    <span class="social-label">أو</span>
-                    <hr class="my-4">
-                    <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fa fa-google mr-2"></i>   سجل الدخول عبر جميل </button>
-                    <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fa fa-facebook mr-2"></i> سجل الدخول عبر فيسبوك</button>
-
+                        <input type="text" id="inputName" class="form-control"placeholder="العنوان" name="address" required autofocus>
+                        <label for="inputName" ></label>
+                      </div>
+                      <div class="form-label-group">
+                        <input type="text" id="inputName" class="form-control"placeholder="رقم الهاتف  " name="phone" required autofocus>
+                        <label for="inputName" ></label>
+                      </div>	
+                    <div class="form-label-group">
+                        <input type="password" id="inputPassword" class="form-control" placeholder=" كلمة المرور" name="password" required>
+                        <label for="inputPassword"> </label>	
+                        <?PHP $creation_date=date("Y-m-d H:i:s"); ?>
+                        <input type="hidden" checked="" class="custom-control-input" name='creation_date' value= <?PHP echo $creation_date; ?>>
+                      </div>
+                    <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">تسجيل </button>
                   </form>
                 </div>
               </div>
             </div>
           </div>
         </div>
-       
-        <div class="container">
-          <div class="row">
-          <div class="col-md-12 text-center">
-          <span> ليس لديك حساب؟ </span><a style="color:#f79635;font-weight: 600;" class="register"  href="main/singnup">انشاء حساب</a>
-          </div>
-          </div>
-         </div>
-      
-</body>
-</html>
-
-            <!-- Modal Header 
-            <div class="modal-header">
-                <h4>login</h4> 
-            </div>
-<form action="singnup/add" method="post">
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" name="email">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Password</label>
-      <input type="password" class="form-control" name="password">
-    </div>
-  </div>
-  <button type="submit" class="btn btn-primary">Sign in</button>
-</form>-->
- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
-<br>
+<br><br>
 <?PHP
 include "app/views/footer.php"; 
 ?>
@@ -158,5 +129,6 @@ include "app/views/footer.php";
   
   </body>
 </html>
+
 
  

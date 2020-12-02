@@ -12,15 +12,23 @@ public $cat_model;
         $this->cat_model=$this->controller->model_object->create_model('admin/product');
         $this->$function();
        }
-       function index(){  
-            $items=array(
-                'products'=>$this->cat_model->getproducts(),
-                'color'=>$this->cat_model->getColor(),
-                'brand'=>$this->cat_model->getBrand(),
-                'categories'=>$this->cat_model->getCategory(),
-                );
-        $this->controller->view_object->create_view('admin/products/show_products',$items);
-       }
+
+
+      function index(){  
+    $items=array(
+        'products'=>$this->cat_model->innerJoine(),
+        'color'=>$this->cat_model->getColor(),
+        'brand'=>$this->cat_model->getBrand(),
+        'categories'=>$this->cat_model->getCategory(),
+        );
+$this->controller->view_object->create_view('admin/products/show_products',$items);
+}
+
+function getBrand(){
+    $this->cat_model->getBrandwhere($_POST['category_id']);
+   }
+
+
        function login(){
         $this->controller->view_object->create_view('admin/login');
        }
@@ -184,7 +192,7 @@ public $cat_model;
         $this->cat_model->updatewithmainimage($data);      
      } 
       
-     if(isset($_FILES['product_images']) && !empty($_FILES['product_images']['size'])){
+     if(isset($_FILES['product_images']) && !empty(array_filter($_FILES['product_images']['size']))){
       echo "test2"."<br>";
       
         $data = array( 
